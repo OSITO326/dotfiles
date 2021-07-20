@@ -1,0 +1,116 @@
+"LIGHTLINE
+"lightline.vim 
+if !has('gui_running')
+  set t_Co=256
+endif
+"Colorscheme configuration
+"let g:lightline = {
+"      \ 'colorscheme': 'gruvbox',
+"      \ }
+let g:lightline = {
+      \ 'active': {
+      \   'left': [['mode', 'paste'], [], ['relativepath', 'modified']],
+      \   'right': [['cocstatus'], ['filetype', 'percent', 'lineinfo'], ['gitbranch']]
+      \ },
+      \ 'inactive': {
+      \   'left': [['inactive'], ['relativepath']],
+      \   'right': [['bufnum']]
+      \ },
+      \ 'component': {
+      \   'bufnum': '%n',
+      \   'inactive': 'inactive'
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ 'colorscheme': 'gruvbox',
+      \ 'subseparator': {
+      \   'left': '',
+      \   'right': ''
+      \ }
+      \}
+
+"nerdtree
+"al darle enter a un archivo se cerrara el nerdtree automaticamente
+let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeMapOpenInTab='\t'
+let g:javascript_plugin_flow = 1
+
+"Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+" Signify plugin
+set updatetime=300
+
+"Rainbow Parentheses
+let g:rainbow_active=1
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"COC
+"line after html-> \'coc-eslint', 
+let g:coc_global_extensions=[
+            \'coc-omnisharp',
+            \'coc-html',
+            \'coc-snippets',
+            \'coc-emmet',
+            \'coc-clangd',
+            \'coc-java',
+            \'coc-pairs',
+            \'coc-json',
+            \'coc-lists',
+            \'coc-highlight',
+            \'coc-css',
+            \'coc-git',
+            \'coc-phpls',
+            \'coc-prettier',
+            \'coc-wxml',
+            \'coc-tsserver',
+            \'coc-vetur',
+            \'coc-stylelint',
+            \'coc-word',
+            \'coc-python',
+            \'coc-tabnine',
+            \'coc-emoji'
+            \]
+
+" phpcomplete.vim
+if has('autocmd')
+  augroup PHPComplete
+    autocmd!
+    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+  augroup END
+endif
+let g:phpcomplete_parse_docblock_comments=1
+let g:phpcomplete_complete_for_unknown_classes=1
+
+"polyglot settings 
+let g:go_highlight_build_constraints=1
+let g:go_highlight_extra_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_operators=1
+let g:go_highlight_structs=1
+let g:go_highlight_types=1
+let g:go_highlight_function_parameters=1
+let g:go_highlight_function_calls=1
+let g:go_highlight_generate_tags=1
+let g:go_highlight_format_strings=1
+let g:go_highlight_variable_declarations=1
+let g:go_auto_sameids=1

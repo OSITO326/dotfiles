@@ -1,0 +1,277 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+#Config File for Linux 
+#Made by OSITO_326 © - 2020
+
+env:
+  TERM: alacritty
+  LANG: en_US.UTF-8
+  LC_CTYPE: en_US.UTF-8
+  #TERM: xterm-256color
+window:
+  
+  dimensions:
+    columns: 75
+    lines: 25 
+  
+  padding:
+    x: 0
+    y: 0
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  #decorations: none #show terminal without status bar
+  decorations: full
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+  # Window title
+  #title: Alacritty
+
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+  
+  # Scroll to the bottom when new text is written to the terminal.
+  #auto_scroll: true
+
+# Font configuration
+#change font FiraCode to SF Mono -> look better if you change to FiraCode Font just uncommnet ## and comment family: SF Mono & style:
+font:
+  normal:
+    #family: 'FiraCode Nerd Font'
+    #family: 'SF Mono'
+    family: 'UbuntuMono Nerd Font'
+    style: Regular
+  bold:
+    #family: 'FiraCode Nerd Font'
+    #family: 'SF Mono'
+    family: 'UbuntuMono Nerd Font'
+    style: Bold
+  italic:
+    #family: 'FiraCode Nerd Font'
+    #family: 'SF Mono'
+    family: 'UbuntuMono Nerd Font'
+    style: Italic
+  # Point size
+  size: 12.0 #14.0 -> without fake 1080p
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+  # increasing `y` moves the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  #use_thin_strokes: true
+
+# If `true`, bold text is drawn using the bright color variants.
+#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
+
+# Colors (Gruvbox dark)
+colors:
+  primary:
+    # soft contrast background - '#32302f'
+    # default contrast background - '#282828'
+    # hard contrast background - '#1d2021'
+    background:        &gruvbox_dark_bg '#32302f'
+    foreground:        '#fbf1c7'
+    bright_foreground: '#f9f5d7'
+    dim_foreground:    '#f2e5bc'
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  # search:
+  #   matches:
+  #     foreground: '#000000'
+  #     background: '#ffffff'
+  #   focused_match:
+  #    foreground: CellBackground
+  #    background: CellForeground
+  #   bar:
+  #     background: ''
+  #     foreground: ''
+  # line_indicator:
+  #   foreground: None
+  #   background: None     
+  selection:
+    text:       CellBackground
+    background: CellForeground
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  normal:
+    black:   *gruvbox_dark_bg
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  dim:
+    black:   '#32302f'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#928374'
+  # indexed_colors: []
+  # END Gruvbox THEME
+    
+    ## Colors (BROGRAMMER)
+    #colors:
+  # Default colors
+  #primary:
+    
+#background: '#1f1f1f'
+    
+#   foreground: '#edf0f5'
+
+  # Normal colors
+  # normal:
+  #  black:   '#313131'
+  #  red:     '#f81118'
+  #  green:   '#2dc55e'
+  #  yellow:  '#ecba0f'
+  #  blue:    '#2a84d2'
+  #  magenta: '#4e5ab7'
+  #  cyan:    '#1381d6'
+  #  white:   '#d6dbe5'
+
+  # Bright colors
+  #bright:
+    #black:   '#d6dbe5'
+    #red:     '#de352e'
+    #green:   '#1dd361'
+    #yellow:  '#ecba0f'
+    #blue:    '#1081d6'
+    #magenta: '#535087'
+    # cyan:    '#0f7ddb'
+   # white:   '#ffffff'
+   # END BROGRAMMER THEME
+
+# ...
+# Bell
+#
+# The bell is rung every time the BEL control character is received.
+bell:
+  # Visual Bell Animation
+  #
+  # Animation effect for flashing the screen when the visual bell is rung.
+  #
+  # Values for `animation`:
+  #   - Ease
+  #   - EaseOut
+  #   - EaseOutSine
+  #   - EaseOutQuad
+  #   - EaseOutCubic
+  #   - EaseOutQuart
+  #   - EaseOutQuint
+  #   - EaseOutExpo
+  #   - EaseOutCirc
+  #   - Linear
+  animation: EaseOutExpo
+
+  # Duration of the visual bell flash. A `duration` of `0` will disable the
+  # visual bell animation.
+  duration: 0
+
+  # Visual bell animation color.
+  color: '#ffffff'
+
+  # Bell Command
+  #
+  # This program is executed whenever the bell is rung.
+  #
+  # When set to `command: None`, no command will be executed.
+  #
+  # Example:
+  #   command:
+  #     program: notify-send
+  #     args: ["Hello, World!"]
+  #
+  #command: None
+
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 0.75
+
+selection:
+  # This string contains all characters that are used as separators for "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Block
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+mouse:
+  hide_cursor_when_typing: true
+
+url:
+  modifiers: Shift
+
+
+# (Windows, Linux, and BSD only)
+key_bindings:
+  - { key: V,        mods: Control|Shift,    action: Paste               }
+  - { key: C,        mods: Control|Shift,    action: Copy                }
+  - { key: Q,        mods: Control,          action: Quit                }
+  - { key: W,        mods: Control,          action: Quit                }
+  - { key: N,        mods: Control,          action: SpawnNewInstance    } #open a new instance of alacritty terminal
+  - { key: T,        mods: Control,          action: SpawnNewInstance    } #open a new instance of alacritty terminal
+    #increase font size Control, = +
+    #decrease font size Control, -
+    #reset font size control, 0

@@ -1,0 +1,99 @@
+{
+    //tsserver
+    //use eslint to check js and ts
+    "tsserver.trace.server": "verbose",
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false,
+
+    //emmet
+    "emmet.priority": 1,
+    "emmet.excludeLanguages": [
+        "vue"
+    ],
+
+    //prettier
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.printWidth": 120,
+    "prettier.jsxSingleQuote": false,
+    "prettier.bracketSpacing": true,
+    "prettier.trailingComma": "none",
+    "prettier.arrowParens": "avoid",
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "prettier.proseWrap": "always",
+
+    //vue
+    "vetur.trace.server": "verbose",
+    "vetur.format.enable": true,
+    "vetur.validation.style": true,
+    "vetur.validation.script": true,
+    "vetur.validation.template": true,
+    "vetur.format.defaultFormatterOptions": {
+        "prettyhtml": {
+            "sortAttributes": true,
+            "singleQuote": false,
+            "printWidth": 120
+        }
+    },
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.defaultFormatter.less": "prettier",
+    "vetur.format.defaultFormatter.scss": "prettier",
+    "vetur.format.defaultFormatter.ts": "prettier-tslint",
+    "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+    "vetur.format.defaultFormatter.postcss": "prettier",
+
+    //json
+    "json.format.enable": false,
+
+    //html
+    "html.trace.server": "verbose",
+    "html.enable": true,
+    "html.format.enable": true,
+    "html.validate.html": true,
+    "html.validate.styles": true,
+    "html.validate.scripts": true,
+    "html.format.wrapLineLength": 100,
+    "html.format.endWithNewline": false,
+    "html.format.wrapAttributes": "auto",
+
+     //eslint,js  install coc-eslint
+    //"eslint.trace.server": "verbose",
+    //"eslint.packageManager": "yarn",
+    //"prettier.eslintIntegration": true,
+    //"eslint.autoFix": true,
+    //"eslint.autoFixOnSave": true,
+    //"eslint.filetypes": ["javascript", "javascriptreact", "typescriptreact", "vue", "typescript"],
+    //"eslint.run": "onSave",
+    //"eslint.options" : {
+    //"env": {
+    //    "browser": true,
+    //    "node": true
+    //    }
+    //}
+
+    
+    //java
+    "java.enabled": true,
+    "java.trace.server": "verbose",
+   	"java.errors.incompleteClasspath.severity": "ignore",
+    "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",
+    "java.import.gradle.enabled": true,
+    "java.import.gradle.wrapper.enable": true,
+    "java.import.gradle.home": "/home/osito/.gradle",
+    "java.completion.enabled": true,
+    "java.completion.guessMethodArguments": true,
+    "java.format.enabled": true,
+
+    "java.configuration.runtimes":[
+        {
+            "name": "JavaSE-14",
+            "path": "/usr/lib/jvm/java-14-openjdk",
+            "default": true
+        }
+    ]
+}

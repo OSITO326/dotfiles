@@ -1,0 +1,60 @@
+"IdeaVim config file
+"Made By OSITO_326 ©
+"Leader Key Space
+let mapleader=" "
+
+set number
+set mouse=a
+set numberwidth=1
+set clipboard=unnamed
+set showcmd
+set ruler
+set cursorline
+set encoding=utf-8
+set showmatch
+set sw=2
+set relativenumber
+set laststatus=2
+set showmode "set noshowmode
+set hlsearch								"highlight all search occurrences"
+set syntax on
+
+"Emulated Plugins
+set easymotion
+set surround
+set multiple-cursors
+
+"256-colors
+set t-Co=256
+
+"mapeo de comandos
+nnoremap <Leader>w     :action SaveDocument<CR>
+nnoremap <Leader>q		 :q<CR>
+"shortcuts
+map gc :action GotoClass<CR>
+map gf :action GotoFile<CR>
+map gs :action GotoSymbol<CR>
+map gi :action GotoImplementation<CR>
+map gd :action GotoDeclaration<CR>
+map gu :action GotoSuperMethod<CR>
+map fu :action FindUsages<CR>
+
+" Make it easier to make it easier to edit text
+" Edit vimrc
+nnoremap <Leader>ev :vsplit<CR>
+" Source vimrc
+nnoremap <Leader>sv :source<CR>
+
+" Quicker window movement
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+"Move half page faster
+nnoremap <Leader>d <C-d>
+nnoremap <Leader>u <C-u>
+
+"EasyMotion
+nmap <Leader>b <Plug>(easymotion-s2)
+:imap ii <ESC> 

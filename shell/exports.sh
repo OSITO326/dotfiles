@@ -9,7 +9,8 @@ export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home'
+#export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home'
+export JAVA_HOME='/usr/lib/jvm/default'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -44,4 +45,16 @@ export path=(
   "/usr/bin"
   "/usr/sbin"
   "/sbin"
+  "$HOME/.npm-global/bin"
 )
+
+#Calcurse editor and visual NVIM
+export CALCURSE_EDITOR="nvim"
+export VISUAL="nvim"
+
+#Qt5 Apps Enviroment
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+
+#NPM-Global
+#export PATH="$HOME/.npm-global/bin"
+

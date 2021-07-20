@@ -22,6 +22,26 @@ alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 
+#NeoVim
+alias v='nvim'
+
+#LSD
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+#Zathura
+alias z='zathura'
+
+#Nginx
+alias html='cd /usr/share/nginx/html/'
+
+#Arch/Manjaro
+#alias update='sudo pacman -Sy'
+#alias upgrade='sudo pacman -Syu'
+
 # Utils
 alias k='kill -9'
 alias i.='(idea $PWD &>/dev/null &)'

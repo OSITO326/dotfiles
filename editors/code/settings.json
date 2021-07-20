@@ -1,0 +1,67 @@
+{
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.integrated.automationShell.linux": "/bin/zsh",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    // NeoVim Settings
+    "vim.leader": "<space>",
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/.vimrc",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.cursorStylePerMode.visual": "block",
+    "vim.easymotionMarkerForegroundColorOneChar": "#595750",
+    "vim.easymotionMarkerBackgroundColor": "#ffbf00",
+    "vim.easymotionMarkerForegroundColorTwoCharFirst": "#595750",
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "#595750",
+    //NeoVimKeybinding
+    "vim.normalModeKeyBindings":[
+        {
+            "before": ["leader", "w"],
+            "commands": [":w"]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["i", "i"],
+            "after": ["<Esc>"]
+        }
+    ],
+    //NeoVim Airline
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#AFAF00", "#282828"],
+    "vim.statusBarColors.insert": "#87AFAF",
+    "vim.statusBarColors.visual": "#FF8700",
+    "vim.statusBarColors.visualline": "#3A3A3A",
+    "vim.statusBarColors.visualblock": "#FF8700", 
+    "vim.statusBarColors.replace": "#D75F5F", 
+    "vim.statusBarColors.commandlineinprogress": "#98971A", 
+    "vim.statusBarColors.searchinprogressmode": "#FFAF00",
+    "vim.statusBarColors.easymotionmode": "#FFAF00",
+    "vim.statusBarColors.easymotioninputmode": "#FFAF00",
+    "vim.statusBarColors.surroundinputmode": "#98971A",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#AFAF00",
+        "statusBar.noFolderBackground": "#AFAF00",
+        "statusBar.debuggingBackground": "#AFAF00",
+        "statusBar.foreground": "#282828"
+    },
+    //Relative Numbers for Vim extension
+    "editor.lineNumbers": "relative",
+    //ActivityBar Align to Right
+    "workbench.sideBar.location": "right",
+}

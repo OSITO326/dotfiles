@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/osito/Pictures/Wallpapers/RickAndMorty4.jpg' '/home/osito/Pictures/Wallpapers/RickAndMorty3.jpg' 
