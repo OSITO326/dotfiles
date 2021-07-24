@@ -38,6 +38,9 @@ alias z='zathura'
 #Nginx
 alias html='cd /usr/share/nginx/html/'
 
+#Bat
+alias cat='bat'
+
 #Arch/Manjaro
 #alias update='sudo pacman -Sy'
 #alias upgrade='sudo pacman -Syu'
