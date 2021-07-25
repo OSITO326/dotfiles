@@ -52,6 +52,13 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Menu
     ([mod], "space", lazy.spawn("rofi -show drun")),
 
+    # Rofi Emoji
+    ([mod, "shift"], "e", lazy.spawn("rofi -show emoji -modi emoji")),
+
+    # Rofi PowerMenu
+    #([mod], "l", lazy.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu")),
+    ([mod], "l", lazy.spawn("rofi -show session-menu -modi 'session-menu:/bin/rofi-power-menu --choices=suspend/logout'")),
+
     # Window Nav
     ([mod, "shift"], "space", lazy.spawn("rofi -show")),
 
@@ -59,8 +66,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "b", lazy.spawn("firefox")),
 
     # File Explorer
-    ([mod], "e", lazy.spawn("pcmanfm")),
-    #([mod], "e", lazy.spawn("thunar")), #Thunar bug, close app crashed v 4.16
+    #([mod], "e", lazy.spawn("pcmanfm")),
+    ([mod], "e", lazy.spawn("thunar")), #Thunar bug, close app crashed v 4.16
 
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),

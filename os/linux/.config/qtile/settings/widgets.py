@@ -86,29 +86,29 @@ primary_widgets = [
     icon(bg="color5", text='龍 '),  # Icon: nf-fa-feed
     
     #widget.Net(**base(bg='color3'), interface='wlp2s0'),
-    widget.Net(**base(bg='color5'), interface="enp8s0"),
+    widget.Net(**base(bg='color5'), font='UbuntuMono Nerd Font', interface="enp8s0"),
     
     powerline('color4', 'color5'),
     
     icon(bg="color4", text="🖬"),
 
-    widget.Memory(background=colors['color4']),
+    widget.Memory(background=colors['color4'], font='UbuntuMono Nerd Font Mono', measure_mem='M'),
 
     powerline('color3', 'color4'),
     
     icon(bg='color3', text="🌡"),
     
-    widget.ThermalSensor(**base(bg='color3'), padding=2),
+    widget.ThermalSensor(**base(bg='color3'), padding=2, font='UbuntuMono Nerd Font Mono'),
 
     icon(bg='color3', text='  '),
 
-    widget.CPU(**base(bg='color3'), padding=2),
+    widget.CPU(**base(bg='color3'), padding=2, font='UbuntuMono Nerd Font Mono'),
 
     powerline('color2','color3'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.CurrentLayout(**base(bg='color2'), padding=5, font='UbuntuMono Nerd Font Mono'),
 
     powerline('color1','color2'),
 
@@ -118,7 +118,9 @@ primary_widgets = [
 
     #widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
-    widget.Clock(**base(bg='color1'), fontsize=16,format='%A %d %B %Y |   %I:%M:%S %p '),
+    #widget.Clock(**base(bg='color1'), fontsize=16,format='%A %d %B %Y |   %I:%M:%S %p '),
+
+    widget.Clock(**base(bg='color1'), fontsize=16, format='%A %d %B %Y |   %I:%M %p '),
 
     widget.Systray(background=colors['color1'], padding=5),
 
@@ -145,7 +147,8 @@ secondary_widgets = [
     
     icon(bg="color1", text='  '), # Icon: nf-mdi-calendar_clock
 
-    widget.Clock(**base(bg='color1'), fontsize=16, format='%A %d %B %Y |   %I:%M:%S %p '),
+    #widget.Clock(**base(bg='color1'), fontsize=16, format='%A %d %B %Y |   %I:%M:%S %p '),
+    widget.Clock(**base(bg='color1'), fontsize=16, format='%A %d %B %Y |   %I:%M %p '),
 
 ]
 
