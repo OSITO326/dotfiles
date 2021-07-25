@@ -56,8 +56,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "e", lazy.spawn("rofi -show emoji -modi emoji")),
 
     # Rofi PowerMenu
-    #([mod], "l", lazy.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu")),
-    ([mod], "l", lazy.spawn("rofi -show session-menu -modi 'session-menu:/bin/rofi-power-menu --choices=suspend/logout'")),
+    #([mod, "shift"], "l", lazy.spawn("rofi -show session-menu -modi 'session-menu:/bin/rofi-power-menu --choices=suspend/logout'")), #Install Package rofi-power-menu
+    #Betterlockscreen
+    ([mod], "l", lazy.spawn("betterlockscreen -l")),#lockscreen
+    ([mod, "shift"], "l", lazy.spawn("betterlockscreen -s")),#lockscreen with suspend
 
     # Window Nav
     ([mod, "shift"], "space", lazy.spawn("rofi -show")),
