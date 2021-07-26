@@ -7,17 +7,17 @@ Now that you're in Qtile, you should know some of the default keybindings.
 
 | Key                  | Action                     |
 | -------------------- | -------------------------- |
-| **mod + return**     | launch xterm               |
-| **mod + k**          | next window                |
-| **mod + j**          | previous window            |
-| **mod + w**          | kill window                |
-| **mod + [asdfuiop]** | go to workspace [asdfuiop] |
-| **mod + ctrl + r**   | restart qtile              |
-| **mod + ctrl + q**   | logout                     |
+| **mod + return**     | launch xterm                   |
+| **mod + k**          | next window                    |
+| **mod + j**          | previous window                |
+| **mod + w**          | kill window                    |
+| **mod + [asdfuiop]** | go to workspace [asdfuiop]     |
+| **mod + ctrl + r**   | restart qtile                  |
+| **mod + ctrl + q**   | logout                         |
 
 Before doing anything else, if you don't have a US keyboard, you should
 change it using *setxkbmap*. To open xterm use **mod + return**. For example to
-change your layout to spanish:
+change your layout to english with dead keys:
 
 ```bash
 setxkbmap -layout us -variant altgr-intl &
@@ -198,6 +198,8 @@ Here's how **[xrandr](https://wiki.archlinux.org/index.php/Xrandr)** CLI works:
 xrandr
 # Common setup for a laptop and a monitor
 xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate normal --output VIRTUAL1 --off
+# In my case, I prefer use fake resolution "fake 1920x1080"
+xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output VIRTUAL1 --off
 ```
 
 We need to specify the position for each output, otherwise it will default to
@@ -357,6 +359,8 @@ These are common keybindings to all my window managers.
 | **mod + w**             | kill window                      |
 | **mod + ctrl + r**      | restart wm                       |
 | **mod + ctrl + q**      | quit                             |
+| **mod + x**             | lockscreen (betterlockscreen)    |
+| **mod + shift + x**     | lockscreen + suspend (betterlockscreen)    |
 
 The following keybindings will only work if you install all programs needed:
 
@@ -365,23 +369,72 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 ```
 
 To set up *rofi*,
-[check this README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi),
-and for *alacritty*, [this one](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty).
+[check this README](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/rofi),
+and for *alacritty*, [this one](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/alacritty).
 
 
 ## Apps
 
-| Key                 | Action                        |
-| ------------------- | ----------------------------- |
-| **mod + m**         | launch rofi                   |
-| **mod + shift + m** | window nav (rofi)             |
-| **mod + b**         | launch browser (firefox)      |
-| **mod + e**         | launch file explorer (dolphin) |
-| **mod + return**    | launch terminal (alacritty)   |
-| **mod + r**         | redshift                      |
-| **mod + shift + r** | stop redshift                 |
-| **mod + s**         | screenshot (scrot)            |
+| Key                     | Action                        |
+| ----------------------- | ----------------------------- |
+| **mod + space**         | launch rofi                   |
+| **mod + shift + space** | window nav (rofi)             |
+| **mod + shift + e**     | window emoji (rofi)           |
+| **mod + b**             | launch browser (firefox)      |
+| **mod + e**             | launch file explorer (thunar) |
+| **mod + return**        | launch terminal (alacritty)   |
+| **mod + r**             | redshift                      |
+| **mod + shift + r**     | stop redshift                 |
+| **mod + s**             | screenshot (scrot)            |
+| **Print**               | maim (fullscreen)             |
+| **shift + Print**       | maim (area)                   |
+| **mod + c**             | vscode                        |
+| **mod + i**             | intellij-idea                 |
+| **mod + t**             | telegram                      |
+| **mod + p**             | gpick (colorpicker)           |
 
 ## Rofi
 
-The configuration of rofi, [click here](https://gitlab.com/OSITO326/dotfiles-archlinux/-/tree/master/os/linux/.config/rofi)
+The configuration of rofi, [click here](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/rofi)
+
+## Packages Requierements
+|                       Packages                          |             Yay packages             |
+|---------------------------------------------------------|--------------------------------------|
+|   cmatrix                                               |   aic94xx-firmware                   |
+|   composer                                              |   alsi                               |
+|   feh                                                   |   android-studio                     |
+|   geeqie                                                |   betterlockscreen                   |
+|   htop                                                  |   checkra1n-cli                      |
+|   hunspell                                              |   i3lock-color                       |
+|   hunspell-es_any                                       |   intellij-idea-ultimate-edition     |
+|   hunspell-es_es                                        |   intellij-idea-ultimate-edition-jre |
+|   hyphen-es                                             |   lightdm-webkit-theme-aether        |
+|   jdk-openjdk                                           |   necta-wifi-mouse                   |
+|   kvantum-qt5                                           |   nerd-fonts-ubuntu-mono             |
+|   **LEMP(nginx,php, mysql)**                            |   pfetch                             |
+|   libreoffice-fresh                                     |   picom-git                          |
+|   libreoffice-fresh-es                                  |   pipes.sh                           |
+|   lightdm-webkit2-greeter                               |   postman-bin                        |
+|   lsd                                                   |   qmk-git                            |
+|   lxappearance                                          |   qt5-styleplugins                   |
+|   maim                                                  |   rofi-power-menu                    |
+|   neofetch                                              |   scrcpy                             |
+|   neovim                                                |   simplenote-electron-bin            |
+|   nodejs                                                |   skypeforlinux-stable-bin           |
+|   notification-daemon                                   |   spotify                            |
+|   npm                                                   |   telegram-desktop-bin               |
+|   qbittorrent                                           |   ttf-ms-fonts                       |
+|   ranger                                                |   tty-clock                          |
+|   redshift                                              |   upd72020x-fw                       |
+|   rofi                                                  |   visual-studio-code-bin             |
+|   rofi-emoji                                            |   wd719x-firmware                    |
+|   rofi-power-menu                                       |   yay-bin                            |
+|   sl                                                    |   zoom                               |
+|   thunar(thunar-archive-plugin,thunar-media-tags-plugin)|   zramswap                           |
+|   tree                                                  |                                      |
+|   ueberzug                                              |                                      |
+|   vlc                                                   |                                      |
+|   xarchiver                                             |                                      |
+|   xcb-util-cursor                                       |                                      |
+|   youtube-dl                                            |                                      |
+|   zathura(zathura-cb,zathura-djvu,zathura-pdf-mudpf)    |                                      |

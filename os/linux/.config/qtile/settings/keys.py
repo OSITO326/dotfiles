@@ -7,8 +7,8 @@
 from libqtile.config import Key
 from libqtile.command import lazy
 
-
 mod = "mod4"
+term = "alacritty"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -58,8 +58,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Rofi PowerMenu
     #([mod, "shift"], "l", lazy.spawn("rofi -show session-menu -modi 'session-menu:/bin/rofi-power-menu --choices=suspend/logout'")), #Install Package rofi-power-menu
     #Betterlockscreen
-    ([mod], "l", lazy.spawn("betterlockscreen -l")),#lockscreen
-    ([mod, "shift"], "l", lazy.spawn("betterlockscreen -s")),#lockscreen with suspend
+    ([mod], "x", lazy.spawn("betterlockscreen -l")),#lockscreen
+    ([mod, "shift"], "x", lazy.spawn("betterlockscreen -s")),#lockscreen with suspend
 
     # Window Nav
     ([mod, "shift"], "space", lazy.spawn("rofi -show")),
@@ -79,11 +79,20 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
-    #([mod], "s", lazy.spawn("scrot")),
-    #([mod], "s", lazy.spawn("scrot -e 'mv $f ~/Pictures/ScreenshotsScrot/%d%B%Y-%H:%M:%S.png'")),
-    #([], "Print", lazy.spawn("scrot -e 'mv $f ~/Pictures/ScreenshotsScrot/Screenshot_%d%m%Y_%H:%M:%S%p-$wx$h.png'")), 
-    ([], "Print", lazy.spawn("scrot -e 'mv $f ~/Pictures/ScreenshotsScrot/Screenshot_%F_%T.png'")), 
+    #With Scrot -> Install scrot package
+    #([], "Print", lazy.spawn("scrot -e 'mv $f ~/Pictures/ScreenshotsScrot/Screenshot_%F_%T.png'")), 
+    #([], "Print", lazy.spawn("scrot -e 'mv $f ~/Pictures/ScreenshotsScrot/%Y%m%d_%H%M%S.png'")),
 
+    #With Maim -> Install maim package and copy *.sh file on /usr/bin/ to execute maim_"actions"
+    #Screenshot FullArea with maim
+    ([], "Print", lazy.spawn("maim_fullscreen")),
+    #Screenshot Area with maim
+    (["shift"], "Print", lazy.spawn("maim_area")),
+    #Screenshot ActiveWindow
+    #(["control"], "Print", lazy.spawn("maim -u -i $(xdotool getactivewindow) ~/Pictures/screenshot/window_$(date +%Y%m%d_%H%M%S).png")),
+
+    #Run launcher
+    ([mod, "shift"], "Return", lazy.spawn("dmenu_run -p 'Run: '")),
     #VisualCode
     ([mod], "c", lazy.spawn("code")),
 

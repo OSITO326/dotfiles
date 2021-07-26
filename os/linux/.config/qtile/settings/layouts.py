@@ -16,7 +16,7 @@ layout_conf = {
 }
 
 layouts = [
-    layout.Max(),
+    #layout.Max(),
     layout.MonadTall(**layout_conf),
     layout.MonadWide(**layout_conf),
     layout.Bsp(**layout_conf),
