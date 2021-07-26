@@ -81,7 +81,7 @@ rofi-theme-selector
 
 That's it for Qtile, now you can start hacking on it and make it your own.
 Checkout my custom Qtile config
-[here](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile).
+[here](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/qtile).
 But before that I would recommend configuring basic utilities like audio,
 battery, mounting drives, etc.
 
@@ -174,6 +174,7 @@ Key([], "XF86AudioMute", lazy.spawn("pamixer --toggle-mute")),
 Restart Qtile with **mod + control + r** and your keybindings should work. If
 you're on a laptop, you might also want to control the brightness of your screen,
 and for that I recommend
+
 **[brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**:
 
 ```bash
@@ -335,6 +336,240 @@ blueman-applet &
 
 Every time you login you will have all systray utilities, your keyboard layout
 and monitors set.
+# Further configuration and tools
+
+## AUR helper
+
+Now that you have some software that allows you tu use your computer without
+losing your patience, it's time to do more interesting stuff. First, install an
+**[AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers)**, I use
+**[yay](https://github.com/Jguer/yay)**:
+
+```bash
+sudo pacman -S base-devel git
+cd /opt/
+sudo git clone https://aur.archlinux.org/yay-git.git
+sudo chown -R username:username yay-git/
+cd yay-git
+makepkg -si
+```
+
+With an *Arch User Repository helper*, you can basically install
+any piece of software on this planet that was meant to run on Linux.
+
+## Media Transfer Protocol
+
+If you want to connect your phone to your computer using a USB port, you'll
+need MTP implementation and some CLI to use it, like
+[this one](https://aur.archlinux.org/packages/simple-mtpfs/):
+
+```bash
+sudo pacman -S libmtp
+yay -S simple-mtpfs
+
+# List connected devices
+simple-mtpfs -l
+# Mount first device in the previous list
+simple-mtpfs --device 1 /mount/point
+```
+
+## File Manager
+
+We've done all files stuff through a terminal up to this point, but you can
+install graphical or terminal based file managers.
+For a graphical one, I suggest
+**[thunar](https://wiki.archlinux.org/index.php/Thunar)**
+and for a terminal based one,
+**[ranger](https://wiki.archlinux.org/index.php/Ranger)**, although this one
+is very vim-like, only use it if you know how to move in vim.
+
+```bash
+sudo pacman -S thunar ranger
+```
+
+## Trash
+
+If you don't want to *rm* all the time and potentially lose files, you need a
+trashing system. Luckily, that's pretty easy to do, using
+[some of these tools](https://wiki.archlinux.org/index.php/Trash_management#Trash_creation)
+such as **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**,
+and for GUIs like *thunar* you need **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**:
+
+```bash
+sudo pacman -S glib2 gvfs
+# CLI usage
+gio trash path/to/file
+# Empty trash
+gio trash --empty
+```
+
+With *thunar* you can open the trash clicking on the left panel, but on the command
+line you can use:
+
+```bash
+ls ~/.local/share/Trash/files
+```
+
+## GTK Theming
+
+The moment you have been wating for has arrived, you are finally going to
+install a dark theme. I use *Material Black Colors*, so go grab a flavor
+[here](https://www.gnome-look.org/p/1316887/) and the matching icons
+[here](https://www.pling.com/p/1333360/).
+
+I suggest starting with
+*Material-Black-Blueberry* and *Material-Black-Blueberry-Suru*. You can find
+other GTK themes [on this page](https://www.gnome-look.org/browse/cat/135/).
+Once you have your theme folders downloaded, this is what you do:
+
+```bash
+# Assuming you have downloaded Material-Black-Blueberry
+cd Downloads/
+sudo pacman -S unzip
+unzip Material-Black-Blueberry.zip
+unzip Material-Black-Blueberry-Suru.zip
+rm Material-Black*.zip
+
+# Make your themes available
+sudo mv Material-Black-Blueberry /usr/share/themes
+sudo mv Material-Black-Blueberry-Suru /usr/share/icons
+```
+
+Now edit **~/.gtkrc-2.0** and **~/.config/gtk-3.0/settings.ini** by adding
+these lines:
+
+```ini
+# ~/.gtkrc-2.0
+gtk-theme-name = "Material-Black-Blueberry"
+gtk-icon-theme-name = "Material-Black-Blueberry-Suru"
+
+# ~/.config/gtk-3.0/settings.ini
+gtk-theme-name = Material-Black-Blueberry
+gtk-icon-theme-name = Material-Black-Blueberry-Suru
+```
+
+Next time you log in, these changes will be visible. You can also install a
+different cursor theme, for that you need
+**[xcb-util-cursor](https://www.archlinux.org/packages/extra/x86_64/xcb-util-cursor/)**.
+The theme I use is
+[Breeze](https://www.gnome-look.org/p/999927/), download it and then:
+
+```bash
+sudo pacman -S xcb-util-cursor
+cd Downloads/
+tar -xf Breeze.tar.gz
+sudo mv Breeze /usr/share/icons
+```
+
+Edit **/usr/share/icons/default/index.theme** by adding this:
+
+```ini
+[Icon Theme]
+Inherits = Breeze
+```
+
+Now, again, edit **~/.gtkrc-2.0** and **~/.config/gtk-3.0/settings.ini**:
+
+```ini
+# ~/.gtkrc-2.0
+gtk-cursor-theme-name = "Breeze"
+
+# ~/.config/gtk-3.0/settings.ini
+gtk-cursor-theme-name = Breeze
+```
+
+Make sure not to mistype the names of your themes and icons, they should
+match the names of the directories where they are located, the ones you can
+see in this output:
+
+```bash
+ls /usr/share/themes
+ls /usr/share/icons
+```
+
+Remember that you will only see the new theme if you log in again.
+There are also graphical frontends for changing themes, I just prefer the
+traditional way of editing files though, but you can use
+**[lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/)**,
+which is a desktop environment independent GUI for this task, and it lets you
+preview themes.
+
+```bash
+sudo pacman -S lxappearance
+```
+
+Finally, if you want tranparency and fancy looking things, install a compositor:
+
+```bash
+sudo pacman -S picom
+# Run it like so, place it in ~/.xrofile
+picom &
+```
+
+## Qt
+
+GTK themes will not be applied to Qt programs, but you can use
+[**Kvantum**](https://archlinux.org/packages/?name=kvantum-qt5) to change the
+default theme:
+
+```bash
+sudo pacman -S kvantum-qt5
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+```
+
+## Lightdm theming
+
+We can also change the theme of *lightdm* and make it look cooler, because why
+not? We need another greeter, and some theme, namely
+**[lightdm-webkit2-greeter](https://www.archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/)**
+and  **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
+
+```bash
+sudo pacman -S lightdm-webkit2-greeter
+yay -S lightdm-webkit-theme-aether
+```
+
+These are the configs you need to make:
+
+```ini
+# /etc/lightdm/lightdm.conf
+[Seat:*]
+# ...
+# Uncomment this line and set this value
+greeter-session = lightdm-webkit2-greeter
+# ...
+
+# /etc/lightdm/lightdm-webkit2-greeter.conf
+[greeter]
+# ...
+webkit_theme = lightdm-webkit-theme-aether
+```
+
+Ready to go.
+
+## Multimedia
+
+There are dozens of programs for multimedia stuff, check
+[this page](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia).
+
+### Images
+
+For image previews, one of the best that I could find is
+[geeqie](https://www.archlinux.org/packages/extra/x86_64/geeqie/):
+
+```bash
+sudo pacman -S geeqie
+```
+
+### Video and audio
+
+No doubt
+[vlc](https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol))
+is exactly what you need:
+
+```bash
+sudo pacman -S vlc
+```
 
 # Keybindings
 
@@ -393,10 +628,54 @@ and for *alacritty*, [this one](https://github.com/OSITO326/dotfiles/tree/main/o
 | **mod + t**             | telegram                      |
 | **mod + p**             | gpick (colorpicker)           |
 
-## Rofi
+# Software
 
-The configuration of rofi, [click here](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/rofi)
+## Basic utilities
 
+| Software                                                                                            | Utility                          |
+| --------------------------------------------------------------------------------------------------- | -------------------------------- |
+| **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                           | Self explanatory                 |
+| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | *NetworkManager* systray         |
+| **[pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)**                                   | Self explanatory                 |
+| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | *pulseaudio* GUI                 |
+| **[pamixer](https://www.archlinux.org/packages/community/x86_64/pamixer/)**                         | *pulseaudio* CLI                 |
+| **[brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**             | Laptop screen brightness         |
+| **[xinit](https://wiki.archlinux.org/index.php/Xinit)**                                             | Launch programs before wm starts |
+| **[libnotify](https://wiki.archlinux.org/index.php/Desktop_notifications)**                         | Desktop notifications            |
+| **[notification-daemon](https://www.archlinux.org/packages/community/x86_64/notification-daemon/)** | Self explanatory                 |
+| **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                            | Automounter                      |
+| **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**                                         | NTFS read & write                |
+| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI for *xrandr*                 |
+| **[cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**                     | Battery systray                  |
+| **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Volume systray                   |
+| **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**                                  | Trash                            |
+| **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**                                   | Trash for GUIs                   |
+
+## Fonts, theming and GTK
+
+| Software                                                                               | Utility                    |
+| -------------------------------------------------------------------------------------- | -------------------------- |
+| **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                | Compositor for Xorg        |
+| **[UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono/)** | Nerd Font for icons        |
+| **[Material Black](https://www.gnome-look.org/p/1316887/)**                            | GTK theme and icons        |
+| **[lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/)**  | GUI for changing themes    |
+| **[nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)**                          | GUI for setting wallpapers |
+| **[feh](https://wiki.archlinux.org/index.php/Feh)**                                    | CLI for setting wallpapers |
+
+## Apps
+
+| Software                                                              | Utility                  |
+| --------------------------------------------------------------------- | ------------------------ |
+| **[alacritty](https://wiki.archlinux.org/index.php/Alacritty)**       | Terminal emulator        |
+| **[thunar](https://wiki.archlinux.org/index.php/Thunar)**             | Graphical file explorer  |
+| **[ranger](https://wiki.archlinux.org/index.php/Ranger)**             | Terminal based explorer  |
+| **[neovim](https://wiki.archlinux.org/index.php/Neovim)**             | Terminal based editor    |
+| **[rofi](https://wiki.archlinux.org/index.php/Rofi)**                 | Menu and window switcher |
+| **[scrot](https://wiki.archlinux.org/index.php/Screen_capture)**      | Screenshot               |
+| **[maim](https://github.com/naelstrof/maim)**                         | Screenshot               |
+| **[redshift](https://wiki.archlinux.org/index.php/Redshift)**         | Take care of your eyes   |
+| **[gpick](https://archlinux.org/packages/community/x86_64/gpick/)**   | Color picker             |
+| **[trayer](https://www.archlinux.org/packages/extra/x86_64/trayer/)** | Systray                  |
 ## Packages Requierements
 |                       Packages                          |             Yay packages             |
 |---------------------------------------------------------|--------------------------------------|
