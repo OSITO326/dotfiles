@@ -4,7 +4,6 @@
     "editor.fontSize": 16,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "terminal.external.linuxExec": "alacritty",
-    "terminal.integrated.fontFamily": "UbuntuMono Nerd Font Mono",
     "terminal.integrated.automationShell.linux": "/bin/zsh",
     "workbench.iconTheme": "material-icon-theme",
     "editor.suggestSelection": "first",

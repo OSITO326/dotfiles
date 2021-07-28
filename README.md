@@ -30,4 +30,4 @@ It also supports other git repos, but you need to know your git repository url.
 
 ## Qtile Tiling Window Manager
 
-[Check this README](https://github.com/OSITO326/dotfiles/blob/main/os/linux/.config/qtile/README.md)
+[Check this README](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/qtile)
