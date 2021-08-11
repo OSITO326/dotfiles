@@ -34,6 +34,7 @@ Plug 'sheerun/vim-polyglot'
 "IDE
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'preservim/nerdcommenter' "to comments 
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
@@ -42,9 +43,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'yggdroot/indentline'
 Plug 'luochen1990/rainbow'
-
-"HTML5
-Plug 'othree/html5.vim'
 
 "Icons
 Plug 'ryanoasis/vim-devicons'

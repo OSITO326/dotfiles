@@ -16,7 +16,7 @@ syntax on
 so ~/.vim/plugins.vim
 so ~/.vim/plugins-config.vim
 so ~/.vim/maps.vim
-"so ~/.vim/coc-initconfig.vim
+so ~/.vim/coc-initconfig.vim
 
 "color scheme guvbox contraste alto del tema gruvbox
 colorscheme gruvbox

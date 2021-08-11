@@ -13,6 +13,15 @@ else
     xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output VIRTUAL1 --off &
 fi
 
+#BSPWM
+#if [[ $XDG_SESSION_DESKTOP = bspwm ]]; then
+ #   exec bspwm
+#fi
+if echo $XDG_SESSION_DESKTOP=bspwm
+    exec bspwm
+fi
+
+
 # Wallpaper with feh
 #sh ~/.fehbg &
 # Composer

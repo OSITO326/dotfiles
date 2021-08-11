@@ -31,3 +31,7 @@ It also supports other git repos, but you need to know your git repository url.
 ## Qtile Tiling Window Manager
 
 [Check this README](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/qtile)
+
+## BSPWM with Polibar
+[BSPWM](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/bspwm)
+[Polibar](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polybar)

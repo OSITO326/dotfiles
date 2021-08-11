@@ -47,7 +47,8 @@ alias cat='bat'
 
 # Utils
 alias k='kill -9'
-alias i.='(idea $PWD &>/dev/null &)'
+#alias i.='(idea $PWD &>/dev/null &)'
+alias i.='(intellij-idea-ultimate-edition $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 alias up='dot package update_all'
