@@ -426,3 +426,59 @@ for the modules you want to put in the polybar **[bar/main]** and **[bar/seconda
 <p align="center">
   <img src="https://github.com/OSITO326/dotfiles/blob/main/.screenshots/custom_module.png">
 </p>
+
+In my case I decided to create a module to show me the IP address of the VPN that I use through openvpn.
+To create the following module, open the file **user_modules.ini**:
+
+```bash
+nvim ~/.config/polybar/forest/user_modules.ini
+```
+At the end of all the code you can add the following lines to create the vpn module or any custom one. 
+
+```bash
+; Module name 
+[module/vpn]
+
+; Type module
+type = custom/script
+
+; Iin the type of module I put that it will be a script, so I want it to execute the script 
+exec = ~/.config/polybar/forest/scripts/vpn.sh &
+
+; Will the script output continous content?
+; Default: false
+tail = true
+
+; Seconds to sleep between updates
+; Default: 2 (0 if `tail = true`)
+interval = 2
+
+; Available tags:
+;   <output> - deprecated
+;   <label> (default)
+format = <label>
+format-prefix = "異 "
+
+; Available tokens:
+;   %output%
+; Default: %output%
+format-prefix-foreground = ${color.pink}
+label = " %output%"
+```
+
+the script you create contains the following:
+
+```bash
+#!/bin/sh
+ 
+IFACE=$(/usr/sbin/ifconfig | grep tun0 | awk '{print $1}' | tr -d ':')
+ 
+if [ "$IFACE" = "tun0" ]; then
+    echo "$(/usr/sbin/ifconfig tun0 | grep "inet " | awk '{print $2}')%{u-}"
+else
+    echo "N/A"
+fi
+```
+
+- If you create a new script do not forget to give it write permissions with the command **chmod +x file.sh** so that it works correctly together with the module.
+- once the module and the script have been created, all you have to do is add the module in the bar you want, both in **[bar/main]** or **[bar/secondary]**. Check [this subsection](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polybar#addremove-modules)
