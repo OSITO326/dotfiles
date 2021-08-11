@@ -418,4 +418,9 @@ change enp8s0 with your network interface, If you do not know what interface you
 ifconfig
 ```
 
-for the modules you want to put in the polybar **[bar/main]** and **[bar/secondary]** read the code of both files and configure with the values of your computer. Once you have decided which modules to use in both. Check [this subsection](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polyba/README.md##Add/Removemodules)
+for the modules you want to put in the polybar **[bar/main]** and **[bar/secondary]** read the code of both files and configure with the values of your computer. Once you have decided which modules to use in both. Check
+
+[this subsection](##Add/Remove\modules)
+          section_title<a name="Add/Remove\modules"></a>   
+
+[this subsection](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polyba/README.md##Add/Removemodules)

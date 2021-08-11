@@ -1,6 +1,6 @@
 # BSPWM with Polybar
 
-![View the final results](.screenshots/bspwm_polybar.png)
+![View the final results](https://github.com/OSITO326/dotfiles/tree/main/.screenshots/bspwm_polybar.png)
 ## Dependencies
 
 Install following programs on your system before you use these themes.
@@ -11,7 +11,7 @@ Install following programs on your system before you use these themes.
 All this programs you can install via yay.
 
 - [BSPWM Repo](https://github.com/baskerville/bspwm)
-- [sxhkd](https://github.com/baskerville/sxhkd)
+- [sxhkd Repo](https://github.com/baskerville/sxhkd)
 
 ## Use BSPWM
 
