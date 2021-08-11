@@ -384,7 +384,7 @@ To be able to change the modules and modify to your liking, just modify these li
 ```bash
 nvim ~/.config/polybar/forest/config.ini
 ```
-change this lines to the modules you want:
+Change this lines to the modules you want:
 
 ```bash
 original modules
@@ -392,7 +392,7 @@ modules-left = launcher sep workspaces sep cpu memory filesystem
 modules-center = mpd sep date
 modules-right = battery network sep volume brightness sep sysmenu
 ```
-take into account that each configuration of the modules is independent of each other **[bar/main]** and **[bar/secondary]**
+Take into account that each configuration of the modules is independent of each other **[bar/main]** and **[bar/secondary]**
 
 ## Module configuration
 
@@ -401,24 +401,24 @@ To configure the modules and they can work correctly on your computer, it is nec
 - **modules.ini**: modules that come by [default polybar](https://github.com/polybar/polybar/wiki). Path: ~/.config/polybar/forest/modules.ini
 - **user_modules.ini**: []().Path: ~/.config/polybar/forest/user_modules.ini
 
-example configure **modules.ini -> [module/network]**
+Example configure **modules.ini -> [module/network]**
 
 ```bash
 nvim ~/.config/polybar/forest/modules.ini
 ```
-example:
+Example:
 
 ```bash
 {module/network}
 interface = enp8s0
 ```
-change enp8s0 with your network interface, If you do not know what interface you have, use the following command:
+Change enp8s0 with your network interface, If you do not know what interface you have, use the following command:
 
 ```bash
 ifconfig
 ```
 
-for the modules you want to put in the polybar **[bar/main]** and **[bar/secondary]** read the code of both files and configure with the values of your computer. Once you have decided which modules to use in both. 
+For the modules you want to put in the polybar **[bar/main]** and **[bar/secondary]** read the code of both files and configure with the values of your computer. Once you have decided which modules to use in both. 
 - Check [this subsection](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polybar#addremove-modules)
 
 ## Create your own module
@@ -427,7 +427,7 @@ for the modules you want to put in the polybar **[bar/main]** and **[bar/seconda
   <img src="https://github.com/OSITO326/dotfiles/blob/main/.screenshots/custom_module.png">
 </p>
 
-In my case I decided to create a module to show me the IP address of the VPN that I use through openvpn.
+In my case I decided to create a module to show me the IP address of the VPN that I use through **openvpn**.
 To create the following module, open the file **user_modules.ini**:
 
 ```bash
@@ -482,3 +482,9 @@ fi
 
 - If you create a new script do not forget to give it write permissions with the command **chmod +x file.sh** so that it works correctly together with the module.
 - once the module and the script have been created, all you have to do is add the module in the bar you want, both in **[bar/main]** or **[bar/secondary]**. Check [this subsection](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polybar#addremove-modules)
+
+
+> **Note**
+
+To create other modules you want you can see the modules that are inside the **user_modules.ini** file and guide you with the modules since I did not find information about creating custom modules, I was guided with the ones that had and partly with the documentation of [polybar](https://github.com/polybar/polybar/wiki).
+
