@@ -423,4 +423,6 @@ for the modules you want to put in the polybar **[bar/main]** and **[bar/seconda
 
 ## Create your own module
 
-[![sample screenshot](https://github.com/OSITO326/dotfiles/tree/main/.screenshots/custom_module.png)](https://github.com/OSITO326/dotfiles/tree/main/.screenshots/custom_module.png)
+<p align="center">
+  <img src=".screenshots/custom_module.png">
+</p>
