@@ -1,2 +1,4 @@
 #!/bin/bash
-maim -u ~/Pictures/Screenshots/Fullscreen/$(date +%Y%m%d_%H%M%S).png && notify-send  "Screenshot Fullscreen" "Screenshot saved!"
+NOTIFY_ICON=/usr/share/icons/Papirus/32x32/devices/camera-photo.svg
+
+maim -u ~/Pictures/Screenshots/Fullscreen/$(date +%Y%m%d_%H%M%S).png && notify-send  "Screenshot Fullscreen" "Screenshot saved!" -i $NOTIFY_ICON

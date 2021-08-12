@@ -1,2 +1,4 @@
 #!/bin/bash
-maim -s ~/Pictures/Screenshots/Area/area_$(date +%Y%m%d_%H%M%S).png && notify-send "Screenshot Area" "Selection capture saved successfully"
+NOTIFY_ICON=/usr/share/icons/Papirus/32x32/devices/camera-photo.svg
+
+maim -s ~/Pictures/Screenshots/Area/area_$(date +%Y%m%d_%H%M%S).png && notify-send "Screenshot Area" "Selection capture saved successfully" -i $NOTIFY_ICON

@@ -8,9 +8,16 @@ hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
 if [ "$hdmi" = "HDMI1" ]; then
 
-    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off &
+    #xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off &
+    
+    ## With gamma calibration laptop screen
+    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --gamma 0.75:0.75:0.75 --brightness 0.95 --rotate normal --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off
+
 else
-    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output VIRTUAL1 --off &
+    #xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output VIRTUAL1 --off &
+    
+    #With gamma calibration laptop screen 
+    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --gamma 0.75:0.75:0.75 --brightness 0.95 --rotate normal --output HDMI1 --off --output VIRTUAL1 --off &
 fi
 
 #BSPWM
