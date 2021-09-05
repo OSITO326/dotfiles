@@ -12,7 +12,8 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 
 "FZF
-nmap <Leader>f :Files<CR>
+"nmap <Leader>f :Files<CR>
+nmap <Leader>v :Files<CR>
 
 "Move half page faster
 nmap <Leader>d <C-d>
@@ -32,8 +33,8 @@ map <Leader>h :tabprevious<CR>
 map <Leader>l :tabnext<CR>
 
 "Use <c-space> to trigger completion
-if &filetype == "javascript" || &filetype == "python"
-  inoremap <c-space> <C-x><C-u>
-else
+"if &filetype == "javascript" || &filetype == "python"
+  "inoremap <c-space> <C-x><C-u>
+"else
   inoremap <silent><expr> <c-space> coc#refresh()
-endif
+"endif

@@ -114,3 +114,23 @@ let g:go_highlight_generate_tags=1
 let g:go_highlight_format_strings=1
 let g:go_highlight_variable_declarations=1
 let g:go_auto_sameids=1
+
+"Kite
+let g:kite_supported_languages=['javascript', 'python']
+
+"COC
+autocmd FileType pyton let b:coc_suggest_disable=1
+autocmd Filetype javascript let b:coc_suggest_disable=1
+autocmd Filetype scss setl iskeyword+=@-@
+
+" Signify plugin
+set updatetime=300
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+
+"Indentline Vim
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 2 " (default: 2)
+let g:indentLine_char_list = ['|', '¦', '┆', '┊'] "change indent Char
