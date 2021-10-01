@@ -2,7 +2,7 @@
 
 Install following programs on your system before you use these themes.
 
-- **`polibar-git`**: Ofcourse, the bar itselft.
+- **`polybar-git`**: Ofcourse, the bar itselft.
 - **`siji-git`**: Extra fonts.
 - **`ttf-unifont`**: Extra fonts.
 
