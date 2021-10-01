@@ -32,6 +32,6 @@ It also supports other git repos, but you need to know your git repository url.
 
 [Check this README](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/qtile)
 
-## BSPWM with Polibar
+## BSPWM with Polybar
 - [BSPWM](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/bspwm)
 - [Polybar](https://github.com/OSITO326/dotfiles/tree/main/os/linux/.config/polybar)
