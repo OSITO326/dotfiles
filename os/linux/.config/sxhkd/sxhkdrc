@@ -4,7 +4,8 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
+	##alacritty
 # Redshift
 super + r
 	redshift -O 5400
@@ -17,10 +18,16 @@ super + @space
 # Rofi Emoji
 super + shift + e
 	rofi -show emoji -modi emoji
-#Maim
-#Screenshot Fullscreen
+# Rofi Clipboard
+super + control + c
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+# Flameshot
 Print
-	maim_fullscreen
+	flameshot gui
+# Maim
+#Screenshot Fullscreen
+#Print
+	#maim_fullscreen
 #Screenshot Area
 shift + Print
 	maim_area

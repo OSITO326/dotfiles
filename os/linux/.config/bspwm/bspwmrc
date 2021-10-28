@@ -2,18 +2,30 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+#----------DUPLICATE PROGRAM AUTOSTART----------
+killall sxhkd 2>/dev/null
+#killall polybar 2>/dev/null
+killall -qw picom 2>/dev/null
+killall nm-applet 2>/dev/null
+killall -q volumeicon 2>/dev/null
+killall -q cbatticon 2>/dev/null
+killall greenclip 2>/dev/null
+
 #----------AUTOSTART----------
 wmname LG3D &
 bash ~/.config/polybar/launch.sh --forest
 sxhkd &
 picom &
-cbatticon -u 5 &
+#cbatticon -u 5 &
 volumeicon &
 sh ~/.fehbg &
+#paperview ~/Downloads/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Downloads/Gifs/bmp/daft 5 1920 0 1920 1080 &
 nm-applet &
 blueman-applet &
 setxkbmap -layout us,us -variant altgr-intl,dvorak-intl -option grp:alt_shift_toggle &
 xsetroot -cursor_name left_ptr &
+greenclip daemon &
+
 #----------MONITORS----------
 bspc monitor eDP1 -d 1 2 3 4 5 
 bspc monitor HDMI1 -d 6 7 8 9 0
@@ -67,3 +79,4 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a Soffice desktop='^4' #open any libreoffice suit, move to desktop 4
