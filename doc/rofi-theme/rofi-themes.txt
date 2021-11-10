@@ -1,0 +1,9 @@
+https://github.com/lr-tech/rofi-themes-collection
+
+https://github.com/Murzchnvok/rofi-collection
+
+https://github.com/MonsieurBedard/rofi-breeze-theme
+
+Just change theme rofi, edit file .config/rofi/config.rasi change theme and save file to apply changes
+
+Change the font with the one you like, in my case i use "FiraCode Nerd Font Mono"

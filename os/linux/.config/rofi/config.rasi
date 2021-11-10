@@ -3,7 +3,8 @@ configuration {
 	width: 50;
 	lines: 15;
 	columns: 1;
-	font: "UbuntuMono Nerd Font 14";
+	/*font: "UbuntuMono Nerd Font 14";*/
+	font: "FiraCode Nerd Font Mono 14";
 	bw: 1;
 	location: 0;
 	padding: 5;
@@ -51,7 +52,8 @@ configuration {
 	window-format: "{w}    {c}   {t}";
 	click-to-exit: true;
 	show-match: true;
-	theme: "onedark";
+	/*theme: "gruvbox-dark-hard";*/
+	theme: "spotlight-dark";
 	max-history-size: 25;
 	combi-hide-mode-prefix: false;
 	pid: "/run/user/1000/rofi.pid";
