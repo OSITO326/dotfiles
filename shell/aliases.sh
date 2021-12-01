@@ -9,7 +9,7 @@ alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
 
 # Git
-alias gaa="git add --all"
+alias gaa="git add -A"
 alias gcm="git commit -m"
 alias gst="git status"
 alias gpl="git pull"
@@ -31,6 +31,7 @@ alias gco="git checkout"
 #alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 
 #NeoVim
+alias v.='nvim .'
 alias v='nvim'
 
 #LSD

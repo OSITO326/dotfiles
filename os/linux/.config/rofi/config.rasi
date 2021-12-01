@@ -1,4 +1,9 @@
 configuration {
+	display-ssh:    "";
+  display-run:    "";
+  display-drun:   "";
+  display-window: "";
+  display-combi:  "";
 	modi: "window,run,ssh,combi,drun";
 	width: 50;
 	lines: 15;
@@ -52,8 +57,6 @@ configuration {
 	window-format: "{w}    {c}   {t}";
 	click-to-exit: true;
 	show-match: true;
-	/*theme: "gruvbox-dark-hard";*/
-	theme: "spotlight-dark";
 	max-history-size: 25;
 	combi-hide-mode-prefix: false;
 	pid: "/run/user/1000/rofi.pid";
@@ -130,3 +133,6 @@ configuration {
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
 }
+
+@theme "/usr/share/rofi/themes/spotlight-dark.rasi"
+/*@theme "/usr/share/rofi/themes/gruvbox-dark-hard"*/
