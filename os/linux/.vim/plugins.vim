@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 
 "Syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'norcalli/nvim-colorizer.lua'
 
 "Status bar
 Plug 'itchyny/lightline.vim'
@@ -40,16 +39,13 @@ Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'preservim/nerdcommenter' "to comments 
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } "css
-Plug 'luochen1990/rainbow' "brackets colors
+"Plug 'unblevable/quick-scope' "navigation
 
-" Git
+"Git
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
 "Icons
 Plug 'ryanoasis/vim-devicons'
-
-"Prettier
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()

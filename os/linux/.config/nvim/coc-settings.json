@@ -95,5 +95,7 @@
             "path": "/usr/lib/jvm/java-14-openjdk",
             "default": true
         }
-    ]
+    ],
+    //Css conflicts with hexokinase plugin css 
+    "coc.preferences.colorSupport": false,
 }

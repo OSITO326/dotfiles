@@ -56,10 +56,11 @@
     "vim.statusBarColors.easymotioninputmode": "#FFAF00",
     "vim.statusBarColors.surroundinputmode": "#98971A",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#AFAF00",
-        "statusBar.noFolderBackground": "#AFAF00",
-        "statusBar.debuggingBackground": "#AFAF00",
-        "statusBar.foreground": "#282828"
+        "statusBar.background": "#87AFAF",
+        "statusBar.noFolderBackground": "#87AFAF",
+        "statusBar.debuggingBackground": "#87AFAF",
+        "statusBar.foreground": "#282828",
+        "statusBar.debuggingForeground": "#282828"
     },
     //Relative Numbers for Vim extension
     "editor.lineNumbers": "relative",
