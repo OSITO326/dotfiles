@@ -3,7 +3,8 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "workbench.colorTheme": "Gruvbox Dark Hard",
-    "terminal.external.linuxExec": "alacritty",
+    //"terminal.external.linuxExec": "alacritty",
+    "terminal.external.linuxExec": "kitty",
     "terminal.integrated.automationShell.linux": "/bin/zsh",
     "workbench.iconTheme": "material-icon-theme",
     "editor.suggestSelection": "first",
@@ -36,6 +37,17 @@
             "commands": [":w"]
         },
     ],
+    //Easymotion-s2 -> search 2 caracters to navigate
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "leader", "s"
+            ],
+            "after": [
+                "leader", "leader", "2", "s"
+            ]
+        }
+    ],
     "vim.insertModeKeyBindings": [
         {
             "before": ["i", "i"],
@@ -44,21 +56,21 @@
     ],
     //NeoVim Airline
     "vim.statusBarColorControl": true,
-    "vim.statusBarColors.normal": ["#AFAF00", "#282828"],
-    "vim.statusBarColors.insert": "#87AFAF",
-    "vim.statusBarColors.visual": "#FF8700",
-    "vim.statusBarColors.visualline": "#3A3A3A",
-    "vim.statusBarColors.visualblock": "#FF8700", 
-    "vim.statusBarColors.replace": "#D75F5F", 
+    "vim.statusBarColors.normal": ["#B8BB26", "#282828"],
+    "vim.statusBarColors.insert": "#83A598",
+    "vim.statusBarColors.visual": "#FE8019",
+    "vim.statusBarColors.visualline": "#FE8019",
+    "vim.statusBarColors.visualblock": "#FE8019", 
+    "vim.statusBarColors.replace": "#FB4934", 
     "vim.statusBarColors.commandlineinprogress": "#98971A", 
     "vim.statusBarColors.searchinprogressmode": "#FFAF00",
-    "vim.statusBarColors.easymotionmode": "#FFAF00",
-    "vim.statusBarColors.easymotioninputmode": "#FFAF00",
+    "vim.statusBarColors.easymotionmode": "#FABD2F",
+    "vim.statusBarColors.easymotioninputmode": "#FABD2F",
     "vim.statusBarColors.surroundinputmode": "#98971A",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#87AFAF",
-        "statusBar.noFolderBackground": "#87AFAF",
-        "statusBar.debuggingBackground": "#87AFAF",
+        "statusBar.background": "#B8BB26",
+        "statusBar.noFolderBackground": "#B8BB26",
+        "statusBar.debuggingBackground": "#B8BB26",
         "statusBar.foreground": "#282828",
         "statusBar.debuggingForeground": "#282828"
     },

@@ -2,7 +2,9 @@
 call plug#begin('~/.vim/plugged')
 
 "Syntax
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } "css
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' } "ES7 JavaScript TypeScript extension vscode
 
 "Status bar
 Plug 'itchyny/lightline.vim'
@@ -38,7 +40,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'preservim/nerdcommenter' "to comments 
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } "css
+"Plug 'romgrk/barbar.nvim' "tab buffer
 "Plug 'unblevable/quick-scope' "navigation
 
 "Git
@@ -47,5 +49,6 @@ Plug 'junegunn/gv.vim'
 
 "Icons
 Plug 'ryanoasis/vim-devicons'
+"Plug 'kyazdani42/nvim-web-devicons' "devicons to barbar plugin
 
 call plug#end()

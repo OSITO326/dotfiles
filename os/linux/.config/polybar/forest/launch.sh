@@ -8,6 +8,8 @@ DIR="$HOME/.config/polybar/forest"
 killall -q polybar
 killall -q volumeicon
 killall -q cbatticon 
+killall -q cbatticon 
+killall -q udiskie
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
