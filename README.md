@@ -1,6 +1,9 @@
 <h1 align="center">
   .dotfiles created using <a href="https://github.com/CodelyTV/dotly">🌚 dotly</a>
 </h1>
+---
+![logo](https://github.com/OSITO326/dotfiles/blob/main/assets/dotfiles.png)
+---
 
 ## Restore your Dotfiles manually
 
