@@ -10,7 +10,7 @@
 - Launcher: Rofi
 - Bar: Polybar -> **`polybar-git`** install via AUR
 - Notification Daemon: Dunst
-- Compositor: picom
+- Compositor: picom-ibhagwan-git
 - Editor: NVIM
 - Colors: Gruvbox
 - GTK3: Gruvbox-Material-Dark
