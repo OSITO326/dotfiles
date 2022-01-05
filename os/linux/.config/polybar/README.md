@@ -36,7 +36,7 @@ Install following programs on your system before you use these themes.
   - sxhkd-git
   - rofi-greenclip
   - rofi-power-menu
-  - zscroll-git
+  - zscroll-git and playerctl via pacman
 
 All this programs you can install via yay.
 
