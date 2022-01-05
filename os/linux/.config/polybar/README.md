@@ -1,3 +1,4 @@
+![logo](https://github.com/OSITO326/dotfiles/blob/main/assets/custom_module.png)
 ---
 
 ## Info
