@@ -216,7 +216,7 @@ For the modules you want to put in the polybar **[bar/main]** and **[bar/seconda
 ## Create your own module
 
 <p align="center">
-  <img src="https://github.com/OSITO326/dotfiles/blob/main/.screenshots/custom_module.png">
+  <img src="https://github.com/OSITO326/dotfiles/blob/main/assets/custom_module.png">
 </p>
 
 In my case I decided to create a module to show me the IP address of the VPN that I use through **openvpn**.
