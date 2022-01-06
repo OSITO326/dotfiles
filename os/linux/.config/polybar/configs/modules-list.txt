@@ -1,0 +1,6 @@
+Module for Spotify -> left spotify-prev spotify-play-pause spotify-next sep spotify right
+Module for Pomodo -> left-pomodo pomo-pane-icon pomo-pane right 
+Module for Weather -> left weather right
+Module for Docker -> left-docker docker right
+Module for VPN -> left vpn right
+
