@@ -68,9 +68,9 @@
     "vim.statusBarColors.easymotioninputmode": "#FABD2F",
     "vim.statusBarColors.surroundinputmode": "#98971A",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#83A598",
-        "statusBar.noFolderBackground": "#83A598",
-        "statusBar.debuggingBackground": "#83A598",
+        "statusBar.background": "#B8BB26",
+        "statusBar.noFolderBackground": "#B8BB26",
+        "statusBar.debuggingBackground": "#B8BB26",
         "statusBar.foreground": "#282828",
         "statusBar.debuggingForeground": "#282828"
     },
