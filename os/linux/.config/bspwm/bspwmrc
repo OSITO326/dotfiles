@@ -6,20 +6,20 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 killall sxhkd 2>/dev/null
 #killall polybar 2>/dev/null
 killall -qw picom 2>/dev/null
+killall -q dunst 2>/dev/null
 killall nm-applet 2>/dev/null
-killall -q volumeicon 2>/dev/null
+#killall -q volumeicon 2>/dev/null
 killall -q cbatticon 2>/dev/null
 killall -q udiskie 2>/dev/null
 killall greenclip 2>/dev/null
 
 #----------AUTOSTART----------
 wmname LG3D &
-#bash ~/.config/polybar/launch.sh --forest
 bash ~/.config/polybar/launch.sh 
 sxhkd &
 picom &
 cbatticon -u 5 &
-volumeicon &
+#volumeicon &
 sh ~/.fehbg &
 #paperview ~/Downloads/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Downloads/Gifs/bmp/daft 5 1920 0 1920 1080 &
 nm-applet &
@@ -36,19 +36,18 @@ bspc monitor HDMI1 -d 6 7 8 9 0
 #bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9
 #bspc monitor HDMI1 -d 1 2 3 4 5 6 7 8 9
 
-#bspc monitor eDP1 -d     
-#bspc monitor HDMI1 -d     
-
 #### BSPWM configuration ####
 #bspc config border_radius                8
+bspc config border_radius                 10
 bspc config border_width                  1
 bspc config window_gap                    5
-bspc config top_padding                   10
+#bspc config top_padding                   10
+bspc config top_padding                   0
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
 bspc config single_monocle                false
-bspc config click_to_focus                true
+#bspc config click_to_focus                true
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
 bspc config gapless_monocle               true
@@ -92,6 +91,14 @@ xdo below -t $(xdo id -n root) $(xdo id -a polybar-secondary_HDMI1)
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
-bspc rule -a Code desktop='^3' #open VSCcode on workspace 2
+
+bspc rule -a Zathura state=tiled follow=on
+
+bspc rule -a Code desktop='^2' #open VSCcode on workspace 2
 bspc rule -a Soffice desktop='^4' #open any libreoffice suit, move to workspace 6
 bspc rule -a firefox desktop='^6' #open firefox, move to desktop 6
+bspc rule -a pomotroid state=floating rectangle=600+503+145
+
+bspc rule -a Font-manager state=floating follow=on center=true
+bspc rule -a Gnome-calculator state=floating follow=on center=true rectangle=400x400+0+0
+

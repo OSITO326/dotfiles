@@ -70,15 +70,26 @@ super + Escape
 # Media Keys
 # Volume up # Volume down
 XF86AudioRaiseVolume
-	pamixer --increase 5
+	changevolume up
 XF86AudioLowerVolume
-	pamixer --decrease 5
-# Volume mute
+	changevolume down
+XF86AudioMute
+	changevolume mute
+# Volume up/down alt
+super + shift + period
+	changevolume up
+super + shift + comma
+	changevolume down
 # Brightness
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	changebrightness up
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	changebrightness down
+# Brightness-alt
+super + shift + equal
+	changebrightness up
+super + shift + minus
+	changebrightness down
 # bspwm hotkeys
 #
 
