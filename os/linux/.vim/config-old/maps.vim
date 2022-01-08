@@ -1,48 +1,57 @@
-" leader key Space
+"shortcut key Space Leader
 let mapleader = " "
-"Map key ESC for ii 
-:imap ii <ESC>
 
-" split resize
-nnoremap <Leader>> 10<C-w>>
-nnoremap <Leader>< 10<C-w><
+"atajo de easymotion nmap-> solo funciona en modo normal
+nmap <Leader>s <Plug>(easymotion-s2)
 
-" create shortcuts for :w and :q
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>Q :q!<CR>
+"Faster scrolling
+nmap <Leader>d <C-d>
+nmap <Leader>u <C-u>
 
-" nerdTree shortcut
+"NerdTree shortcut
 nmap <Leader>nt :NERDTreeFind<CR>
-" fzf
-nmap <Leader>f :Files<CR>
+
 "Buffers
 map <Leader>ob :Buffers<CR>
 
-" Remap surround to lowercase s so it does not add an empty space
-"xmap s <Plug>VSurround
+"Split resize
+nnoremap <Leader>> 10<C-w>>
+nnoremap <Leader>< 10<C-w><
 
-" tabs Navigation
-map <Leader>h :tabprevious<CR>
-map <Leader>l :tabnext<CR>
+"Create shortcuts for :w and :q
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
 
-" faster scrolling
-nnoremap <S-j> 10<C-e>
-nnoremap <S-k> 10<C-y>
-nmap <Leader>s <Plug>(easymotion-s2)
+"FZF
+nmap <Leader>f :Files<CR>
 
-" run current file
-nnoremap <Leader>x :!node %<CR>
+"Map key ESC for ii 
+:imap ii <ESC>
 
-" coc go to
+"CoC
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+"Tabs Navigation
+map <Leader>h :tabprevious<CR>
+map <Leader>l :tabnext<CR>
 
-" open terminal split
+"Run current file
+nnoremap <Leader>x :!node %<CR>
+
+"Use <c-space> to trigger completion -> with KITE
+"if &filetype == "javascript" || &filetype == "python"
+  "inoremap <c-space> <C-x><C-u>
+"else
+  "inoremap <silent><expr> <c-space> coc#refresh()
+"endif
+"without KITE
+  inoremap <silent><expr> <c-space> coc#refresh()
+
 set splitright
+
 function! OpenTerminal()
   " move to righ most buffer
   execute "normal \<C-l>"

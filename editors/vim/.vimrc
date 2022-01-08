@@ -12,12 +12,18 @@ set sw=2
 set relativenumber
 set laststatus=2
 set noshowmode
+"coc
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=1
+set shortmess+=c
+set signcolumn=number
 syntax on 
 
 so ~/.vim/plugins.vim
 so ~/.vim/plugins-config.vim
 so ~/.vim/maps.vim
-so ~/.vim/coc-initconfig.vim
 
 "color scheme guvbox contrast hard of theme gruvbox
 let g:gruvbox_contrast_dark = "hard"
