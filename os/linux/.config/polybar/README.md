@@ -10,7 +10,7 @@
 - Launcher: Rofi
 - Bar: Polybar -> **`polybar-git`** install via AUR
 - Notification Daemon: Dunst
-- Compositor: picom-ibhagwan-git
+- Compositor: picom
 - Editor: NVIM
 - Colors: Gruvbox
 - GTK3: Gruvbox-Material-Dark
@@ -23,6 +23,7 @@
 - Fonts:
   - FiraCode Nerd Font
   - Iosevka Nerd Font
+  - Awesome 6 Pro
 
 ---
 ## Dependencies
@@ -34,6 +35,7 @@ Install following programs on your system before you use these themes.
   - bspwm-git
   - lightdm-webkit-theme-aether
   - sxhkd-git
+  - picom-ibhagwan-git
   - rofi-greenclip
   - rofi-power-menu
   - zscroll-git and playerctl via pacman
@@ -155,21 +157,19 @@ If you are copying the settings for use with 2 monitors, do not touch anything a
 
 ```
 ;Text Fonts
-font-0 = "FiraCode Nerd Font:Regular:size=10;4"
-;font-0 = "FiraCode Nerd Font:style=Medium:size=10;4"
+font-0 = "FiraCode Nerd Font:Regular:antialias=true:pixelsize=10;4"
 ;Icons Fonts
 font-1 = "Iosevka Nerd Font:pixelsize=13;4"
-;Powerline Glyphs
-font-2 = "FiraCode Nerd Font Mono:size=12;3"
-;Larger font size for bar fill icons
-font-3 = "Iosevka Nerd Font:style=Medium:size=12;4"
-;Smaller font size for shorter spaces
-font-4 = "Iosevka Nerd Font:style=Medium:size=7;4"
-;Powerline utils
+font-2 = "Font Awesome 6 Pro:style=Solid:pixelsize=11;2.5"
+font-3 = "Font Awesome 6 Pro:style=Solid:pixelsize=11;1"
+font-4 = "Font Awesome 6 Brands:style=Regular:pixelsize=11;2.5"
+;Powerline Glyphs for separators glyphs
 font-5 = "FiraCode Nerd Font:pixelsize=16;3.5"
-;
-;font-6 = "FiraCode Nerd Font:pixelsize=8;3.3"
-font-6 = monospace:pixelsize=8;3.3
+;Icons Fonts Duotone
+font-6 = "Font Awesome 6 Duotone Solid:style=Solid:pixelsize=11;2.5"
+;Icons Fonts Awesome 6 Pro Regular
+font-7 = "Font Awesome 6 Pro:style=Regular:pixelsize=11;2.5"
+font-8 = "Font Awesome 6 Pro:style=Light:pixelsize=11;2.5"
 ```
 
 ## Add/Remove modules
@@ -231,32 +231,23 @@ At the end of all the code you can add the following lines to create the vpn mod
 ```bash
 ; Module name 
 [module/vpn]
-
-; Type module
 type = custom/script
 
-; Iin the type of module I put that it will be a script, so I want it to execute the script 
-exec = ~/.config/polybar/forest/scripts/vpn.sh &
-
-; Will the script output continous content?
-; Default: false
+exec = ~/.config/polybar/scripts/vpn.sh
 tail = true
-
-; Seconds to sleep between updates
-; Default: 2 (0 if `tail = true`)
 interval = 2
 
-; Available tags:
-;   <output> - deprecated
-;   <label> (default)
 format = <label>
-format-prefix = "異 "
+;format-prefix = "異"
+;format-prefix-font = 2
+format-prefix = ""
+format-prefix-font = 8 ;If you will use different fonts for the "Glyphs" icons, change the number according to the order of the fonts.ini file. As can be seen in the 2 lines above 
+format-prefix-background = ${color.shade}
+format-prefix-foreground = ${color.purple-light}
 
-; Available tokens:
-;   %output%
-; Default: %output%
-format-prefix-foreground = ${color.pink}
 label = " %output%"
+label-background = ${color.shade}
+label-foreground = ${color.foreground}
 ```
 
 the script you create contains the following:
