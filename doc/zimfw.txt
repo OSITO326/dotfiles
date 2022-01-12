@@ -1,0 +1,24 @@
+* Updates for Zim 1.x
+
+See changelog in https://github.com/zimfw/zimfw/blob/master/CHANGELOG.md
+
+Thanks a lot for chosing Zim as the Zsh framework of choice for your
+dotfiles and your courses!
+
+I spotted a few points where the usage is not compatible with the
+changes since Zim 1.0.0 (released 2020-01-07):
+* The zimfw repo is not intended to be cloned for daily use. You only
+  need the zimfw.zsh file. And downloading it from
+  https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  will always give you the latest released version of it.
+* .zimrc should only contain module definitions, and it's not sourced
+  anymore when the shell starts.
+* zhighlighters is deprecated in favor of ZSH_HIGHLIGHT_HIGHLIGHTERS,
+  since we're using the zsh-users/zsh-syntax-highlighting module
+  directly now.
+* There are two separate zimfw actions: `upgrade` will upgrade the
+  zimfw.zsh file itself, and `update` will update the modules.
+  You usually would want to do both if you want to "up" everything...
+
+* install zim inside the zsh dir
+

@@ -1,0 +1,4 @@
+# Compiled zsh
+shell/zsh/.zim/**.zwc
+shell/zsh/.zim/**.zwc.old
+shell/zsh/.zim/modules/
