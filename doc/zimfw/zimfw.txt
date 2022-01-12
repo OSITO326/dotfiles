@@ -22,3 +22,5 @@ changes since Zim 1.0.0 (released 2020-01-07):
 
 * install zim inside the zsh dir
 
+
+download the zimfw.zsh and copy to the path ~/.dotfiles/shell/zsh/.zim/
