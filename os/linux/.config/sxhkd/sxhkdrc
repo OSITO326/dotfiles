@@ -33,7 +33,8 @@ Print
 	#maim_fullscreen
 #Screenshot Area
 shift + Print
-	maim_area
+	maim_fullscreen
+	#maim_area
 # Betterlockscreen
 super + x
 	betterlockscreen -l
