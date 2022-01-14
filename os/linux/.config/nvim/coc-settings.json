@@ -1,81 +1,43 @@
 {
-    //tsserver
+    // JS TS
     //use eslint to check js and ts
     "tsserver.trace.server": "verbose",
-    "javascript.validate.enable": false,
-    "typescript.validate.enable": false,
+    "javascript.validate.enable": true,
+    "typescript.validate.enable": true,
 
-    //emmet
-    "emmet.priority": 1,
-    "emmet.excludeLanguages": [
-        "vue"
-    ],
+    // JSON
+    "json.format.enable": true,
 
-    //prettier
-    "prettier.useTabs": false,
-    "prettier.tabWidth": 4,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.jsxBracketSameLine": true,
-    "prettier.printWidth": 120,
-    "prettier.jsxSingleQuote": false,
-    "prettier.bracketSpacing": true,
-    "prettier.trailingComma": "none",
-    "prettier.arrowParens": "avoid",
-    "prettier.htmlWhitespaceSensitivity": "ignore",
-    "prettier.proseWrap": "always",
-
-    //vue
-    "vetur.trace.server": "verbose",
-    "vetur.format.enable": true,
-    "vetur.validation.style": true,
-    "vetur.validation.script": true,
-    "vetur.validation.template": true,
-    "vetur.format.defaultFormatterOptions": {
-        "prettyhtml": {
-            "sortAttributes": true,
-            "singleQuote": false,
-            "printWidth": 120
-        }
-    },
-    "vetur.format.defaultFormatter.js": "prettier-eslint",
-    "vetur.format.defaultFormatter.html": "prettier",
-    "vetur.format.defaultFormatter.css": "prettier",
-    "vetur.format.defaultFormatter.less": "prettier",
-    "vetur.format.defaultFormatter.scss": "prettier",
-    "vetur.format.defaultFormatter.ts": "prettier-tslint",
-    "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
-    "vetur.format.defaultFormatter.postcss": "prettier",
-
-    //json
-    "json.format.enable": false,
-
-    //html
+    // HTML
     "html.trace.server": "verbose",
     "html.enable": true,
     "html.format.enable": true,
-    "html.validate.html": true,
-    "html.validate.styles": true,
+    "html.suggest.html5": true,
     "html.validate.scripts": true,
-    "html.format.wrapLineLength": 100,
-    "html.format.endWithNewline": false,
-    "html.format.wrapAttributes": "auto",
+    "html.validate.styles": true,
+    "html.validate.html": true,
 
-     //eslint,js  install coc-eslint
-    //"eslint.trace.server": "verbose",
-    //"eslint.packageManager": "yarn",
-    //"prettier.eslintIntegration": true,
-    //"eslint.autoFix": true,
-    //"eslint.autoFixOnSave": true,
-    //"eslint.filetypes": ["javascript", "javascriptreact", "typescriptreact", "vue", "typescript"],
-    //"eslint.run": "onSave",
-    //"eslint.options" : {
-    //"env": {
-    //    "browser": true,
-    //    "node": true
-    //    }
-    //}
+    // CSS
+    "css.enable": true,
+    //Css conflicts with hexokinase plugin css 
+    "coc.preferences.colorSupport": false,
 
+    // C#
+    "omnisharp.trace.server": "verbose",
+    "omnisharp.debug.server": true,
+
+    // ESLint
+    "eslint.trace.server": "verbose",
+    "eslint.packageManager": "npm",
+    "eslint.autoFixOnSave": true,
+    "eslint.probe": [ "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown" ],
+    "eslint.run": "onSave",
+    "eslint.options": {
+        "env": {
+            "browser": true,
+            "node": true
+        }
+    },
     
     //java
     "java.enabled": true,
@@ -96,6 +58,4 @@
             "default": true
         }
     ],
-    //Css conflicts with hexokinase plugin css 
-    "coc.preferences.colorSupport": false,
-}
+    }
