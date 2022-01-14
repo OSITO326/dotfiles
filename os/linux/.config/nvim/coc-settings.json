@@ -38,6 +38,11 @@
             "node": true
         }
     },
+    // Python -> pyright
+    "pyright.enable": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.linting.enabled": true,
+    //"python.venvPath": "",
     
     //java
     "java.enabled": true,
