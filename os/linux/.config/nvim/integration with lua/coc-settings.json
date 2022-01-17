@@ -39,9 +39,9 @@
         }
     },
     // Python -> pyright
-    "pyright.enable": false,
-    //"python.analysis.autoImportCompletions": true,
-    //"python.linting.enabled": true,
+    "pyright.enable": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.linting.enabled": true,
     //"python.venvPath": "",
     
     //java
