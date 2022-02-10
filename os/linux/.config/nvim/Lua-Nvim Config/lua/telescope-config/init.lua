@@ -8,6 +8,7 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
+    --prompt_prefix = "🔍 ",
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -78,6 +79,9 @@ telescope.setup {
     },
   },
   pickers = {
+    find_files = {
+      theme = 'dropdown', -- 'dropdown'| 'cursor' | 'ivy' || or use by default just comment find_files {}
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,

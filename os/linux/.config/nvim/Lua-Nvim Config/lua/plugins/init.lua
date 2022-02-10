@@ -63,7 +63,8 @@ return packer.startup(function(use)
 	--> IDE
 	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 	use "lukas-reineke/indent-blankline.nvim"
-  use "christoomey/vim-tmux-navigator" -- tmux navigator
+  use "akinsho/toggleterm.nvim"
+  --use "christoomey/vim-tmux-navigator" -- tmux navigator
   use "preservim/nerdcommenter"
   use "phaazon/hop.nvim"
   use { "rrethy/vim-hexokinase", run = "make hexokinase" } --css

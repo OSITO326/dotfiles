@@ -20,5 +20,7 @@ require "lsp-config"
 require "hop-config"
 --> Treesitter
 require "treesitter-config"
+--> ToggleTerm
+require "toggleterm-config"
 --> Autopairs
 require "autopairs-config"
