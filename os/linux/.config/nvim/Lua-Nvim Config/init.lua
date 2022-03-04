@@ -6,12 +6,14 @@ require "colorschemes-config"
 require "lualine-config"
 --> NerdTree
 require "nvim-tree-config"
+--require "nvim-tree-config.nerdtree"
 --> FZF
 require "telescope-config"
 --> Git
 require "gitsigns-config"
 --> Indenline
 require "indentline-config"
+--require "indentline-config.indent"
 --> CMP
 require "cmp-config"
 --> LSP

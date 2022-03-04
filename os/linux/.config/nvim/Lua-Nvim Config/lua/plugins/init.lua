@@ -62,7 +62,8 @@ return packer.startup(function(use)
 
 	--> IDE
 	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-	use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  --use "yggdroot/indentline" --vim
   use "akinsho/toggleterm.nvim"
   --use "christoomey/vim-tmux-navigator" -- tmux navigator
   use "preservim/nerdcommenter"
@@ -78,8 +79,9 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-nvim-lsp"
 	--> Snippets
 	use "L3MON4D3/LuaSnip" --snippet engine
-	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
- 	--use "onsails/lspkind-nvim"
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use { "dsznajder/vscode-es7-javascript-react-snippets", run = "yarn install --frozen-lockfile && yarn compile" }
+  --use "onsails/lspkind-nvim"
   --use "quangnguyen30192/cmp-nvim-ultisnips"
 
 	--> LSP

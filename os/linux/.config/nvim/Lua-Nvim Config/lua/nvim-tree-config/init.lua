@@ -1,8 +1,6 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 
-vim.g.nvim_tree_quit_on_open = 1
-
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -102,7 +100,7 @@ nvim_tree.setup {
     cmd = "trash",
     require_confirm = true,
   },
-  quit_on_open = 0,
+  --quit_on_open = 0,
   git_hl = 1,
   disable_window_picker = 0,
   root_folder_modifier = ":t",
@@ -112,5 +110,13 @@ nvim_tree.setup {
     files = 1,
     folder_arrows = 1,
     tree_width = 30,
+  },
+  actions = {
+    change_dir = {
+      global = false,
+    },
+    open_file = {
+      quit_on_open = true,
+    }
   },
 }
