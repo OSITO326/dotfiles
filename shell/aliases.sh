@@ -48,7 +48,8 @@ alias z='zathura'
 alias html='cd /usr/share/nginx/html/'
 
 #Bat
-alias cat='bat'
+#alias cat='bat'
+alias cat='bat --style=plain --paging=never'
 
 #Arch/Manjaro
 #alias update='sudo pacman -Sy'
@@ -61,4 +62,3 @@ alias i.='(intellij-idea-ultimate-edition $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='thunar'
 #alias o.='open .'
-alias up='dot package update_all'
