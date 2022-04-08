@@ -3,9 +3,9 @@
 # finds the active sink for pulse audio and increments the volume. useful when you have multiple audio outputs and have a key bound to vol-up and down
 
 osd='no'
-inc='2'
+inc='5'
 capvol='no'
-maxvol='200'
+maxvol='100'
 autosync='yes'
 
 # Muted status
@@ -184,7 +184,7 @@ case "$1" in
         ;;
     --listen)
         # Listen for changes and immediately create new output for the bar
-        # This is faster than having the script on an interval
+        # This is faster than having the script on an inerval
         listen
         ;;
     *)
