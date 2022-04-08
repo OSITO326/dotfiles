@@ -2,7 +2,7 @@
 # zmodload zsh/zprof
 
 # Flex on the ubuntu users
-neofetch
+#neofetch
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
