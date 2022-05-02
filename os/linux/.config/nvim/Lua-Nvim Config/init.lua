@@ -1,9 +1,13 @@
+pcall(require, "impatient")
+
 require "settings"
 require "plugins"
 require "mappings"
 --> Theme
 require "colorschemes-config"
 require "lualine-config"
+--> CSS
+require "css-config"
 --> NerdTree
 require "nvim-tree-config"
 --> FZF
@@ -24,3 +28,5 @@ require "treesitter-config"
 require "toggleterm-config"
 --> Autopairs
 require "autopairs-config"
+--> Flutter
+require "flutter-config"

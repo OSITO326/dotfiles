@@ -10,8 +10,10 @@ end
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "hint" },
-  symbols = { error = " ", warn = " ", hint= " "},
+   sections = { "error", "warn", "info", "hint" },
+  symbols = { error = " ", warn = " ",info = " ", hint = " " },
+	--sections = { "error", "warn", "hint" },
+  --symbols = { error = " ", warn = " ", hint= " "},
   --symbols = { error = " ", warn = " ", info = " ", hint= " "},
 	colored = true,
 	update_in_insert = false,
@@ -82,7 +84,9 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = 'gruvbox',
+    theme = 'gruvbox_dark',
+    --theme = 'gruvbox',
+    --theme = 'kanagawa',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
 		--component_separators = { left = "", right = "" },

@@ -42,15 +42,18 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use "wbthomason/packer.nvim" -- Have packer manage itself
+  use 'lewis6991/impatient.nvim'
 
 	--> Colorscheme
-	use "ellisonleao/gruvbox.nvim"
+  use "ellisonleao/gruvbox.nvim"
+  --use "rebelot/kanagawa.nvim" --italic
+  use "OSITO326/nightfox.nvim"
 	--> Status bar
 	use "nvim-lualine/lualine.nvim"
 
 	--> NerdTree
 	use "kyazdani42/nvim-web-devicons"
-	use "kyazdani42/nvim-tree.lua"
+  use "kyazdani42/nvim-tree.lua"
 
 	--> FZF
 	use "nvim-telescope/telescope.nvim"
@@ -68,6 +71,7 @@ return packer.startup(function(use)
   --use "christoomey/vim-tmux-navigator" -- tmux navigator
   use "preservim/nerdcommenter"
   use "phaazon/hop.nvim"
+  use "norcalli/nvim-colorizer.lua" -- css
   use { "rrethy/vim-hexokinase", run = "make hexokinase" } --css
 
 	--> CMP plugins
@@ -81,8 +85,8 @@ return packer.startup(function(use)
 	use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use { "dsznajder/vscode-es7-javascript-react-snippets", run = "yarn install --frozen-lockfile && yarn compile" }
-  --use "onsails/lspkind-nvim"
-  --use "quangnguyen30192/cmp-nvim-ultisnips"
+  use "onsails/lspkind-nvim"
+  use "quangnguyen30192/cmp-nvim-ultisnips"
 
 	--> LSP
 	use "neovim/nvim-lspconfig" -- enable LSP
@@ -90,10 +94,19 @@ return packer.startup(function(use)
 	use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
+  --> Laravel
+  use "tpope/vim-dispatch"
+  use "tpope/vim-projectionist"
+  use "noahfrederick/vim-composer"
+  use "noahfrederick/vim-laravel"
+  use "jwalton512/vim-blade" -- blade files
+  --> Flutter
+  use "akinsho/flutter-tools.nvim"
+  use "mfussenegger/nvim-dap"
+
   --> Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use "nvim-treesitter/nvim-treesitter-refactor"
-
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
