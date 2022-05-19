@@ -1,5 +1,4 @@
-pcall(require, "impatient")
-
+require "impatient-config"
 require "settings"
 require "plugins"
 require "mappings"

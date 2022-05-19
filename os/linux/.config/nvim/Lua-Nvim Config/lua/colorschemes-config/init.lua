@@ -1,12 +1,5 @@
---vim.o.background = "dark" -- or "light" for light mode
-
---local cmd = vim.cmd
---cmd([[colorscheme gruvbox]])
---
---vim.g.gruvbox_contrast_dark = 'hard'
---vim.g.gruvbox_italic = 'leg g:vim_italiceze_keywords'
---vim.g.gruvbox_italicize_strings = 1
---vim.g.gruvbox_italicize_comments = 1
+--vim.opt.background = "dark" -- or "light" for light mode
+--vim.cmd([[colorscheme gruvbox]])
 
 --require("kanagawa").setup({
 --undercurl = true, -- enable undercurls
@@ -37,7 +30,7 @@ require('nightfox').setup({
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,   -- Non focused panes set to alternative background
     styles = {              -- Style to be applied to different syntax groups
-      comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
+      comments = "italic",    -- Value is any valid attr-list value `:help attr-list`
       conditionals = "italic",
       constants = "NONE",
       functions = "italic",
@@ -46,7 +39,7 @@ require('nightfox').setup({
       operators = "NONE",
       strings = "NONE",
       types = "NONE",
-      variables = "italic",
+      variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types
       match_paren = false,
@@ -58,6 +51,22 @@ require('nightfox').setup({
     },
   }
 })
-
 -- setup must be called before loading
 vim.cmd("colorscheme dayfox")
+
+
+-- Gruvbox material
+--vim.g.gruvbox_material_background = 'medium'
+--vim.g.gruvbox_material_statusline_style = 'original'
+--vim.opt.background = "dark"
+--vim.g.gruvbox_material_palette = 'original'
+--vim.g.gruvbox_material_better_performance = 1
+--vim.g.gruvbox_material_enable_bold = 1
+--vim.g.gruvbox_material_enable_italic = 1
+--vim.g.gruvbox_material_ui_contrast = 'high'
+--vim.g.gruvbox_material_transparent_background = 2
+--vim.g.gruvbox_material_diagnostic_text_highlight = 1
+--vim.g.gruvbox_material_diagnostic_line_highlight = 1
+--vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+--vim.g.gruvbox_material_disable_terminal_colors = 0
+--vim.cmd("colorscheme gruvbox-material")

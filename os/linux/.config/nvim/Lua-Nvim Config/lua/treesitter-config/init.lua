@@ -29,4 +29,11 @@ configs.setup({
 			},
 		},
 	},
+  rainbow = {
+    disable = {"html", "css"},
+    enable = true,
+    extended_mode = false,
+    max_file_lines = nil,
+    colors = { "#ebdbb2", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c" },
+  },
 })

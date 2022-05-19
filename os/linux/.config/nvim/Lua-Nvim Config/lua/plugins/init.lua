@@ -46,8 +46,10 @@ return packer.startup(function(use)
 
 	--> Colorscheme
   use "ellisonleao/gruvbox.nvim"
-  --use "rebelot/kanagawa.nvim" --italic
+  --use "morhetz/gruvbox"
   use "OSITO326/nightfox.nvim"
+  --use "rebelot/kanagawa.nvim" --italic
+  --use "sainnhe/gruvbox-material"
 	--> Status bar
 	use "nvim-lualine/lualine.nvim"
 
@@ -84,7 +86,7 @@ return packer.startup(function(use)
 	--> Snippets
 	use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-  use { "dsznajder/vscode-es7-javascript-react-snippets", run = "yarn install --frozen-lockfile && yarn compile" }
+  use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
   use "onsails/lspkind-nvim"
   use "quangnguyen30192/cmp-nvim-ultisnips"
 
@@ -107,6 +109,7 @@ return packer.startup(function(use)
   --> Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use "nvim-treesitter/nvim-treesitter-refactor"
+  use "p00f/nvim-ts-rainbow"
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
