@@ -5,6 +5,7 @@
 export JAVA_HOME='/usr/lib/jvm/default'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
+export CHROME_EXECUTABLE="/bin/google-chrome-stable" # Flutter Web
 
 # ------------------------------------------------------------------------------
 # Apps
