@@ -40,6 +40,7 @@ export path=(
   "/usr/sbin"
   "/sbin"
   "$HOME/.npm-global/bin"
+  "$HOME/.local/bin" # python pip packages
 )
 
 #Calcurse editor and visual NVIM
