@@ -55,6 +55,9 @@ alias bat='bat --style=plain --paging=never'
 #alias update='sudo pacman -Sy'
 #alias upgrade='sudo pacman -Syu'
 
+#Kitty Terminal
+alias icat='kitty +kitten icat'
+
 # youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
