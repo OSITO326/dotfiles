@@ -84,7 +84,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    theme = 'gruvbox_dark',
+    --theme = 'gruvbox_dark',
     --theme = 'gruvbox-material',
     --theme = 'gruvbox',
     --theme = 'kanagawa',

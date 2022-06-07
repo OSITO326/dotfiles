@@ -45,11 +45,13 @@ return packer.startup(function(use)
   use 'lewis6991/impatient.nvim'
 
 	--> Colorscheme
-  use "ellisonleao/gruvbox.nvim"
+  --use "ellisonleao/gruvbox.nvim"
   --use "morhetz/gruvbox"
   use "OSITO326/nightfox.nvim"
   --use "rebelot/kanagawa.nvim" --italic
   --use "sainnhe/gruvbox-material"
+  use "themercorp/themer.lua"
+
 	--> Status bar
 	use "nvim-lualine/lualine.nvim"
 
