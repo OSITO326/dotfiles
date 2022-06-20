@@ -54,14 +54,25 @@ keymap("n", "<leader><", "10<C-w><", opts)
 --> Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
--->Buffers
-keymap("n", "<leader>ob", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts) -- buffers
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 
 --> FZF
 --map('n', '<leader>f', ':Files<CR>', opts)
 
 --> NerdTreeLua
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+--> DAP Debugger
+--keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
+--keymap("n","<F10>", ":lua require'dap'.step_over()<CR>", opts)
+--keymap("n","<F11>", ":lua require'dap'.step_into()<CR>", opts)
+--keymap("n","<F12>", ":lua require'dap'.step_out()<CR>", opts)
+--keymap("n","<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+--keymap("n","<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+--keymap("n","<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+--keymap("n","<leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
+--keymap("n","<leader>dl", ":lua require'dap'.run_last()<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter

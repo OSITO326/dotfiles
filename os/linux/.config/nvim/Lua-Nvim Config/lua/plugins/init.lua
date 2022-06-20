@@ -50,19 +50,28 @@ return packer.startup(function(use)
   use "OSITO326/nightfox.nvim"
   --use "rebelot/kanagawa.nvim" --italic
   --use "sainnhe/gruvbox-material"
-  use "themercorp/themer.lua"
+  use "themercorp/themer.lua" -- Themes management
 
 	--> Status bar
 	use "nvim-lualine/lualine.nvim"
 
-	--> NerdTree
-	use "kyazdani42/nvim-web-devicons"
+	--> NerdTreeLua
+  use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
 
 	--> FZF
-	use "nvim-telescope/telescope.nvim"
-	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+	use ({
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" }, -- Useful lua functions used ny lots of plugins
+      { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+      { "nvim-telescope/telescope-file-browser.nvim" },
+			{ "nvim-telescope/telescope-dap.nvim" },
+			{ "nvim-telescope/telescope-ui-select.nvim" },
+			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+    },
+  })
 
 	--> Git
 	use "lewis6991/gitsigns.nvim"
@@ -77,6 +86,15 @@ return packer.startup(function(use)
   use "phaazon/hop.nvim"
   use "norcalli/nvim-colorizer.lua" -- css
   use { "rrethy/vim-hexokinase", run = "make hexokinase" } --css
+  use({
+		"leoluz/nvim-dap-go",
+		requires = {
+			"rcarriga/nvim-dap-ui",
+			"mfussenegger/nvim-dap", -- Debugger
+			{ "Pocco81/DAPInstall.nvim", branch = "dev" },
+			"leoluz/nvim-dap-go",
+		},
+	})
 
 	--> CMP plugins
 	use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -106,7 +124,6 @@ return packer.startup(function(use)
   use "jwalton512/vim-blade" -- blade files
   --> Flutter
   use "akinsho/flutter-tools.nvim"
-  use "mfussenegger/nvim-dap"
 
   --> Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }

@@ -12,7 +12,6 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -91,6 +90,10 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    fzy_native = {
+      override_generic_sorter = true,
+      override_file_sorter = true,
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

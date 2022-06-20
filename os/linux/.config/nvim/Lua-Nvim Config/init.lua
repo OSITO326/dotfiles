@@ -29,3 +29,5 @@ require "toggleterm-config"
 require "autopairs-config"
 --> Flutter
 require "flutter-config"
+--> DAP debugger
+require "dap-config.dap"
