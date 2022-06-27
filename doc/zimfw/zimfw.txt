@@ -24,3 +24,7 @@ changes since Zim 1.0.0 (released 2020-01-07):
 
 
 download the zimfw.zsh and copy to the path ~/.dotfiles/shell/zsh/.zim/
+
+install/uninstall module
+- add/remove in .zimrc
+- then source the file (/home/osito/.dotfiles/shell/zsh/.zim/init.zsh:source:11: no such file or directory: /home/osito/.dotfiles/shell/zsh/.zim/modules/spaceship/spaceship.zsh)
