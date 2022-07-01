@@ -31,3 +31,5 @@ require "autopairs-config"
 require "flutter-config"
 --> DAP debugger
 require "dap-config.dap"
+--> Copilot
+require "copilot-config"

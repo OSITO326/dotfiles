@@ -132,6 +132,34 @@ return packer.startup(function(use)
 
   --> Github Copilot
   use "github/copilot.vim"
+  --> Github Copilot cmp
+  use {
+    "zbirenbaum/copilot.lua",
+    --1
+    --event = {"VimEnter"},
+    --config = function()
+      --vim.defer_fn(function()
+        --require("copilot").setup()
+      --end, 100)
+    --end,
+    --2
+    event = "InsertEnter",
+    config = function ()
+      vim.schedule(function() require("copilot").setup() end)
+    end,
+    --3
+    --event = "InsertEnter",
+    --config = function()
+      --vim.schedule(function() require("copilot").setup() end)
+    --end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    module = "copilot_cmp",
+    config = function()
+      vim.schedule(function() require("copilot_cmp").setup() end)
+    end,
+  }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
