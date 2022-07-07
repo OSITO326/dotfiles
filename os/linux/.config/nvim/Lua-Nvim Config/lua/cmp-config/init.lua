@@ -118,8 +118,8 @@ cmp.setup({
 				--buffer = "[Buffer]",
 				--path = "[path]",
 				--orignal config 4 lines down
-				copilot = "[Copilot ]",
 				nvim_lsp = "[LSP]",
+				copilot = "[Copilot ]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
@@ -132,8 +132,8 @@ cmp.setup({
 		--{ name = "nvim_lsp" },
 		--{ name = "luasnip" },
 		-- orignal config 4 lines down
-    { name = "copilot" },
     { name = "nvim_lsp" },
+    { name = "copilot" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

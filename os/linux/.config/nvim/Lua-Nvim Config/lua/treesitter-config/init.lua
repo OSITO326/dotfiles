@@ -11,10 +11,12 @@ configs.setup({
 	autopairs = {
 		enable = true,
 	},
+  autotag = {
+    enable = true,
+  },
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
 	},
 	indent = { enable = true, disable = { "yaml" } },
 	context_commentstring = {
@@ -22,7 +24,7 @@ configs.setup({
 		enable_autocmd = false,
 	},
 	refactor = {
-    --highlight_current_scope = { enable = true },
+    highlight_current_scope = { enable = true },
 		smart_rename = {
       enable = true,
       keymaps = {

@@ -2,6 +2,7 @@ require "impatient-config"
 require "settings"
 require "plugins"
 require "mappings"
+require "whichkey-config"
 --> Theme
 require "colorschemes-config"
 require "lualine-config"
@@ -33,3 +34,9 @@ require "flutter-config"
 require "dap-config.dap"
 --> Copilot
 require "copilot-config"
+--> Markdown preview
+require "markdown-config"
+--> Surround
+require "surround-config"
+--> Barbar
+--require "barbar-config"

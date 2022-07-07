@@ -57,11 +57,21 @@ keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts) -- buffers
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 
+--> Harpoon
+keymap("n", "<leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>hj", ":lua require('harpoon.ui').nav_next()<CR>", opts)
+keymap("n", "<leader>hk", ":lua require('harpoon.ui').nav_prev()<CR>", opts)
+--keymap("n", "<leader>hs", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+
 --> FZF
 --map('n', '<leader>f', ':Files<CR>', opts)
 
 --> NerdTreeLua
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+--> Markdown Preview
+keymap("n", "<leader>m", ":MarkdownPreview<CR>", opts)
 
 --> DAP Debugger
 --keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
@@ -77,4 +87,3 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-
