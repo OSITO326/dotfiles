@@ -52,9 +52,10 @@ return packer.startup(function(use)
 	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "lukas-reineke/indent-blankline.nvim"
   --use "romgrk/barbar.nvim" -- Bar tabs
-  --use "yggdroot/indentline" --vim
   use "akinsho/toggleterm.nvim"
   --use "christoomey/vim-tmux-navigator" -- tmux navigator
+  use "folke/which-key.nvim" -- Keybindings
+  use "ThePrimeagen/harpoon" -- Harpoon
   use "preservim/nerdcommenter"
   use "phaazon/hop.nvim"
   use "norcalli/nvim-colorizer.lua" -- css
@@ -73,8 +74,9 @@ return packer.startup(function(use)
 	--> NerdTreeLua
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "folke/which-key.nvim" -- Keybindings
-  use "ThePrimeagen/harpoon" -- Harpoon
+  	--> Gi --all -pt
+	use "lewis6991/gitsigns.nvim"
+  use "tpope/vim-fugitive"
 
 	--> FZF
 	use ({
@@ -87,11 +89,11 @@ return packer.startup(function(use)
 			{ "nvim-telescope/telescope-dap.nvim" },
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      { "nvim-telescope/telescope-hop.nvim" },
+      { "nvim-telescope/telescope-media-files.nvim" },
     },
   })
 
-	--> Git
-	use "lewis6991/gitsigns.nvim"
 
 	--> CMP plugins
 	use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -134,22 +136,22 @@ return packer.startup(function(use)
   use {
     "zbirenbaum/copilot.lua",
     --1 On 'VimEnter' + Defer: (My preferred method, works well with fast configs)
-    --event = {"VimEnter"},
-    --config = function()
-      --vim.defer_fn(function()
-        --require("copilot").setup()
-      --end, 100)
-    --end,
+    event = {"VimEnter"},
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
     --2 Load After Statusline + defer: (If option (1) causes statusline to flicker, try this)
     --after = 'lualine.nvim', --whichever statusline plugin you use here
     --config = function ()
       --vim.defer_fn(function() require("copilot").setup() end, 100)
     --end,
     --3 On 'InsertEnter': (The safest way to avoid statup lag. Note: Your copilot completions may take a moment to start showing up)
-    event = "InsertEnter",
-    config = function ()
-      vim.schedule(function() require("copilot").setup() end)
-    end,
+    --event = "InsertEnter",
+    --config = function ()
+      --vim.schedule(function() require("copilot").setup() end)
+    --end,
   }
   use {
     "zbirenbaum/copilot-cmp",

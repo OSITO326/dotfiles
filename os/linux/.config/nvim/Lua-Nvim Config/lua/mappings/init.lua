@@ -64,6 +64,13 @@ keymap("n", "<leader>hj", ":lua require('harpoon.ui').nav_next()<CR>", opts)
 keymap("n", "<leader>hk", ":lua require('harpoon.ui').nav_prev()<CR>", opts)
 --keymap("n", "<leader>hs", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 
+--> Git fugitive
+keymap("n", "<leader>gs", ":Git status<CR>", opts)
+keymap("n", "<leader>ga", ":Git add .<CR>", opts)
+keymap("n", "<leader>gc", ":Git commit<CR>", opts)
+keymap("n", "<leader>gi", ":Git init<CR>", opts)
+
+
 --> FZF
 --map('n', '<leader>f', ':Files<CR>', opts)
 

@@ -56,7 +56,8 @@
 
 -- Themecorp custom colorscheme gruvbox_dark
 require("themer").setup({
-	colorscheme = "gruvbox_dark",
+  --colorscheme = "gruvbox_dark",
+  colorscheme = "gruvbox_darker",
 	styles = {
 		["function"] = { style = "bold" },
 		functionbuiltin = { style = "italic" },

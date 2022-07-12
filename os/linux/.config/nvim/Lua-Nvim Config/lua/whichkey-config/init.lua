@@ -23,9 +23,9 @@ local setup = {
 			g = true, -- bindings for prefixed with g
 		},
 	},
-	-- add operators that will trigger motion and text object completion
-	-- to enable all native operators, set the preset / operators plugin above
-	-- operators = { gc = "Comments" },
+	--add operators that will trigger motion and text object completion
+	--to enable all native operators, set the preset / operators plugin above
+	--operators = { gc = "Comments" },
 	key_labels = {
 		-- override the label used to display some keys. It doesn't effect WK in any other way.
 		-- For example:
@@ -122,6 +122,16 @@ local mappings = {
 
 	g = {
 		name = "Git",
+		s = { "<cmd>Git status<cr>", "Git Status" },
+		a = { "<cmd>Git add .<cr>", "Git Add All" },
+		c = { "<cmd>Git commit<cr>", "Git Commit" },
+		i = { "<cmd>Git init<cr>", "Git Init" },
+		p = { "<cmd>Git pull<cr>", "Git Pull" },
+		f = { "<cmd>Git fetch --all -p<cr>", "Git Fetch" },
+	},
+
+	G = {
+		name = "Git Signs",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -143,13 +153,13 @@ local mappings = {
 		},
 	},
 
-  h = {
-    name = "Harpoon",
-    h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
-    a = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark Project"},
-    j = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigates to next mark" },
-    k = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigates to previous mark" },
-  },
+	h = {
+		name = "Harpoon",
+		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark Project" },
+		j = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigates to next mark" },
+		k = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigates to previous mark" },
+	},
 
 	l = {
 		name = "LSP  ",
