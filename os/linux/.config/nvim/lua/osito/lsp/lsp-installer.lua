@@ -7,22 +7,22 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
 	local opts = {
-		on_attach = require("lsp-config.handlers").on_attach,
-		capabilities = require("lsp-config.handlers").capabilities,
+		on_attach = require("osito.lsp.handlers").on_attach,
+		capabilities = require("osito.lsp.handlers").capabilities,
 	}
 
   if server.name == "jsonls" then
-    local jsonls_opts = require("lsp-config.settings.jsonls")
+    local jsonls_opts = require("osito.lsp.settings.jsonls")
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   end
 
 	if server.name == "sumneko_lua" then
-		local sumneko_opts = require("lsp-config.settings.sumneko_lua")
+		local sumneko_opts = require("osito.lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
 	if server.name == "tailwindcss" then
-		local tailwindcss_opts = require("lsp-config.settings.tailwindcss")
+		local tailwindcss_opts = require("osito.lsp.settings.tailwindcss")
 		opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
 	end
 

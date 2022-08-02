@@ -84,7 +84,7 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
-  ["p"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format Document"},
+	["p"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format Document" },
 	--["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	--["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	--["f"] = {
@@ -193,6 +193,18 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 		l = { "<cmd>luafile %<cr>", "Source Lua File" },
+	},
+
+	["<c-w>"] = {
+		name = "Window",
+		h = { "<c-w>H", "Truncate to left" },
+		j = { "<C-w>J", "Truncate to down" },
+		k = { "<C-w>K", "Truncate to up" },
+		l = { "<C-w>L", "Truncate to right" },
+    H = { "<C-w>10<", "Resize window to 10x left" },
+    J = { "<C-w>10-", "Resize window to 10x down" },
+    K = { "<C-w>10+", "Resize window to 10x up" },
+    L = { "<C-w>10>", "Resize window to 10x right" },
 	},
 }
 

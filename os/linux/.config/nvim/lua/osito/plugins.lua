@@ -77,6 +77,7 @@ return packer.startup(function(use)
   	--> Gi --all -pt
 	use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
+  use "rcarriga/nvim-notify"
   use({
     "anuvyklack/hydra.nvim",
     requires = "anuvyklack/keymap-layer.nvim", -- needed only for pink hydras
