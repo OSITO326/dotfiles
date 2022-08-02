@@ -52,10 +52,10 @@ require("nvim-tree").setup({
 		highlight_opened_files = "none", -- new config
 		root_folder_modifier = ":~", -- new config
 		indent_markers = {
-			--enable = false,
+      --enable = false,
       enable = true,
 			icons = {
-				corner = "└ ",
+				corner = "└",
 				edge = "│ ",
 				none = "  ",
 			},

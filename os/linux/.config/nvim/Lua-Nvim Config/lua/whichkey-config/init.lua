@@ -84,18 +84,13 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
-	--["f"] = { "<cmd>Telescope find_files", "Find Files" },
+  ["p"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format Document"},
 	--["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	--["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	--["f"] = {
 	--""}
 	--["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	--["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	--["f"] = {
-	--"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = true})<cr>",
-	--"Find Files",
-	--},
-	--["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	--["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
 	D = {

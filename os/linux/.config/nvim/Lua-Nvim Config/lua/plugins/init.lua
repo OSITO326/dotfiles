@@ -77,6 +77,10 @@ return packer.startup(function(use)
   	--> Gi --all -pt
 	use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
+  use({
+    "anuvyklack/hydra.nvim",
+    requires = "anuvyklack/keymap-layer.nvim", -- needed only for pink hydras
+  })
 
 	--> FZF
 	use ({
@@ -107,7 +111,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use { 'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
   use "onsails/lspkind-nvim"
-  use "quangnguyen30192/cmp-nvim-ultisnips"
+  --use "quangnguyen30192/cmp-nvim-ultisnips"
 
 	--> LSP
 	use "neovim/nvim-lspconfig" -- enable LSP

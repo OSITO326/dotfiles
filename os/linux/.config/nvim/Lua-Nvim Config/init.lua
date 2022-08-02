@@ -40,3 +40,5 @@ require "markdown-config"
 require "surround-config"
 --> Barbar
 --require "barbar-config"
+--> Hydra
+require "hydra-config"
