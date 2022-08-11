@@ -1,7 +1,12 @@
-require("nvim-surround").setup({
+local status_ok, nvim_surround = pcall(require, "nvim-surround")
+if not status_ok then
+  return
+end
+--require("nvim-surround").setup({
+nvim_surround.setup({
 	keymaps = { -- vim-surround style keymaps
-		insert = "ys",
-		visual = "S",
+    --insert = "yy",
+		--visual = "S",
 		delete = "ds",
 		change = "cs",
 	},

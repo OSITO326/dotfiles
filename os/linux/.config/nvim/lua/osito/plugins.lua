@@ -70,7 +70,8 @@ return packer.startup(function(use)
 		},
 	})
   use "davidgranstrom/nvim-markdown-preview" -- Markdown preview
-  use "kylechui/nvim-surround" -- Surround
+  --use "kylechui/nvim-surround" -- Surround
+  use ({"kylechui/nvim-surround", commit = "030a4373aea4354d28052108650bf4e916d3283a" }) -- Surround
 	--> NerdTreeLua
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"

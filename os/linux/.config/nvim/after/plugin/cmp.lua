@@ -119,7 +119,7 @@ cmp.setup({
 				--path = "[path]",
 				--orignal config 4 lines down
 				nvim_lsp = "[LSP]",
-				copilot = "[Copilot ]",
+        copilot = "[Copilot ]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
