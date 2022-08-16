@@ -11,7 +11,11 @@ DEFAULT_OPTIONS = {
 	mode = "background", -- Set the display mode.
 }
 
-require 'colorizer'.setup {
-  '*';
-  '!vim';
-}
+local status_ok, colorizer = pcall(require, "colorizer")
+if not status_ok then
+	return
+end
+colorizer.setup({
+	"*",
+	"!vim",
+})

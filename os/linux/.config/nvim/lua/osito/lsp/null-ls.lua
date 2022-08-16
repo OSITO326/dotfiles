@@ -11,9 +11,12 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }), --formatting JS/TS
-    formatting.black.with({ extra_args = { "--fast" } }), --format python
-    diagnostics.flake8.with({ extra_args = { "--max-line-length=160" } }), --diagnostics python
-		formatting.stylua, --formatting lua
+		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }), --formatting JS/TS
+		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }), --formatting JS/TS (install -> npm i -g prettier)
+		formatting.black.with({ extra_args = { "--fast" } }), --format python (install -> pip3 install black)
+		diagnostics.flake8.with({ extra_args = { "--max-line-length=160" } }), --diagnostics python (install -> pip3 install flake8)
+    formatting.djlint.with({ extra_args = { "$FILENAME", "--reformat", "--lint" } }), --formatting {django, jinja.html, htmldjango} (install -> pip3 install djlint or npm i -g djlint)
+    formatting.djhtml.with({ extra_args = { "-t=2" } }), --formatting {django, jinja.html, htmldjango} (install -> pip install djhtml)
+		formatting.stylua, --formatting lua (install -> sudo pacman -S stylua)
 	},
 })

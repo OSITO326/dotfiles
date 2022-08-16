@@ -103,5 +103,5 @@ keymap("n", "<leader>dk", ":lua require('dapui').eval()<CR>", opts)
 keymap("n", "<leader>dtt", ":lua require('dap-go').debug_test()<CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press jk fast to enter NORMAL mode
 keymap("i", "jk", "<ESC>", opts)

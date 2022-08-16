@@ -75,7 +75,7 @@ return packer.startup(function(use)
 	--> NerdTreeLua
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  	--> Gi --all -pt
+  --> Git --all -pt
 	use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
   use "rcarriga/nvim-notify"

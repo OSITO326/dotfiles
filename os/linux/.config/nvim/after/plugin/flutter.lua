@@ -1,5 +1,9 @@
+local status_ok, flutter_tools = pcall(require, "flutter-tools")
+if not status_ok then
+  return
+end
 -- alternatively you can override the default configs
-require("flutter-tools").setup({
+flutter_tools.setup({
 	ui = {
 		-- the border type to use for all floating windows, the same options/formats
 		-- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}

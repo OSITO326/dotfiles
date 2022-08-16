@@ -79,19 +79,11 @@ local opts = {
 }
 
 local mappings = {
-	--["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
 	["p"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format Document" },
-	--["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	--["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	--["f"] = {
-	--""}
-	--["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	--["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	--["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
 	D = {
 		name = "Debug Adapter Protocol",
@@ -108,7 +100,6 @@ local mappings = {
 		f = { "<cmd>Telescope find_files<cr>", "Find Files" },
 		g = { "<cmd>Telescope live_grep<cr>", "Find Word" },
 		b = {
-			--"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"<cmd>Telescope buffers<cr>",
 			"Buffers",
 		},
@@ -201,10 +192,10 @@ local mappings = {
 		j = { "<C-w>J", "Truncate to down" },
 		k = { "<C-w>K", "Truncate to up" },
 		l = { "<C-w>L", "Truncate to right" },
-    H = { "<C-w>10<", "Resize window to 10x left" },
-    J = { "<C-w>10-", "Resize window to 10x down" },
-    K = { "<C-w>10+", "Resize window to 10x up" },
-    L = { "<C-w>10>", "Resize window to 10x right" },
+		H = { "<C-w>10<", "Resize window to 10x left" },
+		J = { "<C-w>10-", "Resize window to 10x down" },
+		K = { "<C-w>10+", "Resize window to 10x up" },
+		L = { "<C-w>10>", "Resize window to 10x right" },
 	},
 }
 

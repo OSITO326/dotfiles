@@ -55,6 +55,7 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
+	Copilot = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -118,11 +119,16 @@ cmp.setup({
 				--buffer = "[Buffer]",
 				--path = "[path]",
 				--orignal config 4 lines down
+				--nvim_lsp = "[LSP]",
+				--copilot = "[Copilot ]",
+				--buffer = "[Buffer]",
+				--path = "[Path]",
+				--New Configuration
 				nvim_lsp = "[LSP]",
         copilot = "[Copilot ]",
 				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
+        buffer = "[Buffer]",
+        path = "[Path]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -132,6 +138,14 @@ cmp.setup({
 		--{ name = "nvim_lsp" },
 		--{ name = "luasnip" },
 		-- orignal config 4 lines down
+		--{ name = "friendly-snippets" },
+		--{ name = "nvim_lsp" },
+		--{ name = "copilot" },
+		--{ name = "luasnip" },
+		--{ name = "buffer" },
+		--{ name = "path" },
+    --New Configuration
+    { name = "friendly-snippets" },
     { name = "nvim_lsp" },
     { name = "copilot" },
     { name = "luasnip" },
@@ -151,62 +165,62 @@ cmp.setup({
 		ghost_text = false,
 		native_menu = false,
 	},
-  -- copilot
-  sorting = {
-    --keep priority weight at 2 for much closer matches to appear above copilot
-    --set to 1 to make copilot always appear on top
-    priority_weight = 1,
-    comparators = {
-      -- order matters here
-      cmp.config.compare.exact,
-      require("copilot_cmp.comparators").prioritize,
-      require("copilot_cmp.comparators").score,
-      cmp.config.compare.offset,
-      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-      cmp.config.compare.score,
-      cmp.config.compare.recently_used,
-      cmp.config.compare.locality,
-      cmp.config.compare.kind,
-      cmp.config.compare.sort_text,
-      cmp.config.compare.length,
-      cmp.config.compare.order,
-      -- personal settings:
-      -- cmp.config.compare.recently_used,
-      -- cmp.config.compare.offset,
-      -- cmp.config.compare.score,
-      -- cmp.config.compare.sort_text,
-      -- cmp.config.compare.length,
-      -- cmp.config.compare.order,
-    },
-  },
-  preselect = cmp.PreselectMode.Item,
+	-- copilot
+	sorting = {
+		--keep priority weight at 2 for much closer matches to appear above copilot
+		--set to 1 to make copilot always appear on top
+		priority_weight = 1,
+		comparators = {
+			-- order matters here
+			cmp.config.compare.exact,
+			require("copilot_cmp.comparators").prioritize,
+			require("copilot_cmp.comparators").score,
+			cmp.config.compare.offset,
+			-- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+			-- personal settings:
+			-- cmp.config.compare.recently_used,
+			-- cmp.config.compare.offset,
+			-- cmp.config.compare.score,
+			-- cmp.config.compare.sort_text,
+			-- cmp.config.compare.length,
+			-- cmp.config.compare.order,
+		},
+	},
+	preselect = cmp.PreselectMode.Item,
 })
 
 --set max height of items
 --vim.cmd([[ set pumheight=6 ]])
 --set highlights
 --local highlights = {
-  -- type highlights
-  --CmpItemKindText = { fg = "LightGrey" },
-  --CmpItemKindFunction = { fg = "#C586C0" },
-  --CmpItemKindClass = { fg = "Orange" },
-  --CmpItemKindKeyword = { fg = "#f90c71" },
-  --CmpItemKindSnippet = { fg = "#565c64" },
-  --CmpItemKindConstructor = { fg = "#ae43f0" },
-  --CmpItemKindVariable = { fg = "#9CDCFE", bg = "NONE" },
-  --CmpItemKindInterface = { fg = "#f90c71", bg = "NONE" },
-  --CmpItemKindFolder = { fg = "#2986cc" },
-  --CmpItemKindReference = { fg = "#922b21" },
-  --CmpItemKindMethod = { fg = "#C586C0" },
-  --CmpItemKindCopilot = { fg = "#6CC644" },
-  --CmpItemMenu = { fg = "#C586C0", bg = "#C586C0" },
-  --CmpItemAbbr = { fg = "#565c64", bg = "NONE" },
-  --CmpItemAbbrMatch = { fg = "#569CD6", bg = "NONE" },
-  --CmpItemAbbrMatchFuzzy = { fg = "#569CD6", bg = "NONE" },
-  --CmpMenuBorder = { fg="#263341" },
-  --CmpMenu = { bg="#10171f" },
-  --CmpSelection = { bg="#263341" },
+-- type highlights
+--CmpItemKindText = { fg = "LightGrey" },
+--CmpItemKindFunction = { fg = "#C586C0" },
+--CmpItemKindClass = { fg = "Orange" },
+--CmpItemKindKeyword = { fg = "#f90c71" },
+--CmpItemKindSnippet = { fg = "#565c64" },
+--CmpItemKindConstructor = { fg = "#ae43f0" },
+--CmpItemKindVariable = { fg = "#9CDCFE", bg = "NONE" },
+--CmpItemKindInterface = { fg = "#f90c71", bg = "NONE" },
+--CmpItemKindFolder = { fg = "#2986cc" },
+--CmpItemKindReference = { fg = "#922b21" },
+--CmpItemKindMethod = { fg = "#C586C0" },
+--CmpItemKindCopilot = { fg = "#6CC644" },
+--CmpItemMenu = { fg = "#C586C0", bg = "#C586C0" },
+--CmpItemAbbr = { fg = "#565c64", bg = "NONE" },
+--CmpItemAbbrMatch = { fg = "#569CD6", bg = "NONE" },
+--CmpItemAbbrMatchFuzzy = { fg = "#569CD6", bg = "NONE" },
+--CmpMenuBorder = { fg="#263341" },
+--CmpMenu = { bg="#10171f" },
+--CmpSelection = { bg="#263341" },
 --}
 --for group, hl in pairs(highlights) do
-  --vim.api.nvim_set_hl(0, group, hl)
+--vim.api.nvim_set_hl(0, group, hl)
 --end

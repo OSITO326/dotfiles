@@ -10,7 +10,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-require("nvim-tree").setup({
+nvim_tree.setup({
 	auto_reload_on_write = true,
 	create_in_closed_folder = false, -- new config
 	disable_netrw = true,
@@ -126,7 +126,7 @@ require("nvim-tree").setup({
 		},
 	},
 	filters = {
-		dotfiles = false,
+		dotfiles = true,
 		custom = {},
 		exclude = {},
 	},
