@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ## Author : OSITO326
 ## Github : @OSITO326
@@ -16,6 +16,5 @@ theme='style-1'
 
 ## Run
 rofi \
-  -modi "clipboard:greenclip print" \
-  -show clipboard -run-command '{cmd}' \
-  -theme ${dir}/${theme}.rasi
+    -show drun \
+    -theme ${dir}/${theme}.rasi
