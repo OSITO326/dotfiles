@@ -1,0 +1,12 @@
+/**
+ *
+ * Author : OSITO326
+ * Github : @OSITO326
+ * 
+ * Fonts
+ *
+ **/
+
+* {
+    font: "JetBrains Mono Nerd Font 10";
+}
