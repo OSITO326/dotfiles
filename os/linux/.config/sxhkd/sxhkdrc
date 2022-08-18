@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+  kitty
 	##alacritty
 # Redshift
 super + r
@@ -14,16 +14,21 @@ super + shift + r
 #----------PROGRAM LAUNCHERS----------
 # Rofi Launcher
 super + @space
-	rofi -show drun	
+  rofi-launcher # with custom script
+	#rofi -show drun	
 # Rofi Emoji
-super + shift + e
-	rofi -show emoji -modi emoji
+super + period
+  rofi-emoji # with custom script
+  #rofi -show emoji -modi emoji
 # Rofi Clipboard
-super + control + c
-	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+#super + control + c
+super + v
+  rofi-clipboard # with custom script
+  #rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 # Rofi PowerMenu
 super + shift + p
-	rofi -show power-menu -modi "power-menu:/bin/rofi-power-menu --choices=shutdown/reboot --confirm=shutdown/reboot"
+  rofi-powermenu # with custom script
+	#rofi -show power-menu -modi "power-menu:/bin/rofi-power-menu --choices=shutdown/reboot --confirm=shutdown/reboot"
 # Flameshot
 Print
 	flameshot gui
@@ -34,7 +39,6 @@ Print
 #Screenshot Area
 shift + Print
 	maim_fullscreen
-	#maim_area
 # Betterlockscreen
 super + x
 	betterlockscreen -l
@@ -56,15 +60,18 @@ super + i
 #Telegram Desktop
 #super + t
 #	telegram-desktop
-#GPick ColorPicker
+#GPick ColorPicker/gcolor3
 super + p
-	gpick
+  gpick
 #Spotify Adblock
 super + m
 	spotify_adblock
 #Simplenote
 super + n
 	simplenote
+#Network manager
+#super + shift + n
+  #nm-connection-editor
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -138,8 +145,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
