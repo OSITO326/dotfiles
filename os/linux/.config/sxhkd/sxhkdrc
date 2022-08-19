@@ -8,26 +8,29 @@ super + Return
 	##alacritty
 # Redshift
 super + r
-	redshift -O 5400
+  redshift -O 5400 -g 0.8
+	#redshift -O 5400
 super + shift + r
-	redshift -x 
+  redshift -x -g 0.8
 #----------PROGRAM LAUNCHERS----------
 # Rofi Launcher
 super + @space
-  rofi-launcher # with custom script
-	#rofi -show drun	
+  $HOME/.config/rofi/theme/launcher/launcher.sh # Custom script
+  #rofi -show drun
+  #rofi-launcher # with custom script
 # Rofi Emoji
 super + period
-  rofi-emoji # with custom script
-  #rofi -show emoji -modi emoji
+  $HOME/.config/rofi/theme/launcher/launcher-emoji.sh # Custom script
+  #rofi -modi emoji -show emoji
+  #rofi-emoji # with custom script
 # Rofi Clipboard
-#super + control + c
 super + v
-  rofi-clipboard # with custom script
+  $HOME/.config/rofi/theme/launcher/launcher-clipboard.sh # Custom script
   #rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+  #rofi-clipboard # with custom script
 # Rofi PowerMenu
 super + shift + p
-  rofi-powermenu # with custom script
+  $HOME/.config/rofi/theme/powermenu/style-1/powermenu.sh # Custom script
 	#rofi -show power-menu -modi "power-menu:/bin/rofi-power-menu --choices=shutdown/reboot --confirm=shutdown/reboot"
 # Flameshot
 Print
