@@ -13,7 +13,7 @@ killall nm-applet 2>/dev/null
 killall -q udiskie 2>/dev/null
 killall greenclip 2>/dev/null
 killall paperview 2>/dev/null
-killall redshift 2>/dev/null
+killall redshift-gtk 2>/dev/null
 
 #----------AUTOSTART----------
 wmname LG3D &
