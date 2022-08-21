@@ -12,17 +12,20 @@ killall nm-applet 2>/dev/null
 #killall -q cbatticon 2>/dev/null
 killall -q udiskie 2>/dev/null
 killall greenclip 2>/dev/null
+killall paperview 2>/dev/null
+killall redshift 2>/dev/null
 
 #----------AUTOSTART----------
 wmname LG3D &
 bash ~/.config/polybar/launch.sh 
 sxhkd &
-picom &
 #cbatticon -u 5 &
 #volumeicon &
-sh ~/.fehbg &
-#paperview ~/Downloads/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Downloads/Gifs/bmp/daft 5 1920 0 1920 1080 &
-#paperview ~/Downloads/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Downloads/Gifs/bmp/ae 5 1920 0 1920 1080 &
+#sh ~/.fehbg &
+#picom &
+#paperview ~/Pictures/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Pictures/Gifs/bmp/daft 5 1920 0 1920 1080 &
+paperview ~/Pictures/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Pictures/Gifs/bmp/ae 5 1920 0 1920 1080 &
+redshift-gtk &
 nm-applet &
 blueman-applet &
 #setxkbmap -layout us,us -variant altgr-intl,dvorak-intl -option grp:alt_shift_toggle &
@@ -45,7 +48,7 @@ bspc monitor HDMI1 -d 6 7 8 9 0
 #bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
 #bspc monitor HDMI1 -d 1 2 3 4 5 6 7 8 9 0
 
-#### BSPWM configuration ####
+#----------BSPWM Configuration----------
 #bspc config border_radius                8
 bspc config border_radius                 10
 bspc config border_width                  2
@@ -70,7 +73,7 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
-#### BSPWM coloring ####
+#----------BSPWM Coloring----------
 bspc config normal_border_color 	      "#3C3836"
 bspc config active_border_color 	      "#3C3836"
 bspc config focused_border_color 	      "#458588"
@@ -95,11 +98,13 @@ xdo below -t $(xdo id -n root) $(xdo id -a polybar-secondary_HDMI1)
 
 bspc rule -a Zathura state=tiled follow=on
 
-bspc rule -a Code desktop='^2' #open VSCcode on workspace 2
+#bspc rule -a Code desktop='^2' #open VSCcode on workspace 2
+bspc rule -a Code follow=on
 bspc rule -a Soffice desktop='^4' #open any libreoffice suit, move to workspace 6
 #bspc rule -a firefox desktop='^6' #open firefox, move to desktop 6
 bspc rule -a pomotroid state=floating rectangle=600+503+145
 
 bspc rule -a Font-manager state=floating follow=on center=true
-bspc rule -a Gnome-calculator state=floating follow=on center=true rectangle=400x400+0+0
-
+bspc rule -a gnome-calculator state=floating follow=on center=true rectangle=400x400+0+0
+bspc rule -a android-studio state=floating follow=on center=true
+bspc rule -a Gcolor3 state=floating follow=on center=true
