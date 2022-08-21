@@ -60,6 +60,9 @@ All this programs you can install via yay.
 $ fc-cache
 ```
 
+### Different flavors
+if you want other theme you can visit this repository. [polybar-themes](https://github.com/OSITO326/polybar)
+
 ## Add another bar
 
 To have two polybar bars, one on each monitor, it is necessary to modify the file inside the folder:
