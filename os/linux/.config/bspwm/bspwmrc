@@ -13,8 +13,7 @@ killall nm-applet 2>/dev/null
 killall -q udiskie 2>/dev/null
 killall greenclip 2>/dev/null
 killall paperview 2>/dev/null
-killall redshift-gtk 2>/dev/null
-
+killall redshift-gtk 2>/dev/null # Or use redshift &
 #----------AUTOSTART----------
 wmname LG3D &
 bash ~/.config/polybar/launch.sh 
@@ -25,6 +24,7 @@ sxhkd &
 #picom &
 #paperview ~/Pictures/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Pictures/Gifs/bmp/daft 5 1920 0 1920 1080 &
 paperview ~/Pictures/Gifs/bmp/sakura 5 0 0 1920 1080  ~/Pictures/Gifs/bmp/ae 5 1920 0 1920 1080 &
+bash ~/.config/dunst/load.sh # Load dunst configuration
 redshift-gtk &
 nm-applet &
 blueman-applet &
