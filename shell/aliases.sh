@@ -16,6 +16,8 @@ alias gpl="git pull"
 alias gc="git clone"
 alias gb="git branch"
 alias gco="git checkout"
+alias gf="git fetch --all"
+alias gb="git branch"
 
 #alias gaa="git add -A"
 #alias gc='$DOTLY_PATH/bin/dot git commit'
