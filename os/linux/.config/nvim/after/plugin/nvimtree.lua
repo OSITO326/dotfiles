@@ -27,10 +27,11 @@ nvim_tree.setup({
 	respect_buf_cwd = false, -- new config
 	view = {
 		adaptive_size = false, -- new config
-		width = 30,
-		height = 30,
+    width = 30,
+		--height = 30,
 		hide_root_folder = false,
-		side = "left",
+		--side = "left",
+    side = "right",
 		preserve_window_proportions = false,
 		number = false,
 		relativenumber = false,
@@ -126,7 +127,8 @@ nvim_tree.setup({
 		},
 	},
 	filters = {
-		dotfiles = true,
+		--dotfiles = true, -- Hidden dotfiles
+		dotfiles = false, -- Show dotfiles
 		custom = {},
 		exclude = {},
 	},

@@ -49,7 +49,7 @@ return packer.startup(function(use)
 	--> Status bar
   use "nvim-lualine/lualine.nvim"
 	--> IDE
-	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "lukas-reineke/indent-blankline.nvim"
   --use "romgrk/barbar.nvim" -- Bar tabs
   use "akinsho/toggleterm.nvim"
@@ -59,7 +59,7 @@ return packer.startup(function(use)
   use "preservim/nerdcommenter"
   use "phaazon/hop.nvim"
   use "norcalli/nvim-colorizer.lua" -- css
-  use { "rrethy/vim-hexokinase", run = "make hexokinase" } --css
+  --use { "rrethy/vim-hexokinase", run = "make hexokinase" } --css
   use({
 		"leoluz/nvim-dap-go",
 		requires = {
@@ -70,7 +70,6 @@ return packer.startup(function(use)
 		},
 	})
   use "davidgranstrom/nvim-markdown-preview" -- Markdown preview
-  --use "kylechui/nvim-surround" -- Surround
   use ({"kylechui/nvim-surround", commit = "030a4373aea4354d28052108650bf4e916d3283a" }) -- Surround
 	--> NerdTreeLua
   use "kyazdani42/nvim-web-devicons"
@@ -79,10 +78,10 @@ return packer.startup(function(use)
 	use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
   use "rcarriga/nvim-notify"
-  use({
-    "anuvyklack/hydra.nvim",
-    requires = "anuvyklack/keymap-layer.nvim", -- needed only for pink hydras
-  })
+  --use({
+    --"anuvyklack/hydra.nvim",
+    --requires = "anuvyklack/keymap-layer.nvim", -- needed only for pink hydras
+  --})
 
 	--> FZF
 	use ({
@@ -108,6 +107,7 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-cmdline" -- cmdline completions
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use "hrsh7th/cmp-nvim-lsp"
+  --use {"tzachar/cmp-tabnine", run="./install.sh"}
 	--> Snippets
 	use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -117,7 +117,7 @@ return packer.startup(function(use)
 
 	--> LSP
 	use "neovim/nvim-lspconfig" -- enable LSP
-	use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 	use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
@@ -135,37 +135,6 @@ return packer.startup(function(use)
 	use "nvim-treesitter/nvim-treesitter-refactor"
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag" -- closetag
-
-  --> Github Copilot
-  use "github/copilot.vim"
-  --> Github Copilot cmp
-  use {
-    "zbirenbaum/copilot.lua",
-    --1 On 'VimEnter' + Defer: (My preferred method, works well with fast configs)
-    event = {"VimEnter"},
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup()
-      end, 100)
-    end,
-    --2 Load After Statusline + defer: (If option (1) causes statusline to flicker, try this)
-    --after = 'lualine.nvim', --whichever statusline plugin you use here
-    --config = function ()
-      --vim.defer_fn(function() require("copilot").setup() end, 100)
-    --end,
-    --3 On 'InsertEnter': (The safest way to avoid statup lag. Note: Your copilot completions may take a moment to start showing up)
-    --event = "InsertEnter",
-    --config = function ()
-      --vim.schedule(function() require("copilot").setup() end)
-    --end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    module = "copilot_cmp",
-    config = function()
-      vim.schedule(function() require("copilot_cmp").setup() end)
-    end,
-  }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
