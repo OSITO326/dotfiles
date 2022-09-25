@@ -46,10 +46,10 @@ export path=(
 #Calcurse editor and visual NVIM
 export CALCURSE_EDITOR="nvim"
 export VISUAL="nvim"
+export EDITOR="nvim"
 
 #Qt5 Apps Enviroment
-#export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_STYLE_OVERRIDE="kvantum"
 
-#NPM-Global
-#export PATH="$HOME/.npm-global/bin"
-
+export SUDO_PROMPT="passwd: "
