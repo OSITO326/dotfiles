@@ -58,24 +58,6 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-local status_ok, tabnine = pcall(require,"cmp_tabnine.config")
-if not status_ok then
-  return
-end
-tabnine.setup({
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = '..',
-	ignored_file_types = {
-		-- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	},
-	show_prediction_strength = false
-})
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -126,25 +108,24 @@ cmp.setup({
 		}),
 	},
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
-		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-			})[entry.source.name]
-			return vim_item
-		end,
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+    -- Kind icons
+    vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+    -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+    vim_item.menu = ({
+    nvim_lsp = "[LSP]",
+    luasnip = "[Snippet]",
+    buffer = "[Buffer]",
+    path = "[Path]",
+    })[entry.source.name]
+    return vim_item
+    end,
 	},
 	sources = {
-    { name = "friendly-snippets" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
+		{ name = "buffer" },
     { name = "path" },
 	},
 	confirm_opts = {
@@ -160,5 +141,4 @@ cmp.setup({
 		ghost_text = false,
 		native_menu = false,
 	},
-	preselect = cmp.PreselectMode.Item,
 })

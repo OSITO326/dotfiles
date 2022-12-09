@@ -4,7 +4,7 @@ if not status_ok then
 end
 -- Themecorp custom colorscheme gruvbox_dark
 themer.setup({
-  --colorscheme = "gruvbox_dark",
+  --colorscheme = "gruvbox-material-dark-hard",
   colorscheme = "gruvbox_darker",
 	styles = {
 		["function"] = { style = "bold" },

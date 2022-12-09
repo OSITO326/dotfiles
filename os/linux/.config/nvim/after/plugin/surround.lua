@@ -10,7 +10,7 @@ nvim_surround.setup({
 		delete = "ds",
 		change = "cs",
 	},
-	delimiters = {
+	surrounds = {
 		pairs = {
 			["("] = { "( ", " )" },
 			[")"] = { "(", ")" },

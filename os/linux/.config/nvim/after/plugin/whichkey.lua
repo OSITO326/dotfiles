@@ -82,9 +82,13 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
-	["p"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format Document" },
+	["p"] = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format Document" },
 
+	m = {
+		["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
+		["s"] = { "<cmd>MarkdownPreviewStop<cr>", "Markdown Stop" },
+		["t"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Toggle" },
+	},
 	D = {
 		name = "Debug Adapter Protocol",
 		b = { "<cmd>DapToggleBreakpoint", "Breakpoint" },
@@ -155,7 +159,7 @@ local mappings = {
 			"<cmd>lua vim.diagnostic.open_float()<cr>",
 			"Document Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format Document" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {

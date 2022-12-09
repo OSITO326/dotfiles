@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["DAPInstall.nvim"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
-    url = "https://github.com/Pocco81/DAPInstall.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -98,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
@@ -149,20 +149,35 @@ _G.packer_plugins = {
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
-  },
-  ["nlsp-settings.nvim"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
-    url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -184,35 +199,10 @@ _G.packer_plugins = {
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-go"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
-    url = "https://github.com/leoluz/nvim-dap-go"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-markdown-preview"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-markdown-preview",
-    url = "https://github.com/davidgranstrom/nvim-markdown-preview"
   },
   ["nvim-notify"] = {
     loaded = true,
@@ -319,35 +309,15 @@ _G.packer_plugins = {
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["vim-blade"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-blade",
-    url = "https://github.com/jwalton512/vim-blade"
-  },
-  ["vim-composer"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-composer",
-    url = "https://github.com/noahfrederick/vim-composer"
-  },
-  ["vim-dispatch"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-dispatch",
-    url = "https://github.com/tpope/vim-dispatch"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-laravel"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-laravel",
-    url = "https://github.com/noahfrederick/vim-laravel"
-  },
-  ["vim-projectionist"] = {
-    loaded = true,
-    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-projectionist",
-    url = "https://github.com/tpope/vim-projectionist"
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vscode-es7-javascript-react-snippets"] = {
     loaded = true,

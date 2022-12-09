@@ -20,6 +20,7 @@ set.clipboard = "unnamedplus"
 set.showcmd = true
 set.ruler = true
 set.cursorline = true
+set.encoding = "utf-8"
 set.fileencoding = "utf-8"
 set.showmatch = true
 set.sw = 2
