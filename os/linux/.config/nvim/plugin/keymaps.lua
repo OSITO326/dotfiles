@@ -17,36 +17,32 @@ keymap("n", "<leader>Q", ":q!<CR>", opts)
 --   term_mode = "t",
 --   command_mode = "c",
 
---> Prettier
---local api = nvim.api.nvim_set_keymap
---api.("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+-- Visual Mode --
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Normal Mode --
---> navigation
---keymap("n", "f", "l", opts)
---keymap("n", "d", "h", opts)
---> Split resize
+--> Split
 keymap("n", "<leader>>", "10<C-w>>", opts)
 keymap("n", "<leader><", "10<C-w><", opts)
+
 --> Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+
 --> Change truncate window
 keymap("n", "<leader>h<leader>", "<C-w>H", opts)
 keymap("n", "<leader>j<leader>", "<C-w>J", opts)
 keymap("n", "<leader>k<leader>", "<C-w>K", opts)
 keymap("n", "<leader>l<leader>", "<C-w>L", opts)
 
---keymap("n", "<A-h>", "<C-w>H", opts)
---keymap("n", "<A-j>", "<C-w>J", opts)
---keymap("n", "<A-k>", "<C-w>K", opts)
---keymap("n", "<A-l>", "<C-w>L", opts)
-
 --> Scrolling
-keymap("n", "<S-j>", "10<C-e>", opts)
-keymap("n", "<S-k>", "10<C-y>", opts)
+--keymap("n", "<S-j>", "10<C-e>", opts)
+--keymap("n", "<S-k>", "10<C-y>", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 
 --> Run Node on current file
 keymap("n", "<leader>x", ":!node %<CR>", opts)
@@ -79,29 +75,37 @@ keymap("n", "<leader>ga", ":Git add .<CR>", opts)
 keymap("n", "<leader>gc", ":Git commit<CR>", opts)
 keymap("n", "<leader>gi", ":Git init<CR>", opts)
 
-
 --> NerdTreeLua
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 --> Markdown Preview
 keymap("n", "<leader>m", ":MarkdownPreview<CR>", opts)
 
---> DAP Debugger
-keymap("n", "<leader>dbp", ":lua require('dap').toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>dd", ":lua require('dap').continue()<CR>", opts)
-keymap("n", "<leader>de", ":lua require('osito.dap.dap-fn').stop()<CR>", opts)
+--keymap("n", "<C-k>", "<cmd>cnext<CR>zz", opts)
+--keymap("n", "<C-j>", "<cmd>cprev<CR>zz", opts)
+keymap("n", "<leader>k", "<cmd>lnext<CR>zz", opts)
+keymap("n", "<leader>j", "<cmd>lprev<CR>zz", opts)
+
+-- Insert Mode --
+--> Press fast jk to enter NORMAL mode
+keymap("i", "jk", "<ESC>", opts)
+
+-- DAP --
+keymap("n", "<leader>dh", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>dl", ":lua require('dap').step_into()<CR>", opts)
 keymap("n", "<leader>dj", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<leader>dk", ":lua require('dap').step_out()<CR>", opts)
-keymap("n", "<leader>dt", ":lua require('dap').repl.toggle()<CR>", opts)
-keymap("n", "<leader>ds", ":lua require('osito.dap.dap-fn').scopes()<CR>", opts)
-keymap("n", "<leader>da", ":lua require('osito.dap.dap-fn').fullscopes()<CR>", opts)
-keymap("n", "<leader>dbl", ":lua require('dap').list_breakpoints()<CR>", opts)
-keymap("n", "<leader>dbc", ":lua require('dap').clear_breakpoints()<CR>", opts)
-keymap("n", "<leader>dc", ":lua require('dap').run_to_cursor()<CR>", opts)
-keymap("n", "<leader>dk", ":lua require('dapui').eval()<CR>", opts)
-keymap("n", "<leader>dtt", ":lua require('dap-go').debug_test()<CR>", opts)
-
--- Insert --
--- Press jk fast to enter NORMAL mode
-keymap("i", "jk", "<ESC>", opts)
+keymap("n", "<leader>dd", ":lua require('dap').continue()<CR>", opts)
+keymap("n", "<leader>dl", ":lua require('dap').run_last()<CR>", opts)
+keymap("n", "<leader>dr", ":lua require('dap').repl.open({}, 'vsplit')<CR><C-w>", opts)
+keymap(
+	"n",
+	"<leader>di",
+	":lua require('dap.ui.variables'.hover(function () return vim.fn.expand('<cexpr>') end)<CR>",
+	opts
+)
+keymap("n", "<leader>di", ":lua require('dap.ui.variables').visual_hover()<CR>", opts)
+keymap("n", "<leader>d?", ":lua require('dap.ui.variables').scopes()<CR>", opts)
+keymap("n", "<leader>de", ":lua require('dap').set_exception_breakpoints({'all'})<CR>", opts)
+keymap("n", "<leader>da", ":lua require('debugHelper').attach()<CR>", opts)
+--keymap("n", "<leader>", ":lua require'dap'.", opts)

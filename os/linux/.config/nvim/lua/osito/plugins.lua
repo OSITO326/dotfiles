@@ -17,10 +17,10 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
@@ -43,40 +43,48 @@ return packer.startup(function(use)
 	-- My plugins here
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
 	use({ "lewis6991/impatient.nvim" })
+	use({ "rcarriga/nvim-notify" })
 
-	--> Colorscheme
-	use({ "themercorp/themer.lua" }) -- Themes management
-	--> Status bar
-	use({ "nvim-lualine/lualine.nvim" })
 	--> IDE
-	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-	use({ "lukas-reineke/indent-blankline.nvim" })
-	--use "romgrk/barbar.nvim" -- Bar tabs
-	use({ "akinsho/toggleterm.nvim" })
-	--use "christoomey/vim-tmux-navigator" -- tmux navigator
-	use({ "folke/which-key.nvim" }) -- Keybindings
-	use({ "ThePrimeagen/harpoon" }) -- Harpoon
+	use({ "kyazdani42/nvim-web-devicons" })
+	use({ "kyazdani42/nvim-tree.lua" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/playground" })
+	use({ "nvim-treesitter/nvim-treesitter-refactor" })
+	use({ "p00f/nvim-ts-rainbow" })
+	use({ "windwp/nvim-ts-autotag" }) -- closetag
+	use({ "theprimeagen/harpoon" })
+	use({ "windwp/nvim-autopairs" })
+	use({ "mbbill/undotree" })
+	use({ "tpope/vim-fugitive" })
+	use({ "lewis6991/gitsigns.nvim" })
 	use({ "preservim/nerdcommenter" })
 	use({ "phaazon/hop.nvim" })
 	use({ "norcalli/nvim-colorizer.lua" }) -- css
+	use({ "lukas-reineke/indent-blankline.nvim" })
+	use({ "akinsho/toggleterm.nvim" })
+	use({ "kylechui/nvim-surround" })
+	use({ "akinsho/flutter-tools.nvim" }) -- Flutter
+	use({ "folke/which-key.nvim" }) -- Keybindings
+	use({ "folke/zen-mode.nvim" })
+	use({ "ray-x/lsp_signature.nvim" }) -- lsp_signature
+	use({ "onsails/diaglist.nvim" }) -- diagnostics
+	use({ "Tastyep/structlog.nvim" })
 
-	-- Markdown
-	--use { "davidgranstrom/nvim-markdown-preview", commit = "3d6f941beb223b23122973d077522e9e2ee33068"} -- Markdown preview
+	--> Colorscheme
+	use({ "themercorp/themer.lua" }) -- Themes management
+	use({ "nvim-lualine/lualine.nvim" }) -- statusbar
+
+	--> DAP
 	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
+		"mfussenegger/nvim-dap",
+		requires = {
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
+			"leoluz/nvim-dap-go",
+			--"mxsdev/nvim-dap-vscode-js",
+		},
 	})
-	--> Surround
-	use({ "kylechui/nvim-surround", commit="030a4373aea4354d28052108650bf4e916d3283a" }) -- Surround
-	--> NerdTreeLua
-	use({ "kyazdani42/nvim-web-devicons" })
-	use({ "kyazdani42/nvim-tree.lua" })
-	--> Git --all -pt
-	use({ "lewis6991/gitsigns.nvim" })
-	use({ "tpope/vim-fugitive" })
-	use({ "rcarriga/nvim-notify" })
 
 	--> FZF
 	use({
@@ -94,48 +102,50 @@ return packer.startup(function(use)
 			},
 			{ "nvim-telescope/telescope-hop.nvim" },
 			{ "nvim-telescope/telescope-media-files.nvim" },
+			{ "nvim-telescope/telescope-dap.nvim" },
 		},
 	})
 
-	--> CMP plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
-
-	--> Snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
-	use({ "dsznajder/vscode-es7-javascript-react-snippets", run = "yarn install --frozen-lockfile && yarn compile" })
-	use({ "onsails/lspkind-nvim" })
-	--use "quangnguyen30192/cmp-nvim-ultisnips"
-
 	--> LSP
-	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
-	use({ "williamboman/mason-lspconfig.nvim" })
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
-  use({ "glepnir/lspsaga.nvim", branch = "main" })
-	use({ "RRethy/vim-illuminate" })
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+			{ "RubixDev/mason-update-all" },
 
-	--> Laravel
-	--use "tpope/vim-dispatch"
-	--use "tpope/vim-projectionist"
-	--use "noahfrederick/vim-composer"
-	--use "noahfrederick/vim-laravel"
-	--use "jwalton512/vim-blade" -- blade files
-	--> Flutter
-	use({ "akinsho/flutter-tools.nvim" })
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
+			{ "hrsh7th/cmp-cmdline" },
 
-	--> Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use({ "nvim-treesitter/nvim-treesitter-refactor" })
-	use({ "p00f/nvim-ts-rainbow" })
-	use({ "windwp/nvim-ts-autotag" }) -- closetag
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+			{
+				"dsznajder/vscode-es7-javascript-react-snippets",
+				run = "yarn install --frozen-lockfile && yarn compile",
+			}, -- snippets JS
 
+			-- for formatters and linters
+			{ "jose-elias-alvarez/null-ls.nvim" },
+			-- null-ls servers lsp
+			{ "jayp0521/mason-null-ls.nvim" },
+		},
+	})
+	--> Markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

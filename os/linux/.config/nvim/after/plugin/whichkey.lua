@@ -3,6 +3,12 @@ if not status_ok then
 	return
 end
 
+local keymap_zen = vim.keymap.set("n", "<leader>zz", function()
+	require("zen-mode").toggle()
+	vim.wo.wrap = false
+	--ColorMyPencils()
+end)
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -80,23 +86,31 @@ local opts = {
 
 local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
+	["w"] = { "<cmd>w!<cr>", "Save" },
 	["p"] = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format Document" },
+	["q"] = { "<cmd>q!<cr>", "Quit" },
+	["u"] = { "<cmd>UndotreeToggle<cr>", "Show Undotree" },
 
 	m = {
 		["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
 		["s"] = { "<cmd>MarkdownPreviewStop<cr>", "Markdown Stop" },
 		["t"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Toggle" },
 	},
-	D = {
+
+	d = {
 		name = "Debug Adapter Protocol",
-		b = { "<cmd>DapToggleBreakpoint", "Breakpoint" },
-		c = { "<cmd>DapContinue<cr>", "Continue" },
-		i = { "<cmd>DapStepInto<cr>", "Step Into" },
-		o = { "<cmd>DapStepOver<cr>", "Step Over" },
-		s = { "<cmd>DapStepOut<cr>", "Step Out" },
-		r = { "<cmd>DapToggleRepl", "Toggle REPL" },
+		d = { "<cmd>DapContinue<cr>", "Continue" },
+		b = { "<cmd>DapToggleBreakpoint<cr>", "Breakpoint" },
+		l = { "<cmd>DapStepInto<cr>", "Step Into" },
+		j = { "<cmd>DapStepOver<cr>", "Step Over" },
+		k = { "<cmd>DapStepOut<cr>", "Step Out" },
+		r = { "<cmd>DapToggleRepl<cr>", "Toggle REPL" },
+	},
+
+	c = {
+		name = "Diaglist",
+		a = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "All Diaglist" },
+		b = { "<cmd>lua require('diaglist').open_buffer_diagnostics()<cr>", "Diaglist Buffer" },
 	},
 
 	f = {
@@ -171,6 +185,7 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		m = { "<cmd>Mason<cr>", "Open Mason" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
@@ -178,6 +193,7 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
+		U = { "<cmd>MasonUpdateAll<cr>", "Update all packages installed on mason" },
 	},
 
 	P = {
@@ -188,6 +204,11 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 		l = { "<cmd>luafile %<cr>", "Source Lua File" },
+	},
+
+	z = {
+		name = "Zen Mode",
+		z = { keymap_zen, "ZenMode" },
 	},
 
 	["<c-w>"] = {
