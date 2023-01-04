@@ -1,6 +1,6 @@
 zimfw() { source /home/osito/.dotfiles/shell/zsh/.zim/zimfw.zsh "${@}" }
 zmodule() { source /home/osito/.dotfiles/shell/zsh/.zim/zimfw.zsh "${@}" }
-typeset -g _zim_fpath=(/home/osito/.dotfiles/shell/zsh/.zim/modules/git-info/functions)
+typeset -gr _zim_fpath=(/home/osito/.dotfiles/shell/zsh/.zim/modules/git-info/functions)
 fpath=(${_zim_fpath} ${fpath})
 autoload -Uz -- coalesce git-action git-info
 source /home/osito/.dotfiles/shell/zsh/.zim/modules/environment/init.zsh

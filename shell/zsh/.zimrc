@@ -5,5 +5,5 @@ zmodule zimfw/input
 zmodule zimfw/completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
-zmodule spaceship-prompt/spaceship-prompt --name spaceship
+zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 #zhighlighters=(main brackets)
