@@ -32,5 +32,5 @@ source $ZSH_REVERSE/reverse_search.zsh
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 
 # fnm
-export PATH=/home/osito/.fnm:$PATH
-eval "`fnm env`"
+  export PATH="/home/osito/.local/share/fnm:$PATH"
+  eval "`fnm env`"
