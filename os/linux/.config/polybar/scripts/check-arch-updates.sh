@@ -2,6 +2,7 @@
 #source https://github.com/x70b1/polybar-scripts
 #source https://github.com/polybar/polybar-scripts
 
+# if now working the command, install the package pacman-contrib
 if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
     updates_arch=0
 fi
