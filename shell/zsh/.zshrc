@@ -15,7 +15,7 @@ fi
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
 setopt +o nomatch
-# setopt autopushd
+setopt autopushd
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
@@ -32,5 +32,5 @@ source $ZSH_REVERSE/reverse_search.zsh
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 
 # fnm
-  export PATH="/home/osito/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+export PATH="/home/osito/.local/share/fnm:$PATH"
+eval "`fnm env`"
