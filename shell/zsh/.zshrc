@@ -34,3 +34,6 @@ source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 # fnm
 export PATH="/home/osito/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
