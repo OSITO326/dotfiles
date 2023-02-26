@@ -27,11 +27,11 @@ nvim_tree.setup({
 	respect_buf_cwd = false, -- new config
 	view = {
 		adaptive_size = false, -- new config
-    width = 30,
+		width = 30,
 		--height = 30,
 		hide_root_folder = false,
 		--side = "left",
-    side = "right",
+		side = "right",
 		preserve_window_proportions = false,
 		number = false,
 		relativenumber = false,
@@ -53,8 +53,8 @@ nvim_tree.setup({
 		highlight_opened_files = "none", -- new config
 		root_folder_modifier = ":~", -- new config
 		indent_markers = {
-      --enable = false,
-      enable = true,
+			--enable = false,
+			enable = true,
 			icons = {
 				corner = "└",
 				edge = "│ ",
@@ -103,8 +103,8 @@ nvim_tree.setup({
 		auto_open = true,
 	},
 	update_focused_file = {
-        enable = true,
-        update_cwd = true,
+		enable = true,
+		update_cwd = true,
 		ignore_list = {},
 	},
 	ignore_ft_on_setup = {

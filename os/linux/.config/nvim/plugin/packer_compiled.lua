@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbecue.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
+    url = "https://github.com/utilyre/barbecue.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -114,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/diaglist.nvim",
     url = "https://github.com/onsails/diaglist.nvim"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
@@ -138,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["icon-picker.nvim"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/icon-picker.nvim",
+    url = "https://github.com/ziontee113/icon-picker.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -238,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-notify"] = {
     loaded = true,
@@ -358,6 +378,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osito/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-dotenv"] = {
+    loaded = true,
+    path = "/home/osito/.local/share/nvim/site/pack/packer/start/vim-dotenv",
+    url = "https://github.com/tpope/vim-dotenv"
   },
   ["vim-fugitive"] = {
     loaded = true,

@@ -47,7 +47,8 @@ return packer.startup(function(use)
 
 	--> IDE
 	use({ "kyazdani42/nvim-web-devicons" })
-	use({ "kyazdani42/nvim-tree.lua" })
+	use({ "kyazdani42/nvim-tree.lua", commit = "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f" })
+	use({ "tpope/vim-dotenv" })
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "nvim-treesitter/playground" })
 	use({ "nvim-treesitter/nvim-treesitter-refactor" })
@@ -70,6 +71,10 @@ return packer.startup(function(use)
 	use({ "ray-x/lsp_signature.nvim" }) -- lsp_signature
 	use({ "onsails/diaglist.nvim" }) -- diagnostics
 	use({ "Tastyep/structlog.nvim" })
+	use({ "utilyre/barbecue.nvim", tag = "*", requires = { "SmiteshP/nvim-navic" } })
+
+	--> Icon picker
+	use({ "stevearc/dressing.nvim", requires = { "ziontee113/icon-picker.nvim" } })
 
 	--> Colorscheme
 	use({ "themercorp/themer.lua" }) -- Themes management

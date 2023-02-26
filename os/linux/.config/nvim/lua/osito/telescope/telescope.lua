@@ -7,11 +7,37 @@ local actions = require("telescope.actions")
 
 telescope.setup({
 	defaults = {
-		--prompt_prefix = "🔍 ",
-		prompt_prefix = "🔎 ",
-		--prompt_prefix = " ",
-		selection_caret = " ",
-		path_display = { "smart" },
+		vimgrep_arguments = {
+			"rg",
+			"-L",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+		},
+		prompt_prefix = "   ",
+		selection_caret = "  ",
+		path_display = { "truncate" },
+		--path_display = { "smart" },
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.87,
+			height = 0.80,
+			preview_cutoff = 120,
+		},
 		mappings = {
 			i = {
 				["<C-n>"] = actions.cycle_history_next,
@@ -45,7 +71,7 @@ telescope.setup({
 				-- IMPORTANT
 				-- either hot-reloaded or `function(prompt_bufnr) telescope.extensions.hop.hop end`
 				--["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
-        ["<C-s>"] = require("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
+				["<C-s>"] = require("telescope").extensions.hop.hop, -- hop.hop_toggle_selection
 			}, -- INSERT MODE
 
 			n = {
@@ -81,18 +107,11 @@ telescope.setup({
 			}, -- NORMAL MODE
 		},
 	},
-	pickers = {
-		find_files = {
-			theme = "dropdown", -- 'dropdown'| 'cursor' | 'ivy' || or use by default just comment find_files {}
-		},
-		-- Default configuration for builtin pickers goes here:
-		-- picker_name = {
-		--   picker_config_key = value,
-		--   ...
-		-- }
-		-- Now the picker_config_key will be applied every time you call this
-		-- builtin picker
-	},
+	--pickers = {
+	--find_files = {
+	--theme = "dropdown", -- 'dropdown'| 'cursor' | 'ivy' || or use by default just comment find_files {}
+	--},
+	--},
 	extensions = {
 		fzy_native = {
 			override_generic_sorter = true,

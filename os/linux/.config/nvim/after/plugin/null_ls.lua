@@ -36,6 +36,7 @@ mason_null_ls.setup({
 		"black",
 		"djlint",
 		"eslint_d",
+		"flake8",
 		"prettier",
 		"stylua",
 		"sql_formatter",
