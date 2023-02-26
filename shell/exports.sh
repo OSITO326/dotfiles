@@ -41,6 +41,7 @@ export path=(
   "/sbin"
   "$HOME/.npm-global/bin"
   "$HOME/.local/bin" # python pip packages
+  "/opt/flutter/bin" # flutter
 )
 
 #Calcurse editor and visual NVIM

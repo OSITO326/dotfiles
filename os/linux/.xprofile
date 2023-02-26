@@ -1,37 +1,16 @@
-#for WM DE replace this lines if you only use windows manager like desktop enviroment
-#resolution with HDMI connect
-#xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate normal --output VIRTUAL1 --off &
-#fake resolution without HDMI 
-#xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI1 --off --rotate normal --output VIRTUAL1 --off &
 # Screens
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
-if [ "$hdmi" = "HDMI-1" ]; then
-    xrandr --output eDP-1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off &
+if [ "$hdmi" = "HDMI1" ]; then
+    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --rate 120 --output VIRTUAL1 --off &
 else
-    xrandr --output eDP-1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output VIRTUAL1 --off &
+    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --off --output VIRTUAL1 --off &
 fi
 
 #BSPWM
 #if [[ $XDG_SESSION_DESKTOP = bspwm ]]; then
  #   exec bspwm
 #fi
-if echo $XDG_SESSION_DESKTOP=bspwm
+if echo [[ $XDG_SESSION_DESKTOP=bspwm ]]; then
     exec bspwm
 fi
-
-
-# Wallpaper with feh
-#sh ~/.fehbg &
-# Composer
-#picom &
-# Network
-#nm-applet &
-# Bluetooth
-#blueman-applet &
-# Keyboard layout
-#setxkbmap -layout us -variant altgr-intl &
-#setxkbmap -layout us -variant dvp & -> add this line in autostart qtile
-# Automount Devices
-#udiskie -t &
-
