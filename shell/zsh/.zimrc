@@ -5,8 +5,9 @@ zmodule zimfw/input
 zmodule zimfw/completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
-zmodule romkatv/powerlevel10k --use degit
+#zmodule romkatv/powerlevel10k --use degit
+zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
+zmodule prompt-pwd
 #zmodule minimal
-#zmodule prompt-pwd
 #zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 #zhighlighters=(main brackets)
