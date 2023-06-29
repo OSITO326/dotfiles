@@ -5,10 +5,10 @@ end
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint" },
-	symbols = { error = " ", warn = " ", info = " ", hint = " " },
-	--sections = { "error", "warn", "hint" },
-	--symbols = { error = " ", warn = " ", hint= " "},
+	--sections = { "error", "warn", "info", "hint" },
+	--symbols = { error = " ", warn = " ", info = " ", hint = " " },
+	sections = { "error", "warn", "hint" },
+	symbols = { error = " ", warn = " ", hint = " " },
 	--symbols = { error = " ", warn = " ", info = " ", hint= " "},
 	colored = true,
 	update_in_insert = false,
@@ -44,7 +44,9 @@ local branch = {
 
 local location = {
 	"location",
-	padding = 1,
+	padding = 0.5,
+	--left_padding = 0,
+	--right_padding = 0.5,
 }
 
 local filename = {
@@ -75,7 +77,7 @@ local progress = {
 --local progress = function()
 --local current_line = vim.fn.line(".")
 --local total_lines = vim.fn.line("$")
---local chars = { "🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 " }
+--local chars = { "🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 ", "🌑 "}
 --local line_ratio = current_line / total_lines
 --local index = math.ceil(line_ratio * #chars)
 --return chars[index]
@@ -105,20 +107,20 @@ return {
 				always_divide_middle = true,
 			},
 			sections = {
-				lualine_a = { mode },
+				lualine_a = { "mode" },
 				lualine_b = { branch, diagnostics },
 				lualine_c = { filename },
 				-- lualine_x = { "encoding", "fileformat", "filetype" },
 				--lualine_x = { diff, spaces, filetype, "encoding" },--
-				lualine_x = { diff, spaces, filetype, "encoding", "lsp_progress" }, --
-				lualine_y = { location },
-				lualine_z = { progress },
+				lualine_x = { diff, filetype },
+				lualine_y = { progress },
+				lualine_z = { location },
 			},
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
 				lualine_c = { "filename" },
-				lualine_x = { "location" },
+				lualine_x = { location },
 				lualine_y = {},
 				lualine_z = {},
 			},

@@ -1,13 +1,17 @@
 return {
 	"utilyre/barbecue.nvim",
-	dependencies = { "SmiteshP/nvim-navic" },
+	dependencies = {
+		"SmiteshP/nvim-navic",
+	},
 	version = "*",
 	config = function()
 		require("barbecue").setup({
-			show_dirname = false,
+			--show_dirname = false,
+			show_dirname = true,
 			symbols = {
 				---Modification indicator.
-				modified = "●",
+				--modified = "●",
+				modified = "",
 
 				---@type string
 				ellipsis = "…",

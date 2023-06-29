@@ -1,12 +1,22 @@
-local function open_nvim_tree()
-	-- always open the tree
-	require("nvim-tree.api").tree.open()
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+local function on_attach(bufnr)
+	local api = require("nvim-tree.api")
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	-- Default mappings. Feel free to modify or remove as you wish.
+	--
+	-- BEGIN_DEFAULT_ON_ATTACH
+	vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+	vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: Horizontal Split"))
 end
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	tag = "nightly",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
@@ -17,16 +27,14 @@ return {
 			hijack_cursor = false,
 			hijack_netrw = true,
 			hijack_unnamed_buffer_when_opening = false,
-			ignore_buffer_on_setup = false,
-			open_on_setup = false,
-			open_on_setup_file = false,
 			sort_by = "name",
 			root_dirs = {},
 			prefer_startup_root = false,
 			sync_root_with_cwd = false,
 			reload_on_bufenter = false,
 			respect_buf_cwd = false,
-			on_attach = "default",
+			-- on_attach = "default",
+			on_attach = on_attach(),
 			remove_keymaps = false,
 			select_prompts = false,
 			view = {
@@ -34,7 +42,7 @@ return {
 				cursorline = true,
 				debounce_delay = 15,
 				width = 30,
-				hide_root_folder = false,
+				-- hide_root_folder = false,
 				side = "right",
 				preserve_window_proportions = false,
 				number = false,
@@ -66,10 +74,10 @@ return {
 				full_name = false,
 				highlight_opened_files = "none",
 				highlight_modified = "none",
-				root_folder_label = ":~:s?$?/..?",
+				-- root_folder_label = ":~:s?$?/..?",
+				root_folder_label = false,
 				indent_width = 2,
 				indent_markers = {
-					--enable = false,
 					enable = true,
 					inline_arrows = true,
 					icons = {
@@ -96,7 +104,7 @@ return {
 					glyphs = {
 						default = "",
 						symlink = "",
-						bookmark = "",
+						bookmark = "󰆤",
 						modified = "●",
 						folder = {
 							arrow_closed = "",
@@ -127,13 +135,10 @@ return {
 				auto_open = true,
 			},
 			update_focused_file = {
-				--enable = false,
-				--update_root = false,
-				enable = true,
-				update_root = true,
+				enable = false,
+				update_root = false,
 				ignore_list = {},
 			},
-			--ignore_ft_on_setup = {},
 			system_open = {
 				cmd = "",
 				args = {},
@@ -171,6 +176,7 @@ return {
 				ignore = true,
 				show_on_dirs = true,
 				show_on_open_dirs = true,
+				disable_for_dirs = {},
 				timeout = 400,
 			},
 			modified = {
@@ -231,6 +237,7 @@ return {
 			},
 			notify = {
 				threshold = vim.log.levels.INFO,
+				absolute_path = true,
 			},
 			ui = {
 				confirm = {
@@ -238,6 +245,7 @@ return {
 					trash = true,
 				},
 			},
+			experimental = {},
 			log = {
 				enable = false,
 				truncate = false,

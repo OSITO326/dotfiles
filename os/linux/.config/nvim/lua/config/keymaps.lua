@@ -22,6 +22,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --> Split
 keymap("n", "<leader>>", "10<C-w>>", opts)
 keymap("n", "<leader><", "10<C-w><", opts)
+--> Split window
+keymap("n", "<leader>vs", ":vsplit<cr>", opts)
+keymap("n", "<leader>xs", ":split<cr>", opts)
 
 --> Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

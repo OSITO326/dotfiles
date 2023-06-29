@@ -4,7 +4,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("themer").setup({
-			colorscheme = "gruvbox_darker",
+			colorscheme = "onedark",
 			styles = {
 				["function"] = { style = "bold" },
 				functionbuiltin = { style = "italic" },

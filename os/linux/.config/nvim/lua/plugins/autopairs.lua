@@ -1,4 +1,3 @@
---corregir
 return {
 	"windwp/nvim-autopairs",
 	config = function()

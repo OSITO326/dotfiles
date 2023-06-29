@@ -17,6 +17,7 @@ end
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+local code_actions = null_ls.builtins.code_actions -- to setup code actions
 
 -- mason update all
 -- Events message update all lsp servers mason installed
@@ -33,13 +34,23 @@ mason_update_all.setup({
 -- configure mason_null_ls
 mason_null_ls.setup({
 	ensure_installed = {
-		"black",
+		-- Linters
 		"djlint",
 		"eslint_d",
 		"flake8",
+		"phpstan",
+		-- Formatters
+		"black",
+		"blade_formatter",
 		"prettier",
-		"stylua",
+		"shfmt",
 		"sql_formatter",
+		"stylua",
+		"phpcsfixer",
+		-- DAP
+		"chrome-debug-adapter",
+		"debugpy",
+		"node-debug2-adapter",
 	},
 	automatic_installation = true,
 })
@@ -94,8 +105,13 @@ null_ls.setup({
 			extra_args = { "--single-quote", "--jsx-single-quote" },
 		}), -- formatting JS/TS (install -> npm i -g prettier)
 		formatting.black.with({ extra_args = { "--fast" } }), -- format python (install -> pip3 install black)
-		diagnostics.flake8.with({ extra_args = { "--max-line-length=160" } }), -- diagnostics pthon (install -> pip3 install flake8)
 		formatting.djlint.with({ extra_args = { "$FILENAME", "--reformat", "--lint" } }), -- formatting {django, jinja.html, htmldjando} (install -> pip3 install djlint or npm i -g djlint)
 		formatting.djhtml.with({ extra_args = { "-t=2" } }), --formatting {django, jinja.html, htmldjango} (install -> pip install djhtml)
+		formatting.blade_formatter.with({ extra_args = { "-w", "$FILENAME" } }), --formatting blade files
+		formatting.sql_formatter.with({ extra_args = { "sql-formatter" } }),
+		formatting.phpcsfixer.with({ extra_args = { "--no-interaction", "--quiet", "fix", "$FILENAME" } }), --formation php files
+		diagnostics.phpstan.with({ extra_args = { "analyze", "--error-format", "json", "--no-progress", "$FILENAME" } }),
+		diagnostics.flake8.with({ extra_args = { "--max-line-length=160" } }), -- diagnostics pthon (install -> pip3 install flake8)
+		code_actions.eslint.with({ "-f", "json", "--stdin", "--stdin-filename", "$FILENAME" }),
 	},
 })
