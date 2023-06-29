@@ -42,6 +42,7 @@ export path=(
   "$HOME/.npm-global/bin"
   "$HOME/.local/bin" # python pip packages
   "/opt/flutter/bin" # flutter
+  "$HOME/.config/composer/vendor/bin/" # composer path
 )
 
 #Calcurse editor and visual NVIM
