@@ -5,43 +5,38 @@
 # terminal emulator
 super + Return
   kitty
-	##alacritty
-# Redshift
-super + r
-  redshift -O 5400 -g 0.8
-	#redshift -O 5400
-super + shift + r
-  redshift -x -g 0.8
+
 #----------PROGRAM LAUNCHERS----------
 # Rofi Launcher
 super + @space
-  $HOME/.config/rofi/theme/launcher/launcher.sh # Custom script
-  #rofi -show drun
-  #rofi-launcher # with custom script
+  rofi -show drun \
+  -theme "$HOME/.config/rofi/theme/launcher/style-1.rasi"
+
 # Rofi Emoji
 super + period
-  $HOME/.config/rofi/theme/launcher/launcher-emoji.sh # Custom script
-  #rofi -modi emoji -show emoji
-  #rofi-emoji # with custom script
+  rofi \
+  -modi emoji -show emoji \
+  -theme "$HOME/.config/rofi/theme/launcher/style-1.rasi"
+
+# Rofi Filebrowser
+super + shift + e
+  rofi \
+  -modi filebrowser -show filebrowser \
+  -theme "$HOME/.config/rofi/theme/launcher/style-1.rasi"
+
 # Rofi Clipboard
 super + v
-  $HOME/.config/rofi/theme/launcher/launcher-clipboard.sh # Custom script
-  #rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-  #rofi-clipboard # with custom script
+  rofi \
+  -modi "clipboard:greenclip print" \
+  -show clipboard -run-command '{cmd}' \
+  -theme "$HOME/.config/rofi/theme/launcher/style-1.rasi"
+
 # Rofi PowerMenu
 super + shift + p
-  $HOME/.config/rofi/theme/powermenu/style-1/powermenu.sh # Custom script
-	#rofi -show power-menu -modi "power-menu:/bin/rofi-power-menu --choices=shutdown/reboot --confirm=shutdown/reboot"
+    rofi-powermenu # the script copy on /bin/
 # Flameshot
 Print
 	flameshot gui
-# Maim
-#Screenshot Fullscreen
-#Print
-	#maim_fullscreen
-#Screenshot Area
-shift + Print
-	maim_fullscreen
 # Betterlockscreen
 super + x
 	betterlockscreen -l
@@ -54,6 +49,9 @@ super + e
 #Browser
 super + b
 	firefox
+#Spotify
+super + m
+  spotify
 #VSCode
 super + c
 	code
@@ -66,9 +64,6 @@ super + i
 #GPick ColorPicker/gcolor3
 super + p
   gpick
-#Spotify Adblock
-super + m
-	spotify_adblock
 #Simplenote
 super + n
 	simplenote
@@ -93,9 +88,9 @@ super + shift + comma
 	changevolume down
 # Brightness
 XF86MonBrightnessUp
-	changebrightness up
+    changebrightness up
 XF86MonBrightnessDown
-	changebrightness down
+    changebrightness down
 # Brightness-alt
 super + shift + equal
 	changebrightness up
