@@ -1,10 +1,15 @@
 # Screens
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
-if [ "$hdmi" = "HDMI1" ]; then
-    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --rate 120 --output VIRTUAL1 --off &
+if [ "$hdmi" = "HDMI-1" ]; then
+  # xrandr --output eDP-1 --primary ----scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal &
+  xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1366x0 --rotate normal &
+  #
+  # xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --rate 120 --output VIRTUAL1 --off &
 else
-    xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --off --output VIRTUAL1 --off &
+    # xrandr --output eDP-1 --primary ----scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off &
+      xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off &
+  # xrandr --output eDP1 --primary --scale 1.4055636869x1.40625 --panning 1920x1080 --pos 0x0 --rotate normal --rate 60 --output HDMI1 --off --output VIRTUAL1 --off &
 fi
 
 #BSPWM
