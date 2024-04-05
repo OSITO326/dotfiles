@@ -9,10 +9,12 @@ alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
 
 # Git
-alias gaa="git add -A"
-alias gcm="git commit -m"
+alias gga="git add -A"
+alias ggc="git commit -m"
 alias gst="git status"
-alias gpl="git pull"
+alias gps="git push"
+alias gpsf="git push --force"
+alias ggp="git pull"
 alias gc="git clone"
 alias gb="git branch"
 alias gco="git checkout"
@@ -41,7 +43,7 @@ alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-#alias lt='ls --tree'
+alias lt='ls --tree'
 
 #Zathura
 alias z='zathura'

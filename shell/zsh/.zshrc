@@ -37,3 +37,9 @@ eval "`fnm env`"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+  SPACESHIP_PROMPT_ASYNC=false
+  SPACHESHIP_PROMPT_SEPARATE_LINE=false
+  SPACESHIP_CHAR_SYMBOL=""
+fi
