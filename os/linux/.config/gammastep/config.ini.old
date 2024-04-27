@@ -1,0 +1,16 @@
+; Global settings
+[general]
+location-provider=manual
+adjustment-method=randr
+temp-day=6500
+temp-night=4200
+gamma=0.8
+fade=1
+
+[manual]
+lat=-17.3822
+lon=-66.1518
+
+[randr]
+screen=0
+screen=1

@@ -1,0 +1,17 @@
+---
+"ai_assistant_panel:focus_terminal_input": none
+"terminal:focus_input": none
+"pane_group:navigate_down": ctrl-shift-J
+"editor_view:select_previous_command": none
+"workspace:activate_next_tab": alt-l
+"pane_group:navigate_up": ctrl-shift-K
+"terminal:clear_blocks": none
+"workspace:new_tab": alt-n
+"notebookview:focus_terminal_input": none
+"editor_view:select_next_command": none
+"workspace:rename_active_tab": ctrl-alt-r
+"terminal:select_next_block": none
+"terminal:select_previous_block": none
+"pane_group:navigate_left": ctrl-shift-H
+"pane_group:navigate_right": ctrl-shift-L
+"workspace:activate_prev_tab": alt-h

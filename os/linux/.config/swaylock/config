@@ -1,0 +1,44 @@
+# URL: https://www.reddit.com/r/swaywm/comments/mtc11k/swaylock_trying_to_have_a_somewhat_nice_locker/
+ignore-empty-password
+font="JetBrainsMono Nerd Font Mono"
+
+clock
+timestr=%R
+datestr=%A, %e de %B
+
+# Add current screentshot as wallpaper
+# screenshots
+
+# Add an image as a background
+image=~/Pictures/Wallpapers/RickAndMorty4.jpg
+
+# Fade in time
+fade-in=1
+
+# Effect for background
+# effect-blur=20x6
+effect-greyscale
+# effect-pixelate=5
+
+# Show/Hide indicator circle
+indicator
+
+# smaller indicator
+# indicaror-size=200
+
+# bigger indicator
+indicator-size=300
+
+indicator-thickness=20
+indicator-caps-lock
+
+# Define all colors
+
+key-hl-color=d23c3dff
+separator-color=00000000
+
+inside-color=00000033
+inside-clear-color=ffffff00
+inside-caps-lock-color=ffffff00
+inside-ver-color=ffffff00
+inside-wrong-color=ff000000
