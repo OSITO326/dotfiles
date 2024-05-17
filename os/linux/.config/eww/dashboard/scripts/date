@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Get date AM PM
+get_ampm() {
+  hour=$(date +%H)
+  if [ "$hour" -lt 12 ]; then
+    echo "AM"
+  else
+    echo "PM"
+  fi
+}
+
+# Get full weekday name
+get_day() {
+  date +%A | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}'
+  # date +%A
+}
+
+# Get hour (01..12)
+get_hour() {
+  date +%I
+}
+
+# Get minute (00..59)
+get_minute() {
+  date +%M
+}
+
+
+case $1 in
+  --ampm)
+    get_ampm
+    ;;
+  --day)
+    get_day
+    ;;
+  --hour)
+    get_hour
+    ;;
+  --minute)
+    get_minute
+    ;;
+esac

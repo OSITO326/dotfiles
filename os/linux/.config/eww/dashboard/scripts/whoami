@@ -1,0 +1,13 @@
+#!/bin/bash
+
+get_user() {
+  username=$(whoami)
+  formatted_username="@$(echo "$username" | tr '[:lower:]' '[:upper:]')_326"
+  echo "$formatted_username"
+}
+
+case $1 in
+  --user)
+    get_user
+    ;;
+esac

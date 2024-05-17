@@ -53,4 +53,11 @@ export EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE="kvantum"
 
+# export XDG_SESSION_TYPE=wayland
+# export MOZ_ENABLE_WAYLAND=1
+# export GTK_THEME_VARIANT=dark
+# export QT_QPA_PLATFORM=wayland-egl
+# export QT_SCALE_FACTOR=1
+# export QT_QPA_PLATFORM=xcb
+
 export SUDO_PROMPT="passwd: "

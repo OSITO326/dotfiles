@@ -1,0 +1,1 @@
+*/10 * * * * node $HOME/.config/eww/dashboard/script/weather.js --savedata

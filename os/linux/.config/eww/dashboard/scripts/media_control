@@ -1,0 +1,199 @@
+#!/bin/sh
+
+# Selects player based on if they're playing or if they provide a cover image
+# Note: Being played takes priority
+select_player () {
+	playingplayer=""
+	coverplayer=""
+	totalplayer=""
+	playerctl -l 2> /dev/null | while read -r player;
+	do
+		art=`playerctl --player="$player" metadata mpris:artUrl 2> /dev/null`
+		status=`playerctl --player="$player" status 2> /dev/null`
+		[[ $status == "Playing" ]] && playingplayer="$player"
+		[[ $art != "" ]] && coverplayer="$player"
+		[[ $status == "Playing" && $art != "" ]] && totalplayer="$player"
+		[[ ! -z $coverplayer ]] && player="$coverplayer"
+		[[ ! -z $playingplayer ]] && player="$playingplayer"
+		[[ ! -z $totalplayer ]] && player="$totalplayer"
+		# Check if the player is Spotify and fetch cover URL
+		if [[ "$player" == *"spotify"* ]]; then
+			cover_url=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep -oP 'artUrl:\s*".*"' | cut -d '"' -f2)
+			[[ ! -z $cover_url ]] && art=$cover_url
+		fi
+		echo "$player"
+	done;
+}
+
+# Get general info 
+eww="eww -c $HOME/.config/eww/dashboard"
+player=`select_player | tail -1`
+status=`playerctl --player="$player" status 2> /dev/null`
+[[ $status == "" ]] && exit
+
+# Toggle play pause and update status accordingly
+toggle () {
+    [[ $status == "Playing" ]] && $eww update media_status=""|| $eww update media_status=""
+    playerctl --player="$player" play-pause 2> /dev/null
+}
+
+# Get Artist Name
+get_artist() {
+    artist=`playerctl --player="$player" metadata artist 2> /dev/null`
+    [[ $artist == "" ]] && artist="Unknown Artist"
+    echo "$artist"
+}
+
+# Get Song Name
+get_song() {
+    song=`playerctl --player="$player" metadata title 2> /dev/null`
+    [[ $song == "" ]] && song="Unknown Song"
+    echo "$song"
+}
+
+# Status of the player
+get_status() {
+  status=`playerctl --player="$player" status 2> /dev/null`
+  if [[ $status == "Playing" ]]; then
+    echo "󰐌"
+  else
+    echo "󰏥"
+  fi
+}
+
+# Get current time of the track
+get_ctime() {
+  ctime=$(playerctl --player="$player" position 2> /dev/null)
+  if [[ ! -z "$ctime" ]]; then
+      ctime_minutes=$(awk "BEGIN { printf \"%.0f\", $ctime / 60 }")
+      ctime_seconds=$(awk "BEGIN { printf \"%.0f\", $ctime % 60 }")
+      printf "%d:%02d\n" $ctime_minutes $ctime_seconds
+  else
+      echo "0:00"
+  fi
+}
+
+# Get time of the current track
+get_time() {
+  time=$(playerctl --player="$player" metadata mpris:length 2> /dev/null)
+  if [[ ! -z "$time" ]]; then
+      time_seconds=$((time / 1000000))
+      time_minutes=$((time_seconds / 60))
+      time_seconds=$((time_seconds % 60))
+      printf "%d:%02d\n" $time_minutes $time_seconds
+  else
+      echo "0:00"
+  fi
+}
+
+# Get total time of the track
+get_ttime () {
+  ttime=$(playerctl --player="$player" metadata mpris:length 2> /dev/null)
+  if [[ ! -z "$ttime" ]]; then
+      ttime_seconds=$((ttime / 1000000))
+      ttime_minutes=$((ttime_seconds / 60))
+      ttime_seconds=$((ttime_seconds % 60))
+      printf "%d:%02d\n" $ttime_minutes $ttime_seconds
+  else
+      echo "0:00"
+  fi
+}
+
+# Get Cover Image
+get_cover_spotify() {
+  player_status=$(playerctl status 2> /dev/null)
+  if [[ "$player_status" == "No players found" ]]; then
+    echo "images/music.png"
+  else
+    cover=$(playerctl --player="$player" metadata mpris:artUrl 2> /dev/null)
+    if [[ ! -z "$cover" ]]; then
+      echo "$cover"
+    else
+      echo "https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" || "images/music.png"
+    fi
+  fi
+}
+
+# Seek to an specific time 
+seek () {
+  local position="$1"
+  playerctl --player="$player" seek "$position" 2>/dev/null
+}
+
+# seek () {
+#     seekt="$1"    
+#     position=`playerctl --player=$player position 2> /dev/null`
+#     if [[ $? -eq 0 ]]
+#     then
+#         playerctl --player=$player position $seekt 2> /dev/null
+#     fi;
+# }
+
+# Rewind or fast forward 5 seconds
+move () {
+	move="$1"             
+    startpos=`playerctl --player=$player position 2> /dev/null`	
+	length=`playerctl --player="$player" metadata mpris:length 2> /dev/null`
+	length=`python -c "print($length/1000000)"`
+	if [[ $? -eq 0 ]]
+	then
+		endpos=`python -c "print(min($length, max(0, $startpos $move)))"`
+		playerctl --player=$player position $endpos 2> /dev/null
+	fi;
+}
+
+# if player is not found
+notfound () {
+  status=$(playerctl status 2> /dev/null)
+  if [[ ! -z "$status" ]]; then
+    echo "$status"
+  else
+    echo "https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" || "images/music.png"
+  fi
+
+  cover=$(playerctl --player="$player" metadata mpris:artUrl 2> /dev/null)
+  if [[ ! -z "$cover" ]]; then
+    echo "$cover"
+  else
+    echo "https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" || "images/music.png"
+  fi
+}
+
+case $1 in
+    --toggle )
+        toggle
+        ;;
+	--seek )
+		[[ $3 == "true" ]] && seek $2
+		;;
+	--move )
+		move $2
+		;;
+	--next )
+		playerctl --player=$player next 2> /dev/null
+		;;
+	--prev )
+		playerctl --player=$player previous 2> /dev/null
+		;;
+	--artist )
+	  get_artist "$player"
+	  ;;
+	--song )
+	  get_song "$player"
+	  ;;
+	--status )
+	  get_status "$player"
+	  ;;
+	--ctime )
+	  get_ctime "$player"
+	  ;;
+	--time )
+	  get_time "$player"
+	  ;;
+	--ttime )
+	  get_ttime "$player"
+	  ;;
+	--cover )
+	  get_cover_spotify "$player"
+	  ;;
+esac
