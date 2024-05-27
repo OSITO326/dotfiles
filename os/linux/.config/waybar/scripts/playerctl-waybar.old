@@ -1,0 +1,137 @@
+#!/usr/bin/python3
+# Stolen from:
+#  https://github.com/kaansenol5/dotfiles/blob/master/waybar/scripts/mediaplayer.py
+# TODO:
+#  https://gitlab.com/somini/dotfiles.old/-/blob/master/WindowManager_i3/.i3/py3status/player_metadata.py
+# Simpler alternative::
+# `playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F`
+# import argparse
+import logging
+import sys
+import signal
+import json
+
+from gi import require_version
+require_version("Playerctl", "2.0")
+from gi.repository import Playerctl, GLib  # noqa: E402
+
+logger = logging.getLogger(__name__)
+
+
+SPECIAL_ARTISTS = {
+    'Digitally Imported': 'DI',
+    'PsyRadio': 'Psy',
+}
+
+
+def write_output(output):
+    sys.stdout.write(json.dumps(output) + '\n')
+    sys.stdout.flush()
+
+
+def on_play(player, status, manager):
+    # Received new playback status
+    on_metadata(player, player.props.metadata, manager)
+
+
+def on_metadata(player, metadata, manager):
+    player_name = player.props.player_name
+    player_status = player.get_property("status")
+    output = {
+        "class": [
+            f'player-{player_name}',
+            f'state-player-{player_status.lower()}',
+        ],
+    }
+    if player_status == "Paused":
+        output['text'] = f'{player_name}'
+    elif player_status == 'Stopped':
+        output['text'] = ''
+    elif player_status == 'Playing':
+        artist = player.get_artist()
+        title = player.get_title()
+        where = '♫'
+        if artist:
+            marker_split = ' - '
+            if artist in SPECIAL_ARTISTS and marker_split in title:
+                where = f'{SPECIAL_ARTISTS[artist]}{where}'
+                artist, title = title.split(marker_split, maxsplit=1)
+            text = f'{where}{artist}{title}'
+        elif title:
+            text = f'{where}{title}'
+        else:
+            text = f'{where} @ {player_name}'
+        metadatas = [
+            '# Player Name',
+            player_name,
+            '# Metadata',
+        ]
+        for mkey in metadata.keys():
+            mvalue = metadata[mkey]
+            if isinstance(mvalue, list):
+                mvalue = ' '.join(f'"{v}"' for v in mvalue)
+            metadatas.append(f'{mkey}: {mvalue}')
+        output.update({
+            'text': text,
+            'tooltip': '\n'.join(metadatas),
+        })
+    else:
+        raise Exception(f'Invalid Metadata Status: {player_status}')
+    write_output(output)
+
+
+def on_player_appeared(manager, player, selected_player=None):
+    if player is not None and (selected_player is None or player.name == selected_player):
+        init_player(manager, player)
+
+
+def on_player_vanished(manager, player):
+    if player:
+        txt = f'Player[{player.props.player_name}] not running'
+    else:
+        txt = 'Player not running'
+    write_output({
+        'text': '♭',  # Music flat sign
+        'tooltip': txt,
+        'class': 'state-none',
+    })
+
+
+def init_player(manager, name):
+    player = Playerctl.Player.new_from_name(name)
+    player.connect('playback-status', on_play, manager)
+    player.connect('metadata', on_metadata, manager)
+
+    manager.manage_player(player)
+
+    on_metadata(player, player.props.metadata, manager)
+
+
+def signal_handler(sig, frame):
+    # logger.debug('Received signal to stop, exiting')
+    sys.stdout.write('\n')
+    sys.stdout.flush()
+    # loop.quit()
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    manager = Playerctl.PlayerManager()
+    loop = GLib.MainLoop()
+
+    manager.connect('name-appeared', on_player_appeared)
+    manager.connect('player-vanished', on_player_vanished)
+
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+
+    player = None
+    for player in manager.props.player_names:
+        init_player(manager, player)
+    else:
+        if player is None:
+            # No Player at all
+            on_player_vanished(manager, None)
+
+    loop.run()

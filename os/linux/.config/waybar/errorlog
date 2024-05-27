@@ -1,0 +1,6 @@
+[2024-05-20 23:57:00.940] [error] Hyprland IPC: Couldn't write (4)
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Error parsing JSON: * Line 1, Column 1
+  Syntax error: value, object or array expected.
+
+[1]    2661 IOT instruction (core dumped)  waybar --log-level debug

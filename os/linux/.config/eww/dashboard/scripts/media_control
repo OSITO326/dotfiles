@@ -55,9 +55,9 @@ get_song() {
 get_status() {
   status=`playerctl --player="$player" status 2> /dev/null`
   if [[ $status == "Playing" ]]; then
-    echo "󰐌"
-  else
     echo "󰏥"
+  else
+    echo "󰐌"
   fi
 }
 

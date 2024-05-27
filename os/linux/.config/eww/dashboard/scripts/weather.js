@@ -4,7 +4,7 @@ const path = require('path');
 const os = require('os');
 
 const ID = '3919968';
-const API_KEY = ''; // YOUR API KEY HERE
+const API_KEY = ''; // Your API key here
 const UNITS = 'metric';
 const LANG = 'es';
 const URL = `https://api.openweathermap.org/data/2.5/weather?id=${ID}&lang=${LANG}&appid=${API_KEY}&units=${UNITS}`;

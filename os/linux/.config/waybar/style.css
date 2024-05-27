@@ -49,8 +49,8 @@ window#waybar.hidden {
 
 /* Sets active workspace to have a solid line on the bottom */
 #workspaces button.active {
-  border-bottom: 2px solid @brorange;
-  border-radius: 0;
+  /* border-bottom: 2px solid @brorange; */
+  /* border-radius: 0; */
   color: @brorange;
   /* margin-top: 3px; */
   transition: all 0.5s ease-in-out;
@@ -58,7 +58,7 @@ window#waybar.hidden {
 
 #workspaces button.visible {
   /* border-bottom: 2px solid @brorange; */
-  border-radius: 0;
+  /* border-radius: 0; */
   color: @brorange;
   /* margin-top: 3px; */
   transition: all 0.5s ease-in-out;

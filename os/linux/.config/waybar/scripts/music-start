@@ -1,0 +1,14 @@
+#!/bin/sh
+# Bind this to the "Music" key or similar.
+# Doesn't block.
+# Depends on `playerctl`.
+stdout="$XDG_RUNTIME_DIR/music.stdout"
+stderr="$XDG_RUNTIME_DIR/music.stderr"
+if [ "$(playerctl --list-all 2>"$stderr" | wc -l)" = 0 ]; then
+	echo "Start a new player @ $(date -Ins)" >>"$stdout"
+	quodlibet --run --set-browser="InternetRadio" --start-playing >>"$stdout" 2>>"$stderr" &
+else
+	# The player is already setup, play it
+	playerctl play
+fi
+exit 0

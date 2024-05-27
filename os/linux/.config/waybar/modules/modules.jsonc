@@ -133,6 +133,7 @@
   "hyprland/workspaces": {
     "format": "<span font='11' font-family=\"Iosevka Nerd Font\">{icon}</span>",
     "all-outputs": false,
+    "move-to-monitor": true,
     // "active-only": false,
     // "show-special": false,
     // "active-only": true,
@@ -188,7 +189,6 @@
       "vlc": "<span color=\"#e85e00\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "brave": "<span color=\"#ff631c\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
       "spotify": "<span color=\"#1db954\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
-      // "spotify": "<span color=\"#1db954\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     },
     "status-icons": {
       "paused": "<span color=\"#458588\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
@@ -196,7 +196,6 @@
     // "dynamic-order": ["title", "artist"],
     "dynamic-order": ["title"],
     "dynamic-len": 60,
-    "ellipsis": "...",
     // "ignored-players": ["firefox"]
   },
   "network": {

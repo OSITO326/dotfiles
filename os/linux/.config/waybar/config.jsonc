@@ -5,7 +5,7 @@
     "output": "eDP-1", // Waybar output
     "include": "~/.config/waybar/modules/modules.jsonc",
     "spacing": 3, // Gaps between modules (4px)
-    "height": 24,
+    "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
@@ -22,7 +22,7 @@
     "output": "HDMI-A-1", // Waybar output
     "include": "~/.config/waybar/modules/modules.jsonc",
     "spacing": 3, // Gaps between modules (4px)
-    "height": 24,
+    "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
