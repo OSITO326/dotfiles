@@ -46,37 +46,21 @@
 ;; (defpoll CTIME :interval "1s" `scripts/music_info --ctime`)
 ;; (defpoll TTIME :interval "1s" `scripts/music_info --ttime`)
 
-
 ;; Weather vars
-;; TODO: Hacer funcionar
-;; (defpoll DATA :interval "14m" `node scripts/weather.js --savedata`)
-;; Need package: arcolinux-cron-git node
-;; crontab -e
-;; */10 * * * * node $HOME/.config/eww/scripts/weather.js --savedata
-;; the crontab will save the data every 10 minutes
-(defpoll ICON :interval "10s" `node scripts/weather.js --icon`)
-(defpoll STAT :interval "10s" `node scripts/weather.js --desc`)
-(defpoll TEMP :interval "10s" `node scripts/weather.js --temp`)
-(defpoll EXTRA :interval "10s" `node scripts/weather.js --extrastats`)
-(defpoll CITY :interval "10s" `node scripts/weather.js --country`)
-(defpoll QUOTE :interval "10s" `node scripts/weather.js --quote`)
-(defpoll QUOTE2 :interval "10s" `node scripts/weather.js --quote2`)
-
-
-;; (defpoll DATA :interval "14m" `scripts/weather_info --getdata`)
-;; (defpoll ICON :interval "15m" `scripts/weather_info --icon`)
-;; (defpoll STAT :interval "15m" `scripts/weather_info --stat`)
-;; (defpoll TEMP :interval "15m" `scripts/weather_info --temp`)
-;; (defpoll HEX :interval "15m" `scripts/weather_info --hex`)
-;; (defpoll QUOTE :interval "15m" `scripts/weather_info --quote`)
-;; (defpoll QUOTE2 :interval "15m" `scripts/weather_info --quote2`)
+(defpoll DATA :interval "10m" `scripts/weather --savedata`)
+(defpoll ICON :interval "10s" `scripts/weather --printweathericon`)
+(defpoll TEMP :interval "10s" `scripts/weather --printtemperature`)
+(defpoll EXTRA :interval "10s" `scripts/weather --printextrastats`)
+(defpoll STAT :interval "10s" `scripts/weather --printdescription`)
+(defpoll CITY :interval "10s" `scripts/weather --printcitycountry`)
+(defpoll QUOTE :interval "10s" `scripts/weather --printquote`)
+(defpoll QUOTE2 :interval "10s" `scripts/weather --printquotetwo`)
 
 ;; Apps vars
 (defpoll MAILS :interval "5m" `scripts/mails`)
 
 ;; Files vars
 (defpoll FREE :interval "5s" `df -h / | awk '{print $4}' | tail -n 1 | sed 's/G/GB/'`)
-
 
 ;; ** Widgets *************************************************************************
 
@@ -190,26 +174,16 @@
 	(box :class "genwin" 
 		(box :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(box :orientation "h" :vexpand "false" :hexpand "false" 
-				;; (label :class "iconweather" :halign "start" :style "color: ${HEX};" :text ICON)
 				(label :class "iconweather" :halign "start" :style "color: #adadff" :text ICON)
 				(label :class "stats" :halign "start" :text EXTRA)
-				(label :class "label_temp" :halign "end" :text TEMP))
+				(label :class "label_temp" :halign "end" :text TEMP)
+				)
 			(box :orientation "v" :spacing 10 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false" 
 				(label :class "label_country" :text CITY)
 				(label :class "label_stat" :text STAT)
 				(label :class "label_quote" :text QUOTE)
-				(label :class "label_quote" :text QUOTE2)))))
-
-;; (defwidget weather [] 
-;; 	(box :class "genwin" 
-;; 		(box :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false" 
-;; 			(box :orientation "h" :vexpand "false" :hexpand "false" 
-;; 				(label :class "iconweather" :halign "start" :style "color: ${HEX};" :text ICON)
-;; 				(label :class "label_temp" :halign "end" :text TEMP))
-;; 			(box :orientation "v" :spacing 10 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false" 
-;; 				(label :class "label_stat" :text STAT)
-;; 				(label :class "label_quote" :text QUOTE)
-;; 				(label :class "label_quote" :text QUOTE2)))))
+				(label :class "label_quote" :text QUOTE2)
+				))))
 
 ;; apps
 (defwidget apps [] 
