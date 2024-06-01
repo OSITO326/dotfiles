@@ -47,14 +47,23 @@
 ;; (defpoll TTIME :interval "1s" `scripts/music_info --ttime`)
 
 ;; Weather vars
-(defpoll DATA :interval "10m" `scripts/weather --savedata`)
-(defpoll ICON :interval "10s" `scripts/weather --printweathericon`)
-(defpoll TEMP :interval "10s" `scripts/weather --printtemperature`)
-(defpoll EXTRA :interval "10s" `scripts/weather --printextrastats`)
-(defpoll STAT :interval "10s" `scripts/weather --printdescription`)
-(defpoll CITY :interval "10s" `scripts/weather --printcitycountry`)
-(defpoll QUOTE :interval "10s" `scripts/weather --printquote`)
-(defpoll QUOTE2 :interval "10s" `scripts/weather --printquotetwo`)
+;; crontab -e
+-- */10 * * * * python ~/.config/eww/dashboard/scripts/weather.py --savedata
+
+(defpoll ICON :interval "10s" `python scripts/weather.py --printweathericon`)
+(defpoll TEMP :interval "10s" `python scripts/weather.py --printtemperature`)
+(defpoll EXTRA :interval "10s" `python scripts/weather.py --printextrastats`)
+(defpoll STAT :interval "10s" `python scripts/weather.py --printdescription`)
+(defpoll CITY :interval "10s" `python scripts/weather.py --printcitycountry`)
+(defpoll QUOTE :interval "10s" `python scripts/weather.py --printquote`)
+(defpoll QUOTE2 :interval "10s" `python scripts/weather.py --printquotetwo`)
+;; (defpoll ICON :interval "10s" `scripts/weather --printweathericon`)
+;; (defpoll TEMP :interval "10s" `scripts/weather --printtemperature`)
+;; (defpoll EXTRA :interval "10s" `scripts/weather --printextrastats`)
+;; (defpoll STAT :interval "10s" `scripts/weather --printdescription`)
+;; (defpoll CITY :interval "10s" `scripts/weather --printcitycountry`)
+;; (defpoll QUOTE :interval "10s" `scripts/weather --printquote`)
+;; (defpoll QUOTE2 :interval "10s" `scripts/weather --printquotetwo`)
 
 ;; Apps vars
 (defpoll MAILS :interval "5m" `scripts/mails`)

@@ -1,10 +1,12 @@
 #!/bin/bash
 
+icon_path="$HOME/.config/mako/icons/changebrightness.svg"
 function send_notification() {
     # link extract number %
     # https://github.com/Hummer12007/brightnessctl/issues/55
     brightness=$(brightnessctl -m -d intel_backlight | cut -d, -f4 | tr -d %)
-    dunstify -a "Change brightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness-$1" "Brightness: $brightness%" -t 2000
+    # notify-send -a "Change brightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness-$1" "Brightness: $brightness%" -t 2000
+    notify-send -a "Change brightness" -u low -r 9991 -h int:value:"$brightness" -i "$icon_path" "Brightness: $brightness%" -t 2000
 }
 
 case $1 in
