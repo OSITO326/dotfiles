@@ -32,16 +32,6 @@ for THEME_PATH in ${themes_paths[@]}; do
   [ -f "$THEME_PATH" ] && source "$THEME_PATH" && break
 done
 
-for bash_file in "$DOTLY_PATH"/shell/bash/completions/_*; do
-  source "$bash_file"
-done
-
-if [ -n "$(ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
-  for bash_file in "$DOTFILES_PATH"/shell/bash/completions/_*; do
-    source "$bash_file"
-  done
-fi
-
 # fnm
 export PATH="/home/osito/.local/share/fnm:$PATH"
 eval "`fnm env`"
