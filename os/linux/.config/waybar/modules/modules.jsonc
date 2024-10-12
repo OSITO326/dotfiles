@@ -33,11 +33,6 @@
         "<span font='11' font-family=\"JetBrainsMono Nerd Font Mono\">󰂂</span>",
         "<span font='11' font-family=\"JetBrainsMono Nerd Font Mono\">󰁹</span>",
       ],
-      // "<span font-family=\"FiraCode Nerd Font\">󰁺</span>",
-      // "<span font-family=\"FiraCode Nerd Font\">󰁼</span>",
-      // "<span font-family=\"FiraCode Nerd Font\">󰁾</span>",
-      // "<span font-family=\"FiraCode Nerd Font\">󰂀</span>",
-      // "<span font-family=\"FiraCode Nerd Font\">󰁹</span>",
     },
     "format-full": " <span font='11' font-family=\"JetBrainsMono Nerd Font Mono\">󰂄 Full</span> ",
   },
@@ -53,35 +48,8 @@
   },
   "clock": {
     // "interval": 60,
-    "format": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"></span> {:%H:%M} ",
-    "format-alt": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"> </span> {:%A - %d de %B, %Y} ",
-    // "format-alt": "{:%A, %B %d, %Y (%R)}  ",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "on-click-right": "mode",
-      "format": {
-        "months": "<span color='#ebddb2'><b>{}</b></span>",
-        "days": "<span color='#d3869b'><b>{}</b></span>",
-        "weeks": "<span color='#458588'><b>W{}</b></span>",
-        "weekdays": "<span color='#fabd2f'><b>{}</b></span>",
-        "today": "<span color='#fb4934'><b><u>{}</u></b></span>",
-      },
-    },
-    "actions": {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
-    },
-  },
-  "clock#2": {
-    // "interval": 60,
-    "format": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"></span> {:%H:%M} ",
+    // "format": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"></span> {:%H:%M %p} ",
+    "format": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"></span> {:%I:%M %p} ",
     "format-alt": " <span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Regular\"> </span> {:%A - %d de %B, %Y} ",
     // "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -138,33 +106,35 @@
     // "show-special": false,
     // "active-only": true,
     "format-icons": {
-      "1": "", // nf-oct-terminal
-      "2": "", // nf-fa-code
+      "1": "", // nf-fa-firefox
+      "2": "", // nf-oct-terminal
       "3": "", // nf-custom-folder
       "4": "", // nf-fae-layers
-      "5": "", // nf-fa-spotify
-      "6": "", // nf-fa-firefox
-      "7": "", // nf-oct-terminal
+      "5": "", // nf-dev-vim
+      "6": "", // nf-oct-terminal
+      "7": "", // nf-fa-code
       "8": "", // nf-custom-folder
       "9": "", // nf-fae-layers
-      "10": "", // nf-dev-vim
+      "10": "", // nf-fa-spotify
+      // "1": "", // nf-oct-terminal
+      // "2": "", // nf-fa-code
+      // "3": "", // nf-custom-folder
+      // "4": "", // nf-fae-layers
+      // "5": "", // nf-fa-spotify
+      // "6": "", // nf-fa-firefox
+      // "7": "", // nf-oct-terminal
+      // "8": "", // nf-custom-folder
+      // "9": "", // nf-fae-layers
+      // "10": "", // nf-dev-vim
       // "urgent": "",
       // "active": "",
       // "default": "",
     },
     "persistent-workspaces": {
-      "eDP-1": [1, 2, 3, 4, 5],
-      "HDMI-A-1": [6, 7, 8, 9, 10],
-      // "1": ["eDP-1"],
-      // "2": ["eDP-1"],
-      // "3": ["eDP-1"],
-      // "4": ["eDP-1"],
-      // "5": ["eDP-1"],
-      // "6": ["HDMI-A-1"],
-      // "7": ["HDMI-A-1"],
-      // "8": ["HDMI-A-1"],
-      // "9": ["HDMI-A-1"],
-      // "10": ["HDMI-A-1"],
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "eDP-1": [6, 7, 8, 9, 10],
+      // "eDP-1": [1, 2, 3, 4, 5],
+      // "HDMI-A-1": [6, 7, 8, 9, 10],
     },
   },
   "hyprland/window": {
@@ -185,7 +155,7 @@
     "tooltip-format": "{status}\nTitle: {title}\nArtist: {artist}\nAlbum: {album}",
     "player-icons": {
       "default": "<span font-family=\"Font Awesome 6 Pro Solid\"></span>",
-      "mpv": "<span font-family=\"Font Awesome 6 Pro Solid\"></span>",
+      "mpv": "<span color=\"#672168\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "vlc": "<span color=\"#e85e00\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "brave": "<span color=\"#ff631c\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
       "spotify": "<span color=\"#1db954\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
@@ -199,7 +169,7 @@
     // "ignored-players": ["firefox"]
   },
   "network": {
-    "interface": "wlp7s0",
+    "interface": "wlan0",
     "format": " {ifname} ",
     "format-wifi": " <span color=\"#83a598\" font-family=\"Font Awesome 6 Pro Solid\"> </span>{bandwidthDownBits} <span color=\"#fb4934\" font-family=\"Font Awesome 6 Pro Solid\"> </span>{bandwidthUpBits} ",
     "format-ethernet": "{ipaddr}/{cidr} 󰈀",
@@ -215,7 +185,7 @@
     // pactl list sinks
     "format": " {icon} {volume}%",
     "format-bluetooth": " {volume}% {icon}<span font-family=\"Font Awesome 6 Pro Solid\"></span> ",
-    "format-muted": "<span color='#fb4934' font-family=\"Font Awesome 6 Pro Solid\"></span> Mute ",
+    "format-muted": "<span color='#fb4934' font-family=\"Font Awesome 6 Pro Solid\">  </span> Mute ",
     "format-icons": {
       "headphone": "<span font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "hands-free": "<span font-family=\"Font Awesome 6 Pro Solid\"></span>",
@@ -261,7 +231,7 @@
     "exec": "waybar-module-pacman-updates",
   },
   "custom/arch": {
-    "format": " {icon} {}",
+    "format": " {icon} {text}",
     "tooltip-format": "Packages to Update\n{icon}: {}",
     "format-icons": [
       "<span color=\"#d79921\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
@@ -271,7 +241,7 @@
     "tooltip": false,
   },
   "custom/aur": {
-    "format": " {icon} {} ",
+    "format": " {icon} {text} ",
     "format-icons": [
       "<span color=\"#1793d1\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     ],
@@ -279,9 +249,8 @@
     "exec": "bash ~/.config/waybar/scripts/aur-updates.sh",
     "tooltip": false,
   },
-  "custom/nowplaying": {},
   "custom/trash": {
-    "format": "{icon} {} ",
+    "format": "{icon} {text} ",
     "format-icons": [
       "<span color=\"#fb4934\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     ],
@@ -291,7 +260,7 @@
     "tooltip": false,
   },
   "custom/weather": {
-    "format": " {icon} {} ",
+    "format": " {icon} {text} ",
     "format-icons": [
       "<span color=\"#458588\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     ],
@@ -300,9 +269,21 @@
     "exec": "python -u ~/.config/waybar/scripts/weather.py",
     "tooltip": false,
   },
-  "custom/colorpicker": {
+  "custom/vpn": {
+    "format": " {icon} {text} ",
+    "format-icons": [
+      "<span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
+    ],
+    "restart-interval": 30, // 30 seconds
+    "exec": "bash ~/.config/waybar/scripts/vpn.sh",
+    "tooltip": false,
+  },
+  "custom/pickcolor": {
     "format": "{icon}",
-    "format-icons": "<span color=\"#b16286\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
-    "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+    "format-icons": [
+      "<span color=\"#8ec07c\" font-family=\"Font Awesome 6 Pro Solid\">  </span>",
+    ],
+    "on-click": "hyprpicker -a",
+    "tooltip": false,
   },
 }

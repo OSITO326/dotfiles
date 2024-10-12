@@ -1,7 +1,9 @@
 /* 
  * https://github.com/sameemul-haque/dotfiles/blob/mocha/.config/waybar/style.css
  */
-@import 'gruvbox.css';
+/* @import 'gruvbox.css'; */
+@import 'gruv.css';
+/* @import '../../.cache/wal/colors-waybar.css'; */
 
 * {
   border: none;
@@ -28,30 +30,38 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 5px 0 5px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 /* WORKSPACES */
 #workspaces {
-  border-radius: 12px 12px 12px 12px;
-  margin: 3px 0 0 3px;
-  background-color: @black;
-  padding: 0 10px;
   border: 0;
+  border-radius: 12px 12px 12px 12px;
+  background-color: @background;
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+  color: @foreground;
+  /* color: @white; */
+  margin: 3px 0 0 3px;
+  padding: 0 10px;
 }
 
 #workspaces button {
   padding: 0 3px 0 3px;
+  color: @foreground;
+  /* color: @white; */
 }
 
 /* Sets active workspace to have a solid line on the bottom */
 #workspaces button.active {
   /* border-bottom: 2px solid @brorange; */
   /* border-radius: 0; */
-  color: @brorange;
+  /* color: @brorange; */
+  color: @color4;
   /* margin-top: 3px; */
   transition: all 0.5s ease-in-out;
 }
@@ -59,23 +69,28 @@ window#waybar.hidden {
 #workspaces button.visible {
   /* border-bottom: 2px solid @brorange; */
   /* border-radius: 0; */
-  color: @brorange;
+  /* color: @brorange; */
+  color: @color4;
   /* margin-top: 3px; */
   transition: all 0.5s ease-in-out;
 }
 
 #workspaces button.urgent {
-  color: @blue;
+  color: @color9;
+  /* color: @blue; */
 }
 
 /* More workspace stuff for highlighting on hover */
 #workspaces button.focused {
-  color: @brorange;
+  color: @color4;
+  /* color: @brorange; */
 }
 
 #workspaces button:hover {
-  background: @brblack;
-  color: @black;
+  background: @color8;
+  color: @background;
+  /* background: @brblack; */
+  /* color: @black; */
 }
 
 /* NETWORK */
@@ -83,8 +98,10 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -93,8 +110,10 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
-  color: @white;
-  background-color: @black;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -102,8 +121,10 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -112,9 +133,33 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
-  /* padding: 0 5px 0 5px; */
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#custom-pickcolor {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+/* VPN */
+#custom-vpn {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -122,8 +167,10 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -133,8 +180,10 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0; /*right side*/
   padding: 0 5px 0 5px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
@@ -143,20 +192,25 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0;
   padding: 0 5px 0 5px;
-  background-color: @black;
+  background-color: @background;
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 #memory {
   border-radius: 12px 12px 12px 12px;
   margin: 0 3px 0 0;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
 }
 #disk {
   border-radius: 12px 12px 12px 12px;
   margin: 0 0 0 3px;
-  color: @white;
-  background-color: @black;
+  color: @foreground;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
 }
 
 /* GROUP-WIDGETS */
@@ -164,39 +218,48 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 5px 0 5px;
-  background-color: @black;
+  background-color: @background;
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 /* UPDATE */
 #custom-updates {
-  color: @white;
+  color: @foreground;
+  /* color: @white; */
 }
 
 #custom-aur {
-  color: @white;
+  color: @foreground;
+  /* color: @white; */
 }
 
 #custom-arch {
-  color: @white;
+  color: @foreground;
+  /* color: @white; */
 }
 
 #custom-trash {
-  color: @white;
+  color: @foreground;
+  /* color: @white; */
 }
 
 /* CLOCK */
 #clock {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 3px;
-  background-color: @black;
+  background-color: @background;
+  color: @foreground;
+  /* background-color: @black; */
+  /* color: @white; */
   padding: 0 10px;
   border: 0;
-  /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 1); */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 /* TRAY */
 #tray {
-  color: @white;
+  color: @foreground;
+  /* color: @white; */
 }
 
 /* GROUP-SYSTEM */
@@ -204,25 +267,30 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0; /*right side*/
   padding: 0 5px 0 5px;
-  background-color: @black;
+  background-color: @background;
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 #pulseaudio {
-  color: @green;
+  color: @color2;
+  /* color: @green; */
 }
 
 #pulseaudio.muted {
-  color: @brred;
+  color: @color1;
+  /* color: @brred; */
 }
 
 #battery {
-  color: @charge-battery;
+  color: @color10;
+  /* color: @charge-battery; */
 }
 
 /* BLUETOOTH */
 #bluetooth {
-  color: @bluetooth;
+  color: @color12;
+  /* color: @bluetooth; */
 }
 
 /* GROUP-CLOCK */
@@ -230,6 +298,7 @@ window#waybar.hidden {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0; /*right side*/
   padding: 0 5px 0 5px;
-  background-color: @black;
+  background-color: @background;
+  /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }

@@ -8,6 +8,7 @@
     "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    // "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": [
       "group/group-widgets",
@@ -25,6 +26,7 @@
     "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    // "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["mpris", "custom/docker", "custom/weather"],
   },

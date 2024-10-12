@@ -17,7 +17,7 @@ import requests
 import time
 
 CITY = "3919968"
-API_KEY = "" # Your API here
+API_KEY = ""  # Your API here
 UNITS = "Metric"
 UNIT_KEY = "C"
 # UNIT_KEY = "F"
