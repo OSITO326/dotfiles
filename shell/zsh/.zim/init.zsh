@@ -1,4 +1,7 @@
-if (( ${+ZIM_HOME} )) zimfw() { source "${HOME}/.dotfiles/shell/zsh/.zim/zimfw.zsh" "${@}" }
+# FILE AUTOMATICALLY GENERATED FROM /home/osito/.zimrc
+# EDIT THE SOURCE FILE AND THEN RUN zimfw build. DO NOT DIRECTLY EDIT THIS FILE!
+
+if [[ -e ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]] zimfw() { source "${HOME}/.dotfiles/shell/zsh/.zim/zimfw.zsh" "${@}" }
 fpath=("${HOME}/.dotfiles/shell/zsh/.zim/modules/git-info/functions" "${HOME}/.dotfiles/shell/zsh/.zim/modules/prompt-pwd/functions" ${fpath})
 autoload -Uz -- coalesce git-action git-info prompt-pwd
 source "${HOME}/.dotfiles/shell/zsh/.zim/modules/environment/init.zsh"
