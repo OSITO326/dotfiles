@@ -117,16 +117,14 @@ window#waybar.hidden {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
-#custom-nowplaying {
-  border-radius: 12px 12px 12px 12px;
-  margin: 3px 0 0 0;
-  padding: 0 3px 0 3px;
-  color: @foreground;
-  background-color: @background;
-  /* color: @white; */
-  /* background-color: @black; */
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
-}
+/* #custom-nowplaying { */
+/*   border-radius: 12px 12px 12px 12px; */
+/*   margin: 3px 0 0 0; */
+/*   padding: 0 3px 0 3px; */
+/*   color: @foreground; */
+/*   background-color: @background; */
+/*   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1); */
+/* } */
 
 /* DOCKER */
 #custom-docker {
@@ -301,4 +299,22 @@ window#waybar.hidden {
   background-color: @background;
   /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+/* WAYBAR-MPRIS */
+#custom-nowplaying {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @foreground; */
+  color: @color14;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#custom-notification {
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  color: @foreground;
+  font-size: 15pt;
 }

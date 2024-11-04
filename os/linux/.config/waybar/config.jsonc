@@ -28,6 +28,7 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     // "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "custom/docker", "custom/weather"],
+    // "modules-right": ["mpris", "custom/docker", "custom/weather"],
+    "modules-right": ["custom/nowplaying", "custom/docker", "custom/weather"],
   },
 ]
