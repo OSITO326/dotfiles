@@ -10,4 +10,4 @@ zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 zmodule prompt-pwd
 #zmodule minimal
 #zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
-#zhighlighters=(main brackets)
+zhighlighters=(main brackets)
