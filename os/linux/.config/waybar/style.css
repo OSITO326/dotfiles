@@ -9,8 +9,9 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  /* font-family: FiraCode Nerd Font; */
-  font-family: JetBrainsMono Nerd Font Mono;
+  /* font-family: FiraCodeMono Nerd Font; */
+  /* font-family: JetBrainsMono Nerd Font Mono; */
+  font-family: CaskaydiaMono Nerd Font;
   font-size: 10.5pt;
   /* font-size: 10pt; */
 }
@@ -29,7 +30,8 @@ window#waybar.hidden {
 #window {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
-  padding: 0 5px 0 5px;
+  padding: 2px 5px 0 5px;
+  /* padding: 0 5px 0 5px; */
   color: @foreground;
   background-color: @background;
   /* color: @white; */
@@ -95,18 +97,67 @@ window#waybar.hidden {
 
 /* NETWORK */
 #network {
-  border-radius: 12px 12px 12px 12px;
-  margin: 3px 0 0 0;
-  padding: 0 3px 0 3px;
   color: @foreground;
-  background-color: @background;
-  /* color: @white; */
-  /* background-color: @black; */
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 /* MPRIS */
 #mpris {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+/*MPD*/
+#mpd {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#mpd.disconnect {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#mpd.stopped {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#mpd.paused {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 0;
+  padding: 0 3px 0 3px;
+  /* color: @white; */
+  /* background-color: @black; */
+  color: @foreground;
+  background-color: @background;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+#mpd.playing {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
   padding: 0 3px 0 3px;
@@ -130,7 +181,8 @@ window#waybar.hidden {
 #custom-docker {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
-  padding: 0 3px 0 3px;
+  padding: 2px 3px 0 3px;
+  /* padding: 0 3px 0 3px; */
   color: @foreground;
   background-color: @background;
   /* color: @white; */
@@ -177,7 +229,8 @@ window#waybar.hidden {
 #custom-weather {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0; /*right side*/
-  padding: 0 5px 0 5px;
+  padding: 2px 5px 0 5px;
+  /* padding: 0 5px 0 5px; */
   color: @foreground;
   background-color: @background;
   /* color: @white; */
@@ -185,37 +238,31 @@ window#waybar.hidden {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
-/* GROUP-DATA [memory, disk]*/
-#group-data {
+/* GROUP-SYSTRAY*/
+#group-systray {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 3px 0 0;
-  padding: 0 5px 0 5px;
+  /* padding: 0 13px 0 13px; */
+  padding: 2px 13px 0 13px;
   background-color: @background;
   /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
+
+/*top right down left*/
 #memory {
-  border-radius: 12px 12px 12px 12px;
-  margin: 0 3px 0 0;
   color: @foreground;
-  background-color: @background;
-  /* color: @white; */
-  /* background-color: @black; */
 }
 #disk {
-  border-radius: 12px 12px 12px 12px;
-  margin: 0 0 0 3px;
   color: @foreground;
-  background-color: @background;
-  /* color: @white; */
-  /* background-color: @black; */
 }
 
 /* GROUP-WIDGETS */
 #group-widgets {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
-  padding: 0 5px 0 5px;
+  /* padding: 0 5px 0 5px; */
+  padding: 2px 5px 0 5px;
   background-color: @background;
   /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
@@ -249,7 +296,8 @@ window#waybar.hidden {
   color: @foreground;
   /* background-color: @black; */
   /* color: @white; */
-  padding: 0 10px;
+  /* padding: 0 10px; */
+  padding: 2px 5px 0 5px;
   border: 0;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
@@ -263,8 +311,9 @@ window#waybar.hidden {
 /* GROUP-SYSTEM */
 #group-system {
   border-radius: 12px 12px 12px 12px;
-  margin: 3px 3px 0 0; /*right side*/
-  padding: 0 5px 0 5px;
+  margin: 3px 0 0 0; /*right side*/
+  /* padding: 0 5px 0 5px; */
+  padding: 2px 5px 0 5px;
   background-color: @background;
   /* background-color: @black; */
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
@@ -305,7 +354,8 @@ window#waybar.hidden {
 #custom-nowplaying {
   border-radius: 12px 12px 12px 12px;
   margin: 3px 0 0 0;
-  padding: 0 3px 0 3px;
+  padding: 2px 3px 0 3px;
+  /* padding: 0 3px 0 3px; */
   /* color: @foreground; */
   color: @color14;
   background-color: @background;
@@ -313,8 +363,19 @@ window#waybar.hidden {
 }
 
 #custom-notification {
-  margin: 3px 0 0 0;
+  color: @foreground;
+  /* font-size: 15pt; */
+}
+
+/*chilndren-class*/
+/*top right down left*/
+#children-class {
+  border-radius: 12px 12px 12px 12px;
+  margin: 3px 0 0 3px;
   padding: 0 3px 0 3px;
   color: @foreground;
-  font-size: 15pt;
+  background-color: @background;
+  /* color: @white; */
+  /* background-color: @black; */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }

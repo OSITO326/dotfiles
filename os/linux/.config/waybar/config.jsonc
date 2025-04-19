@@ -8,13 +8,15 @@
     "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    // "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": [
+      // "group/group-widgets",
+      // "group/group-system",
+      //
+      // "network",
       "group/group-widgets",
       "group/group-system",
-      "network",
-      "group/group-data",
+      "group/group-systray",
     ],
   },
   // HDMI-A-1
@@ -26,9 +28,7 @@
     "height": 25,
     // MODULES
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    // "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    // "modules-right": ["mpris", "custom/docker", "custom/weather"],
     "modules-right": ["custom/nowplaying", "custom/docker", "custom/weather"],
   },
 ]

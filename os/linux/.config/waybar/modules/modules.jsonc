@@ -78,7 +78,7 @@
   // TODO: Add the disk#2 module
   "disk": {
     "interval": 30,
-    "format": "<span color=\"#fe8019\" font-family=\"Font Awesome 6 Pro Solid\"> </span>{free} ",
+    "format": "<span color=\"#fe8019\" font-family=\"Font Awesome 6 Pro Solid\">  </span>{free}",
     "path": "/home/osito/",
   },
   "disk#2": {
@@ -86,17 +86,34 @@
     "format": "<span color=\"#1793d1\" font-family=\"Font Awesome 6 Pro Solid\"> </span>{free} ",
     "path": "/",
   },
-  "group/group-data": {
+  "group/group-systray": {
     "orientation": "inherit",
-    "modules": ["memory", "disk", "tray"],
+    "modules": ["tray", "custom/notification"],
   },
+  // new
   "group/group-system": {
-    "orientation": "inherit",
-    "modules": ["pulseaudio", "battery", "bluetooth"],
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "chilndren-class": "children",
+      "transition-left-to-right": false,
+      "click-to-reveal": false,
+    },
+    "modules": ["network", "disk", "memory"],
   },
+  // "group/group-system": {
+  //   "orientation": "inherit",
+  //   "modules": ["pulseaudio", "battery", "bluetooth"],
+  // },
   "group/group-widgets": {
-    "orientation": "inherit",
-    "modules": ["custom/arch", "custom/aur", "custom/trash"],
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "chilndren-class": "children",
+      "transition-left-to-right": false,
+      "click-to-reveal": false,
+    },
+    "modules": ["custom/arch", "custom/trash", "custom/aur"],
   },
   "hyprland/workspaces": {
     "format": "<span font='11' font-family=\"Iosevka Nerd Font\">{icon}</span>",
@@ -116,16 +133,6 @@
       "8": "", // nf-custom-folder
       "9": "", // nf-fae-layers
       "10": "", // nf-fa-spotify
-      // "1": "", // nf-oct-terminal
-      // "2": "", // nf-fa-code
-      // "3": "", // nf-custom-folder
-      // "4": "", // nf-fae-layers
-      // "5": "", // nf-fa-spotify
-      // "6": "", // nf-fa-firefox
-      // "7": "", // nf-oct-terminal
-      // "8": "", // nf-custom-folder
-      // "9": "", // nf-fae-layers
-      // "10": "", // nf-dev-vim
       // "urgent": "",
       // "active": "",
       // "default": "",
@@ -133,8 +140,6 @@
     "persistent-workspaces": {
       "HDMI-A-1": [1, 2, 3, 4, 5],
       "eDP-1": [6, 7, 8, 9, 10],
-      // "eDP-1": [1, 2, 3, 4, 5],
-      // "HDMI-A-1": [6, 7, 8, 9, 10],
     },
   },
   "hyprland/window": {
@@ -157,9 +162,10 @@
       "default": "<span font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "mpv": "<span color=\"#672168\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
       "vlc": "<span color=\"#e85e00\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
-      "brave": "<span color=\"#ff631c\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
+      // "brave": "<span color=\"#ff631c\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
       "spotify": "<span color=\"#1db954\" font='11' font-family=\"Iosevka Nerd Font\"></span>",
     },
+    "ignored-players": ["brave"],
     "status-icons": {
       "paused": "<span color=\"#458588\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     },
@@ -167,6 +173,31 @@
     "dynamic-order": ["title"],
     "dynamic-len": 60,
     // "ignored-players": ["firefox"]
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "consume-icons": {
+      "on": " ", // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+      "on": " ",
+    },
+    "repeat-icons": {
+      "on": " ",
+    },
+    "single-icons": {
+      "on": "1 ",
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": "",
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
   },
   "network": {
     "interface": "wlan0",
@@ -205,6 +236,8 @@
     "on-click-middle": "bash ~/.config/waybar/scripts/pulseaudio.sh next-sink",
     "on-click-right": "bash ~/.config/waybar/scripts/pulseaudio.sh togmute",
     "ignored-sinks": ["Easy Effects Sink"],
+    "tooltip": true,
+    "tooltip-format": "{desc}",
   },
   "tray": {
     "icons-size": 8,
@@ -231,7 +264,7 @@
     "exec": "waybar-module-pacman-updates",
   },
   "custom/arch": {
-    "format": " {icon} {text}",
+    "format": " {icon} {text} ",
     "tooltip-format": "Packages to Update\n{icon}: {}",
     "format-icons": [
       "<span color=\"#d79921\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
@@ -241,7 +274,7 @@
     "tooltip": false,
   },
   "custom/aur": {
-    "format": " {icon} {text} ",
+    "format": " {icon} {text}",
     "format-icons": [
       "<span color=\"#1793d1\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     ],
@@ -250,7 +283,7 @@
     "tooltip": false,
   },
   "custom/trash": {
-    "format": "{icon} {text} ",
+    "format": " {icon} {text}",
     "format-icons": [
       "<span color=\"#fb4934\" font-family=\"Font Awesome 6 Pro Solid\"></span>",
     ],
@@ -302,14 +335,14 @@
     "tooltip": true,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": "",
+      "notification": "<span font='11' font-family=\"Iosevka Nerd Font\"></span><span foreground='red'><sup></sup></span>",
+      "none": "<span font='11' font-family=\"Iosevka Nerd Font\"></span>",
+      "dnd-notification": "<span font='11' font-family=\"Iosevka Nerd Font\"></span><span foreground='red'><sup></sup></span>",
+      "dnd-none": "<span font='11' font-family=\"Iosevka Nerd Font\"></span>",
+      "inhibited-notification": "<span font='11' font-family=\"Iosevka Nerd Font\"></span><span foreground='red'><sup></sup></span>",
+      "inhibited-none": "<span font='11' font-family=\"Iosevka Nerd Font\"></span>",
+      "dnd-inhibited-notification": "<span font='11' font-family=\"Iosevka Nerd Font\"></span><span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "<span font='11' font-family=\"Iosevka Nerd Font\"></span>",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
