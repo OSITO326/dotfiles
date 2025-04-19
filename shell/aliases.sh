@@ -46,7 +46,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 #Zathura
-alias z='zathura'
+alias za='zathura'
 
 #Nginx
 alias html='cd /usr/share/nginx/html/'
