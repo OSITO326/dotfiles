@@ -44,6 +44,8 @@ export path=(
   "/opt/flutter/bin" # flutter
 )
 
+export XDG_DATA_DIRS="$HOME/.local/share:/usr/local/share:/usr/share"
+
 #Calcurse editor and visual NVIM
 export CALCURSE_EDITOR="nvim"
 export VISUAL="nvim"
