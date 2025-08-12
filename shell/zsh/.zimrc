@@ -1,4 +1,4 @@
-# If you modify this execute `zimfw uninstall & zimfw install`
+# # If you modify this execute `zimfw uninstall & zimfw install`
 zmodule zimfw/environment
 zmodule zimfw/git-info
 zmodule zimfw/input
@@ -8,6 +8,6 @@ zmodule zsh-users/zsh-autosuggestions
 #zmodule romkatv/powerlevel10k --use degit
 zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 zmodule prompt-pwd
-#zmodule minimal
+zmodule minimal
 #zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 zhighlighters=(main brackets)
