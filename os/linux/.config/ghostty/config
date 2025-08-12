@@ -1,0 +1,74 @@
+## THEME => ghostty +list-themes
+theme = GruvboxDarkHard
+# theme = GruvboxCustom
+
+## Font
+font-size = 12
+font-family = "Cascadia Code"
+font-family-bold = "Cascadia Code"
+font-family-italic = "Cascadia Code"
+font-family-bold-italic = "Cascadia Code"
+## Fallback font for some glyphs
+font-family = "CaskaydiaMono Nerd Font"
+font-family-bold = "CaskaydiaMono Nerd Font"
+font-family-bold-italic = "CaskaydiaMono Nerd Font"
+font-family-italic = "CaskaydiaMono Nerd Font"
+font-thicken = true
+
+## Adjust-Cell
+# adjust-cell-width = 5%
+# adjust-cell-height = 5%
+
+## Cursor settings
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-style-blink = true
+
+## Window settings
+# window-decoration = false
+window-decoration = none
+window-padding-y = 0
+window-padding-x = 0
+window-padding-color = extend
+window-padding-balance = true
+window-save-state = always
+# window-theme = ghostty
+
+## Keybinds
+keybind = alt+n=new_tab
+keybind = alt+h=previous_tab
+keybind = alt+l=next_tab
+keybind = alt+one=goto_tab:1
+keybind = alt+two=goto_tab:2
+keybind = alt+three=goto_tab:3
+keybind = alt+four=goto_tab:4
+keybind = alt+five=goto_tab:5
+keybind = alt+equal=increase_font_size:1
+keybind = alt+minus=decrease_font_size:1
+keybind = alt+zero=reset_font_size
+keybind = ctrl+shift+w=close_surface
+
+## TMUX
+keybind = alt+\=new_split:right
+keybind = alt+-=new_split:down
+# Navigation TMUX
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+# Resize split
+keybind = alt+shift+h=resize_split:left,10
+keybind = alt+shift+j=resize_split:down,10
+keybind = alt+shift+k=resize_split:up,10
+keybind = alt+shift+l=resize_split:right,10
+keybind = alt+shift+plus=equalize_splits
+
+confirm-close-surface = false
+auto-update = download
+
+gtk-titlebar = false
+gtk-wide-tabs = false
+gtk-tabs-location = bottom
+# hidden tabs
+# gtk-tabs-location = hidden
