@@ -7,8 +7,8 @@ SPACESHIP_PROMPT_ORDER=(
   #hg             # Mercurial section (hg_branch  + hg_status)
   package        # Package version
   node           # Node.js section
-  #bun            # Bun section
-  #deno           # Deno section
+  bun            # Bun section
+  deno           # Deno section
   ruby           # Ruby section
   python         # Python section
   #elm            # Elm section
@@ -70,9 +70,8 @@ SPACESHIP_CHAR_COLOR_FAILURE="#FB4934"
 SPACESHIP_CHAR_COLOR_SECONDARY=
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=true
-# SPACESHIP_CHAR_SYMBOL="" # warp terminal
-# SPACESHIP_PROMPT_SEPARATE_LINE=false # warp terminal
-SPACESHIP_PROMPT_ASYNC=false
+SPACESHIP_PROMPT_ASYNC=true
+# SPACESHIP_PROMPT_ASYNC=false
 
 # USER
 SPACESHIP_USER_SHOW=true
